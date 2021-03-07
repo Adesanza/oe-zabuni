@@ -1,10 +1,13 @@
 import './App.css';
+import Header from './components/header/header';
+import Dashboard from './pages/dashboard/dashboard';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-     <h1>Welcome to Zabuni</h1>
-    </div>
+    <>
+    <Header />
+    <Dashboard />
+    </>
   );
 }
 

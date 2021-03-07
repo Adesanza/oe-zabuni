@@ -1,0 +1,8 @@
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard-content {
+    background-color: whitesmoke;
+    flex-basis: 88%;
+}

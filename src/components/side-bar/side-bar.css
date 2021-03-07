@@ -1,0 +1,25 @@
+.side-bar {
+    background-color: blue;
+    height: 100vh;
+    flex-basis: 12%;
+    padding-top: 2.78rem;
+}
+
+.sidebar-settings {
+    display: flex;
+    flex-flow: row nowrap;
+    /* justify-content: space-evenly; */
+    padding: .59rem .79rem;
+    color: white;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.sidebar-settings > *:first-child {
+    padding-left: 1.72rem;
+    align-self: flex-start;
+}
+.sidebar-settings > *:last-child {
+    padding-left: .62rem;
+    line-height: 1rem;
+}

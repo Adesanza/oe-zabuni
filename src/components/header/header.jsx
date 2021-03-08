@@ -2,7 +2,7 @@ import './header.css';
 
 const Header = () => {
     return (
-        <header classNameName="popy">
+        <header className="popy">
              <nav className="navbar fixed-top navbar-expand-sm  navbar-light header-nav">
             <a className="navbar-brand" href="/"><img src="https://res.cloudinary.com/adesanza/image/upload/v1615071965/zabuni/Group_278_svodmy.svg" alt="ZABUNI" /></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -10,7 +10,7 @@ const Header = () => {
             </button>
             <div className="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul className="navbar-nav">
-                    <li classNameName="nav-item">
+                    <li className="nav-item">
                         <a className="nav-link" href="/" id="navs">For Publishers</a>
                     </li>
                     <li className="nav-item">

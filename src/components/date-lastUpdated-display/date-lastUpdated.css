@@ -1,0 +1,19 @@
+.display-date {
+    /* border: 1px solid blue; */
+    padding-top: 1rem;
+}
+
+.display-date > * {
+    margin: 0;
+}
+
+.display-date > *:first-child, .display-date > *:last-child > span {
+    font-weight: bold;
+}
+.display-date > *:last-child {
+    margin-top: .18rem;
+    font-weight: lighter;
+}
+.display-date > *:last-child > span {
+    color: blue;
+}

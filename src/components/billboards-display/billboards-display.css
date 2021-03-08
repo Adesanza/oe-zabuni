@@ -1,0 +1,11 @@
+.display-billboards{
+    margin-top: 1.56rem;
+}
+
+.select-all {
+    display: inline-block;
+    color: blue;
+    border-bottom: 2.76px solid blue;
+    padding-bottom: .35rem;
+    margin-bottom: .78rem;
+}

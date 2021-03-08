@@ -1,8 +1,17 @@
 .dashboard {
     display: flex;
     justify-content: space-between;
+    margin-top: 4.56rem;
 }
 .dashboard-content {
     background-color: whitesmoke;
     flex-basis: 88%;
+    padding: 1.68rem 0 0 2rem;
+    /* border: 1px solid green; */
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid tomato; */
 }

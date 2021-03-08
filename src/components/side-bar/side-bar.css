@@ -1,7 +1,7 @@
 .side-bar {
-    background-color: blue;
+    background-color: #007bff;
     height: 100vh;
-    flex-basis: 12%;
+    flex-basis: 14%;
     padding-top: 2.78rem;
 }
 
@@ -21,5 +21,5 @@
 }
 .sidebar-settings > *:last-child {
     padding-left: .62rem;
-    line-height: 1rem;
+    line-height: 1.58rem;
 }

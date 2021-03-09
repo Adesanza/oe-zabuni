@@ -1,0 +1,23 @@
+.vertical-modal {
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.modal-close-btn {
+    color: grey;
+    /* border: 1px solid rebeccapurple; */
+    margin-left: auto;
+    font-size: 1.556rem;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.modal-close-btn:hover {
+    transform: rotate(360deg);
+}
+
+.modal-heading {
+    margin-top: -1.35rem;
+    color: #007bff;
+    text-transform: capitalize;
+    /* border: 1px solid yellow; */
+}

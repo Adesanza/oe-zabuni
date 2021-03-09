@@ -2,3 +2,51 @@
     overflow-x: scroll;
     background-color: white;
 }
+.billboard-row > td {
+    text-transform: capitalize;
+}
+.create-billboard-btn {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0 .48rem;
+    text-transform: uppercase;
+    background-color: palevioletred;
+    border: 0;
+}
+.create-billboard-btn:hover, .create-billboard-btn:not(:disabled):not(.disabled):active, .create-billboard-btn:focus{
+    background-color: palevioletred;
+}
+
+.edit-delete-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    /* border: 1px solid yellow; */
+}
+
+.edit-delete-container > div {
+    padding-right: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    cursor: pointer;
+}
+
+.billboard-amount {
+    display: flex;
+    flex-flow: column nowrap;
+}
+.billboard-amount > span {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+.edit-icon, .delete-icon {
+    font-size: 1.6rem;
+}
+.delete-icon {
+    color: red;
+}
+.billboard-amount > span:last-child, .edit-icon-text, .delete-icon-text {
+   font-size: .66rem;
+}

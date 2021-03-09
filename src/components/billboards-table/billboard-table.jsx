@@ -1,8 +1,21 @@
-import { Table } from 'react-bootstrap';
-import { billboardData } from './billboard-data';
+import { Table, Button } from 'react-bootstrap';
+import { GrFormEdit } from 'react-icons/gr';
+import { FaTrashAlt } from 'react-icons/fa';
 import './billboard-table.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
+import { deleteBillboard } from '../../redux/billboard-data/billboardDataReducer';
+import { editBillboardData } from '../../redux/form/billboardFormReducer';
 
 const BillboardsTable = () => {
+  const billboardData = useSelector(state => state.billboardData);
+  const filterKey = useSelector(({ filterBillboard }) => filterBillboard.keyword);
+  const dispatch = useDispatch();
+  const handleEdit = (id) => {
+    const toBeEdited = billboardData.find(billboard => billboard.id === id);
+    dispatch(editBillboardData(toBeEdited));
+    dispatch(verticalModalContent('edit-billboard'))
+  }
     return (
         <div className="billboard-table">
         <Table hover >
@@ -19,25 +32,36 @@ const BillboardsTable = () => {
       <th>LGA</th>
       <th>CITY</th>
       <th>AMOUNT</th>
-      <th>BUTTON</th>
+      <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>create new</Button></th>
     </tr>
   </thead>
   <tbody>
         {
-            billboardData.map((details,index) => (
-                <tr key={index}>
-                    <th>{details.name}</th>
-                    <th>{details.type}</th>
-                    <th>{details.size}</th>
-                    <th>{details.status}</th>
-                    <th>{details.faces}</th>
-                    <th>{details.slots}</th>
-                    <th>{details.units}</th>
-                    <th>{details.state}</th>
-                    <th>{details.lga}</th>
-                    <th>{details.city}</th>
-                    <th>{details.amount}</th>
-                    <th>BUTTON</th>
+            billboardData.filter(details => details.name.toLowerCase().includes(filterKey.toLowerCase()) ).map(details => (
+                <tr key={details.id} className="billboard-row">
+                    <td>{details.name}</td>
+                    <td>{details.type}</td>
+                    <td>{details.size}</td>
+                    <td>{details.status}</td>
+                    <td>{details.faces}</td>
+                    <td>{details.slots}</td>
+                    <td>{details.units}</td>
+                    <td>{details.state}</td>
+                    <td>{details.lga}</td>
+                    <td>{details.city}</td>
+                    <td className="billboard-amount"><span></span>{details.amount}<span>Per annum</span></td>
+                    <td>
+                      <div className="edit-delete-container">
+                      <div onClick={() => handleEdit(details.id)}>
+                        <GrFormEdit className="edit-icon"/>
+                        <span className="edit-icon-text">Edit</span>
+                      </div>
+                      <div onClick={() => dispatch(deleteBillboard(details.id))}>
+                        <FaTrashAlt className="delete-icon"/>
+                        <span className="delete-icon-text">Delete</span>
+                      </div>
+                      </div>
+                    </td>
                 </tr>
             ))
         }

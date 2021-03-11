@@ -3,14 +3,30 @@ import './login-form.css';
 import { Formik } from 'formik';
 import { loginSchema } from '../../utils/form/yup-schemas';
 import { useDispatch } from 'react-redux';
-import { closeVerticalModalDisplay } from '../../redux/vertical-modal/verticalModalReducer';
-
+import { closeVerticalModalDisplay, verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
+import { fetchUserOnLogin } from '../../redux/user/userReducer';
+import { unwrapResult } from '@reduxjs/toolkit';
+import { useHistory } from 'react-router';
+// zabuni@optimumexposures.com
 const LoginForm = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     return (
-        <Formik validationSchema={loginSchema} initialValues={{email: '', password: ''}} onSubmit={(values, { setSubmitting }) => {
-            dispatch(closeVerticalModalDisplay());
-            alert("Uncle shina, chill na. Backend is not up yet");
+        <Formik validationSchema={loginSchema} initialValues={{email: '', password: ''}} onSubmit={(values, actions) => {
+            // dispatch(closeVerticalModalDisplay());
+            // alert("Uncle shina, chill na. Backend is not up yet");
+            actions.setSubmitting(true);
+                        console.log({ values, actions });
+                        dispatch(fetchUserOnLogin(values))
+                            .then(unwrapResult)
+                            .then(() => {
+                                dispatch(closeVerticalModalDisplay());
+                                history.push("/dashboard")
+                            })
+                            .catch(error => {
+                                actions.setSubmitting(false);
+                                actions.setFieldError("password",error.message)
+                            })
         }}>
             {({
                 handleSubmit,
@@ -19,23 +35,24 @@ const LoginForm = () => {
                 values,
                 touched,
                 isValid,
-                errors
+                errors,
+                isSubmitting
             }) => (
                 <>
                      <Form noValidate onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Control type="email" placeholder="Email" name="email" value={values.email} onChange={handleChange} onBlur={handleBlur} />
+                    <Form.Control type="email" placeholder="Email" name="email" value={values.email} onChange={handleChange} onBlur={handleBlur} className="email-login-input"/>
                     <Form.Text className="text-danger">{touched.email && errors.email ? errors.email : null}</Form.Text>
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">
                     <Form.Control type="password" placeholder="Password" name="password" value={values.password} onChange={handleChange} onBlur={handleBlur} />
                     <Form.Text className="text-danger">{touched.password && errors.password ? errors.password : null}</Form.Text>
                 </Form.Group>
-                <Button type="submit" block className="login-submit-btn">
+                <Button type="submit" block className="login-submit-btn" disabled={isSubmitting}>
                     Submit
                 </Button>
                 </Form>
-                <p>Don't have an account? <span className="sign-up-text" >Sign up</span></p>
+                <p>Don't have an account? <span className="sign-up-text" onClick={() => dispatch(verticalModalContent('signup'))} >Sign up</span></p>
                 </>
             )}
         </Formik>

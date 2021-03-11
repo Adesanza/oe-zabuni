@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import logger from 'redux-logger';
 import billboardDataReducer from "./billboard-data/billboardDataReducer";
+import dashboardReducer from "./dashboard/dashboardReducer";
 import filterBillboardReducer from "./filter-Billboard/filterBillboardReducer";
 import billboardFormReducer from "./form/billboardFormReducer";
 import userReducer from "./user/userReducer";
@@ -15,7 +16,8 @@ export const store = configureStore({
         user: userReducer,
         filterBillboard: filterBillboardReducer,
         billboardData: billboardDataReducer,
-        billboardForm: billboardFormReducer
+        billboardForm: billboardFormReducer,
+        dashboard: dashboardReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 })

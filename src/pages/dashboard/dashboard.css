@@ -6,7 +6,7 @@
 .dashboard-content {
     background-color: whitesmoke;
     flex-basis: 88%;
-    padding: 1.68rem 0 0 2rem;
+    padding: 1rem 0 0 1rem;
     /* border: 1px solid green; */
 }
 
@@ -14,4 +14,13 @@
     display: flex;
     justify-content: space-between;
     /* border: 1px solid tomato; */
+}
+
+.dashy {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.dashy > * {
+    width: 35%;
+    border: 1px solid red;
 }

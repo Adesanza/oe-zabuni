@@ -9,9 +9,14 @@
     margin-top: 1.69rem;
   }
 .searchIcon {
-    padding: 0.5rem;
+  /* border: 1px solid blue; */
+    /* padding: 0; */
+    margin-top: .47rem;
+    margin-right: .45rem;
+    /* margin: 0; */
     font-weight: lighter;
     color: grey;
+    /* line-height: 2rem; */
   }
   
   .searchBox {

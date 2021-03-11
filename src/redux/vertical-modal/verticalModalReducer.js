@@ -5,7 +5,7 @@ const verticalModalReducer = createSlice({
     initialState: {show: false, type: null},
     reducers: {
         closeVerticalModalDisplay: (state) => {state.show = false},
-        verticalModalContent: (state, action) => {state.show = !state.show; state.type = action.payload }
+        verticalModalContent: (state, action) => {state.show = true; state.type = action.payload }
     }
 })
 

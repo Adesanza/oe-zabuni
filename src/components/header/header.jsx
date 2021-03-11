@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
 import './header.css';
 
@@ -10,17 +11,19 @@ const Header = () => {
             (
                 <header>
                 <nav className="navbar fixed-top navbar-expand-sm  navbar-light header-nav">
-                    <a className="navbar-brand" href="/"><img src="https://res.cloudinary.com/adesanza/image/upload/v1615320288/zabuni/Group_15_bed3tj.svg" alt="OE" /></a>
+                    <Link className="navbar-brand" to="/"><img src="https://res.cloudinary.com/adesanza/image/upload/v1615320288/zabuni/Group_15_bed3tj.svg" alt="OE" /></Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                       </button>
                       <div className="collapse navbar-collapse" id="navbar-list-4">
                         <ul className="navbar-nav">
                             <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Ayinla Ogunbiyi<img src="https://res.cloudinary.com/adesanza/image/upload/v1615321731/zabuni/Ellipse_1_cyixos.png" width="40" height="40" className="rounded-circle" alt="user icon" />
-                            </a>
+                                
+                            <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              {`${userState.first_name} ${userState.last_name}`}<img src="https://res.cloudinary.com/adesanza/image/upload/v1615321731/zabuni/Ellipse_1_cyixos.png" width="40" height="40" className="rounded-circle" alt="user icon" />
+                            </Link>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
                               <a className="dropdown-item" href="/">Edit Profile</a>
                               <a className="dropdown-item" href="/">Settings</a>
                               <a className="dropdown-item" href="/">Log Out</a>
@@ -31,34 +34,26 @@ const Header = () => {
                 </nav>
             </header> 
             ):(
-                <header className="popy">
-                <nav className="navbar fixed-top navbar-expand-sm  navbar-light header-nav">
-               <a className="navbar-brand" href="/"><img src="https://res.cloudinary.com/adesanza/image/upload/v1615071965/zabuni/Group_278_svodmy.svg" alt="ZABUNI" /></a>
+                <header >
+                <nav className="navbar fixed-top navbar-expand-sm navbar-light header-nav1">
+               <Link className="navbar-brand" to="/"><img src="https://res.cloudinary.com/adesanza/image/upload/v1615071965/zabuni/Group_278_svodmy.svg" alt="ZABUNI" /></Link>
                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                    <span className="navbar-toggler-icon"></span>
                </button>
                <div className="collapse navbar-collapse" id="collapsibleNavbar">
                    <ul className="navbar-nav">
-                       <li className="nav-item">
-                           <a className="nav-link" href="/" id="navs">For Publishers</a>
-                       </li>
-                       <li className="nav-item">
-                           <a className="nav-link" href="/" id="navs">What we do</a>
-                       </li>
-                       <li className="nav-item">
-                           <a className="nav-link" href="/" id="navs">Campaigns</a>
-                       </li>
-                       <li className="nav-item">
-                           <a className="nav-link" href="/" id="navs">Campaigns</a>
-                       </li>
-                       <li>
-                           <button className="homeb"><a href="/" className="start">Sign Up</a></button>
-                       </li>
-                       <li>
-                           <button type="button" className="homeb1 start1" onClick={() => dispatch(verticalModalContent('login'))} >
-                           Login
-                           </button>
-                       </li>
+                   <div className="searchContainer">
+                        <span className="iconify search1" data-icon="fluent:search-16-regular" data-inline="false"></span>
+                        <input className="searcher" placeholder="Where will you like to place your advert?" type="search" />
+                    </div>
+                    <li>
+                    <button className="homeb start" onClick={() => dispatch(verticalModalContent('signup'))}>Sign Up as<span className="iconify" data-icon="dashicons:arrow-down-alt2" data-inline="false"></span></button>
+                </li>
+                <li>
+                    <button type="button" data-toggle="modal" data-target="#myModal" className="homeb1 start1" onClick={() => dispatch(verticalModalContent('login'))}>
+                    Login
+                    </button>
+                </li>
                    </ul> 
                </div>  
            </nav>

@@ -4,4 +4,9 @@
 
 .sign-up-text {
     color: #007bff;
+    cursor: pointer;
+}
+
+.email-login-input {
+    /* border-radius: 3%; */
 }

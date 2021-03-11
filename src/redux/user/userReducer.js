@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import userApi from "../../utils/user/user-api";
 
 export const fetchUserOnLogin = createAsyncThunk(
     "userState/fetchByLoginStatus",
     async (logingObject) => {
-        // const response = await userApi.logUserIn(logingObject);
-        // return response;
+        const response = await userApi.logUserIn(logingObject);
+        return response;
     }
 )
 export const fetchUserOnRegister = createAsyncThunk(
@@ -22,11 +23,13 @@ const userReducer = createSlice({
         logUserOut: state => {state.userState = null}
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchUserOnLogin.fulfilled, (state, { payload }) => {state.userState = {...payload}})
-        builder.addCase(fetchUserOnLogin.rejected, (state,action) => {state.userState = null})
-        builder.addCase(fetchUserOnRegister.fulfilled, (state, { payload }) => {state.userState = {...payload}})
-        builder.addCase(fetchUserOnRegister.rejected, (state,action) => {state.userState = null})
+        builder.addCase(fetchUserOnLogin.fulfilled, (state, { payload }) => payload.data)
+        builder.addCase(fetchUserOnLogin.rejected, (state,action) => {state = null})
+        
     }
 })
 
 export default userReducer.reducer;
+
+// builder.addCase(fetchUserOnRegister.fulfilled, (state, { payload }) => {state.userState = {...payload}})
+// builder.addCase(fetchUserOnRegister.rejected, (state,action) => {state.userState = null})

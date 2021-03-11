@@ -38,8 +38,9 @@
 .sidebar-dropdown-content > * {
     margin: .56rem 0;
     font-weight: lighter;
+    cursor: pointer;
 }
 .sidebar-dropdown-content > *:first-child {
-    font-weight: 500;
+    font-weight: 700;
 }
 

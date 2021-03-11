@@ -6,6 +6,7 @@ import { closeVerticalModalDisplay } from "../../redux/vertical-modal/verticalMo
 import LoginForm from "../login-form/login-form";
 import BillboardForm from "../billboard-form/billboard-form";
 import { resetBillboardFormData } from "../../redux/form/billboardFormReducer";
+import SignupForm from "../sign-up-form/sign-up-form";
 
 const modalHeading = {
   'login': "login",
@@ -15,7 +16,8 @@ const modalHeading = {
 
 const SelectContent = ({ type }) => {
   if (type === "login") return <LoginForm />;
-  if(type === 'create-billboard' || 'edit-billboard') return <BillboardForm />;
+  if(type === 'create-billboard' || type ==='edit-billboard') return <BillboardForm />;
+  if(type === 'signup') return <SignupForm />;
 };
 
 const VerticalCenterModal = ({ children }) => {

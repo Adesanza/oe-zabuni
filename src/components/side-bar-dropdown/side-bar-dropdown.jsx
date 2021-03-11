@@ -11,7 +11,8 @@ const SidebarDropdown = ({ data, handleActiveSidebar, children }) => {
                         :
                         (<span><FaCaretRight/></span>)
                     }
-                <span><FaVectorSquare/></span>
+                    {/* <img src="https://res.cloudinary.com/adesanza/image/upload/v1615248780/zabuni/Vector_1_kupos1.svg" alt="dropdown icon"/> */}
+                <span><FaVectorSquare /></span>
                 <span>{data.title}</span>
             </div>
             {

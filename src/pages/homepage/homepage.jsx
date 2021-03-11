@@ -3,78 +3,90 @@ import './homepage.css';
 const Homepage = () => {
     return (
         <>
-        <div className="taking">
+       <div className="taking">
         <div className="row">
             <div className="col-md-6 col-12-sm-12">
                 <div className=""><p>
-                    <span className="grow">Get analysis of all OOH in<br/>Nigeria on ZABUNI</span></p>
+                    <span className="grow">Get analysis of all OOH <br /> in Nigeria on ZABUNI</span></p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, iure officiis tenetur ipsam soluta ex, perferendis nemo unde distinctio consequatur in, ratione debitis cupiditate alias. Accusantium, repellat. Magni, deleniti omnis.</p>
                     <div className="olab">
-                        <button className="homeb"><a href="/" className="start2">Learn How</a></button>
-                        <button className="homeb"><a href="/" className="start2">Become a Publisher</a></button>
+                        <button className="homeb"><a href="/" className="start2">Learn How <span className="iconify" data-icon="bytesize:arrow-right" data-inline="false"></span></a></button>
                     </div> 
                 </div>
             </div>
             <div className="col-md-6">
-                <img src="https://res.cloudinary.com/adesanza/image/upload/v1615071737/zabuni/Group_279_gydgbo.svg" alt="" />
+                <center><img src="https://res.cloudinary.com/adesanza/image/upload/v1615071737/zabuni/Group_279_gydgbo.svg" alt="" width="auto" /></center>
             </div>
         </div>
     </div>
     <div>
-        <div className="row">
-            <div className="col-md-7 col-12-sm-12">
-                <img src="https://res.cloudinary.com/adesanza/image/upload/v1615073055/zabuni/Group_272_1_wbdst1.svg" alt="" />
-            </div>
-            <div className="col-md-5">
-                <h3 id="feature">Our billboards</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat aspernatur laudantium ipsam numquam modi cum consequatur facere nostrum dolore. Ducimus repudiandae hic consequuntur veritatis. Unde sequi ea consequatur? Mollitia, nemo.</p>
+        <div>
+            <h3 id="feature" className="differ">Start your Campaign</h3>
+            <div className="row">
+                <div className="col-md-4">
+                    <center><img src="https://res.cloudinary.com/adesanza/image/upload/v1615074243/zabuni/Group_276_srz2ti.svg" alt="" height="244px" width="236px" />
+                    <span><p id="advert">Set Your Advert Channels<br/>& Budget</p></span></center>
+                </div>
+                <div className="col-md-4">
+                    <center><img src="https://res.cloudinary.com/adesanza/image/upload/v1615074238/zabuni/Group_277_d5rlrd.svg" alt="" height="244px" width="236px" />
+                    <span><p id="advert">Our Adverts Expert <br/>Contacts you</p></span></center>
+                </div>
+                <div className="col-md-4">
+                    <center><img src="https://res.cloudinary.com/adesanza/image/upload/v1615074235/zabuni/Agreement-rafiki_mxyxgd.svg" alt="" height="244px" width="236px" />
+                    <p id="advert">Close The Deal</p></center>
+                </div>
+
             </div>
         </div>
     </div>
     <div className="later">
-        <h3 id="feature" className="differ">Start your Campaign</h3>
-        <div className="row">
-            <div className="col-md-4">
-                <img src="https://res.cloudinary.com/adesanza/image/upload/v1615074243/zabuni/Group_276_srz2ti.svg" alt="" />
-                <span><p>Set Your Advert Channels<br/>& Budget</p></span>
+        <center>
+            <div>
+                <h3 className="loader">Download ZABUNI web app</h3>
+                <p className="accurate">Get accurate daily analysis of OOH on ZABUNI</p>
             </div>
-            <div className="col-md-4">
-                <img src="https://res.cloudinary.com/adesanza/image/upload/v1615074238/zabuni/Group_277_d5rlrd.svg" alt="" />
-                <span><p>Our Adverts Expert <br/>Contacts you</p></span>
+            <div>
+                <img src="https://res.cloudinary.com/adesanza/image/upload/v1615209035/zabuni/Group_1528_acbfe5.png" alt="" />
             </div>
-            <div className="col-md-4">
-                <img src="https://res.cloudinary.com/adesanza/image/upload/v1615074235/zabuni/Agreement-rafiki_mxyxgd.svg" alt="" />
-                <p>Close The Deal</p>
-            </div>
-        </div>
+        </center>
     </div>
-        {/* The Modal */}
-  <div className="modal" id="myModal">
-    <div className="modal-dialog">
-      <div className="modal-content">
-      
-            {/* Modal Header */}
-        <div className="modal-header">
-          <button type="button" className="close" data-dismiss="modal">&times;</button>
-        </div>
-        <center><h2 className="modal-title">Login</h2></center>
+    <footer className="row taking1">
+    
+            <div className="col-md-2">
+                <ul>
+                    <h3 id="pink">COMPANY</h3>
+                    <li>About</li>
+                    <li>Press</li>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy</li>
+                  </ul>
+            </div>
+            <div className="col-md-2">
+                <ul>
+                    <h3 id="pink">CHANNELS</h3>
+                    <li>Taxi Tv</li>
+                    <li>Mobile Screens</li>
+                    <li>Digital Boards</li>
+                    <li>LED Cubes</li>
+                  </ul>
+            </div>
+            <div className="col-md-2">
+                <ul>
+                    <h3 id="pink">SITEMAP</h3>
+                    <li>Cancellation</li>
+                    <li>Site Map</li>
+                    <li>Services</li>
+                    <li>Contact Us</li>
+                  </ul>
+            </div>
+    
         
-             {/* Modal body  */}
-        <div className="modal-body">
-            <center>
-            <input className="form-control loww" type="email" placeholder=" Email" name="" id="" />
-            <input className="mb-4 loww" type="password" placeholder="Password" />
-            <button className="lower">Login</button>
-            </center>
+        <div className="col-md-6 align-self-end">
+            <p className="reserved">Copyright @ 2021, Zabuni NG. All right reserved</p>
         </div>
         
-            {/* Modal footer  */}
-        <div className="modal-footer">
-            <center><h4>Don’t have an account?<span><a href="/">Sign Up</a></span></h4></center>
-        </div>
-      </div>
-    </div>
-  </div>
+    </footer>
+
     </>
     )
 }

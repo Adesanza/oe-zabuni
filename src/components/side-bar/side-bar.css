@@ -1,8 +1,8 @@
 .side-bar {
     background-color: #007bff;
-    height: 100vh;
+    /* height: 100%; */
     flex-basis: 14%;
-    padding-top: 2.78rem;
+    padding-top: 2rem;
 }
 
 .sidebar-settings {

@@ -51,17 +51,16 @@ const Homepage = () => {
         </center>
     </div>
     <footer className="row taking1">
-    
-            <div className="col-md-2">
-                <ul>
-                    <h3 id="pink">COMPANY</h3>
-                    <li>About</li>
-                    <li>Press</li>
-                    <li>Terms & Conditions</li>
-                    <li>Privacy</li>
-                  </ul>
-            </div>
-            <div className="col-md-2">
+        <div className="col-md-2">
+            <ul>
+                <h3 id="pink">COMPANY</h3>
+                <li>About</li>
+                <li>Press</li>
+                <li>Terms & Conditions</li>
+                <li>Privacy</li>
+            </ul>
+        </div>
+        <div className="col-md-2">
                 <ul>
                     <h3 id="pink">CHANNELS</h3>
                     <li>Taxi Tv</li>
@@ -69,16 +68,16 @@ const Homepage = () => {
                     <li>Digital Boards</li>
                     <li>LED Cubes</li>
                   </ul>
-            </div>
-            <div className="col-md-2">
-                <ul>
-                    <h3 id="pink">SITEMAP</h3>
-                    <li>Cancellation</li>
-                    <li>Site Map</li>
-                    <li>Services</li>
-                    <li>Contact Us</li>
-                  </ul>
-            </div>
+        </div>
+        <div className="col-md-2">
+            <ul>
+                <h3 id="pink">SITEMAP</h3>
+                <li>Cancellation</li>
+                <li>Site Map</li>
+                <li>Services</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
     
         
         <div className="col-md-6 align-self-end">

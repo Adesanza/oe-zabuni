@@ -6,7 +6,7 @@
 .dashboard-content {
     background-color: whitesmoke;
     flex-basis: 88%;
-    padding: 1rem 0 0 1rem;
+    padding: .5rem 0 0 175px;
     /* border: 1px solid green; */
 }
 

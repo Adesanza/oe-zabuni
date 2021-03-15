@@ -1,8 +1,9 @@
 .side-bar {
-    background-color: #007bff;
-    /* height: 100%; */
+    position: fixed;
+    background-color: #0056B3;
+    height: 100%;
     flex-basis: 14%;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .sidebar-settings {

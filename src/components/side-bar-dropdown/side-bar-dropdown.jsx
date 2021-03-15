@@ -1,4 +1,4 @@
-import { FaVectorSquare, FaCaretRight, FaCaretDown } from "react-icons/fa";
+import { FaCaretRight, FaCaretDown } from "react-icons/fa";
 import './side-bar-dropdown.css';
 
 const SidebarDropdown = ({ data, handleActiveSidebar, children }) => {
@@ -12,7 +12,7 @@ const SidebarDropdown = ({ data, handleActiveSidebar, children }) => {
                         (<span><FaCaretRight/></span>)
                     }
                     {/* <img src="https://res.cloudinary.com/adesanza/image/upload/v1615248780/zabuni/Vector_1_kupos1.svg" alt="dropdown icon"/> */}
-                <span><FaVectorSquare /></span>
+                <span><img src="https://res.cloudinary.com/adesanza/image/upload/v1615590578/zabuni/Group_1643_cbvpbo.svg" alt=""/></span>
                 <span>{data.title}</span>
             </div>
             {

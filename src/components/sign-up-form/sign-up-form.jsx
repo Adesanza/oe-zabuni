@@ -11,7 +11,7 @@ const SignupForm = () => {
         <Formik validationSchema={registerScehma} initialValues={{firstName: '', lastName: '', company: '', email: '', password: ''}} onSubmit={(values, { setSubmitting }) => {
             // console.log(values)
             dispatch(closeVerticalModalDisplay());
-            alert("Uncle shina, chill na. Backend is not up yet");
+            alert("Back-End Under Construction.. winks");
         }}>
             {({
                 handleSubmit,

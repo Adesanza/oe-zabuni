@@ -14,14 +14,15 @@ const LoginForm = () => {
     return (
         <Formik validationSchema={loginSchema} initialValues={{email: '', password: ''}} onSubmit={(values, actions) => {
             // dispatch(closeVerticalModalDisplay());
-            // alert("Uncle shina, chill na. Backend is not up yet");
+            // alert("Back-End Under Construction.. winks");
             actions.setSubmitting(true);
                         console.log({ values, actions });
                         dispatch(fetchUserOnLogin(values))
                             .then(unwrapResult)
                             .then(() => {
                                 dispatch(closeVerticalModalDisplay());
-                                history.push("/dashboard")
+                                alert("Back End Under Construction but only zabuni@optimumexposures can see this as this is the only valid user stored")
+                                // history.push("/dashboard")
                             })
                             .catch(error => {
                                 actions.setSubmitting(false);
@@ -49,10 +50,10 @@ const LoginForm = () => {
                     <Form.Text className="text-danger">{touched.password && errors.password ? errors.password : null}</Form.Text>
                 </Form.Group>
                 <Button type="submit" block className="login-submit-btn" disabled={isSubmitting}>
-                    Submit
+                    Login
                 </Button>
                 </Form>
-                <p>Don't have an account? <span className="sign-up-text" onClick={() => dispatch(verticalModalContent('signup'))} >Sign up</span></p>
+                <p className="dont">Don't have an account? <span className="sign-up-text" onClick={() => dispatch(verticalModalContent('signup'))} >Sign up</span></p>
                 </>
             )}
         </Formik>

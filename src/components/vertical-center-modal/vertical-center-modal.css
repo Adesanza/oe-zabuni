@@ -1,10 +1,13 @@
 .vertical-modal {
     padding: 0 2rem;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08);
+    border-radius: 10px;
     text-align: center;
 }
 
 .modal-close-btn {
-    color: grey;
+    color: #000;
     /* border: 1px solid rebeccapurple; */
     margin-left: auto;
     font-size: 1.556rem;
@@ -17,7 +20,20 @@
 
 .modal-heading {
     margin-top: -1.35rem;
-    color: #007bff;
-    text-transform: capitalize;
+    margin-bottom: 1.7rem;
+    color: #0056B3;
+    height: 30px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    /* line-height: 30px; */
+    /* text-transform: capitalize; */
     /* border: 1px solid yellow; */
+}
+.form-control{
+    height: 60px;
+    /* opacity: 0.5; */
+border: 0.5px solid #000000;
+filter: drop-shadow(0px 2px 2px rgba(181, 8, 65, 0.08));
+border-radius: 10px;
 }

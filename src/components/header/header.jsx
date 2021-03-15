@@ -2,6 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
 import './header.css';
+import { FaSearch } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
+
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -19,11 +23,11 @@ const Header = () => {
                         <ul className="navbar-nav">
                             <li className="nav-item dropdown">
                                 
-                            <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              {`${userState.first_name} ${userState.last_name}`}<img src="https://res.cloudinary.com/adesanza/image/upload/v1615321731/zabuni/Ellipse_1_cyixos.png" width="40" height="40" className="rounded-circle" alt="user icon" />
+                            <Link className="nav-link dropdown-toggle dropping" to="/" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              {`${userState.first_name} ${userState.last_name}`}  <CgProfile className="cgprofile"/>
                             </Link>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
+                              <Link className="dropdown-item" to="/">Dashboard</Link>
                               <a className="dropdown-item" href="/">Edit Profile</a>
                               <a className="dropdown-item" href="/">Settings</a>
                               <a className="dropdown-item" href="/">Log Out</a>
@@ -43,11 +47,11 @@ const Header = () => {
                <div className="collapse navbar-collapse" id="collapsibleNavbar">
                    <ul className="navbar-nav">
                    <div className="searchContainer">
-                        <span className="iconify search1" data-icon="fluent:search-16-regular" data-inline="false"></span>
+                        <FaSearch className="searchIcon"/>
                         <input className="searcher" placeholder="Where will you like to place your advert?" type="search" />
                     </div>
                     <li>
-                    <button className="homeb start" onClick={() => dispatch(verticalModalContent('signup'))}>Sign Up as<span className="iconify" data-icon="dashicons:arrow-down-alt2" data-inline="false"></span></button>
+                    <button className="homeb start" onClick={() => dispatch(verticalModalContent('signup'))}>Sign Up as  <FaArrowDown className="ArrowDown"/></button>
                 </li>
                 <li>
                     <button type="button" data-toggle="modal" data-target="#myModal" className="homeb1 start1" onClick={() => dispatch(verticalModalContent('login'))}>

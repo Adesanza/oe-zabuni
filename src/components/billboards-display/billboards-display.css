@@ -1,5 +1,5 @@
 .display-billboards{
-    margin-top: 1.56rem;
+    margin-top: 1rem;
 }
 
 .select-all {
@@ -7,5 +7,5 @@
     color: blue;
     border-bottom: 2.76px solid blue;
     padding-bottom: .35rem;
-    margin-bottom: .78rem;
+    /* margin-bottom: .78rem; */
 }

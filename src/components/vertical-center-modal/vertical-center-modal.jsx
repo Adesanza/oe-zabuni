@@ -9,9 +9,10 @@ import { resetBillboardFormData } from "../../redux/form/billboardFormReducer";
 import SignupForm from "../sign-up-form/sign-up-form";
 
 const modalHeading = {
-  'login': "login",
-  'create-billboard': "create new",
-  'edit-billboard': "edit details"
+  'signup': 'Sign up as a publisher',
+  'login': "Login",
+  'create-billboard': "Create new",
+  'edit-billboard': "Edit details"
 };
 
 const SelectContent = ({ type }) => {
@@ -48,7 +49,7 @@ const VerticalCenterModal = ({ children }) => {
         />
       </Modal.Header>
       <Modal.Body>
-        <h4 className="modal-heading">{modalHeading[modalState.type]}</h4>
+        <h3 className="modal-heading">{modalHeading[modalState.type]}</h3>
         <SelectContent type={modalState.type} />
       </Modal.Body>
     </Modal>

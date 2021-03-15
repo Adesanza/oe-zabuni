@@ -1,4 +1,5 @@
 import './homepage.css';
+import { FaArrowRight } from "react-icons/fa";
 
 const Homepage = () => {
     return (
@@ -10,7 +11,7 @@ const Homepage = () => {
                     <span className="grow">Get analysis of all OOH <br /> in Nigeria on ZABUNI</span></p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, iure officiis tenetur ipsam soluta ex, perferendis nemo unde distinctio consequatur in, ratione debitis cupiditate alias. Accusantium, repellat. Magni, deleniti omnis.</p>
                     <div className="olab">
-                        <button className="homeb"><a href="/" className="start2">Learn How <span className="iconify" data-icon="bytesize:arrow-right" data-inline="false"></span></a></button>
+                        <button className="homeb start2">Learn How  <FaArrowRight className=""/></button>
                     </div> 
                 </div>
             </div>

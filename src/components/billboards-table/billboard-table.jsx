@@ -19,7 +19,7 @@ const BillboardsTable = () => {
     return (
         <div className="billboard-table">
         <Table hover >
-  <thead className="bg-primary text-light">
+  <thead className="text-light lightert">
     <tr>
       <th>NAME</th>
       <th>LOCATION</th>
@@ -38,13 +38,14 @@ const BillboardsTable = () => {
       <th>CITY</th>
       <th>COORDINATE</th>
       <th>AMOUNT</th>
-      <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>create new</Button></th>
+      <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATENEW</Button></th>
     </tr>
   </thead>
   <tbody>
         {
             billboardData.filter(details => details.name.toLowerCase().includes(filterKey.toLowerCase()) ).map(details => (
                 <tr key={details.id} className="billboard-row">
+                    {/* <td>{details.sn}</td> */}
                     <td>{details.name}</td>
                     <td>{details.location}</td>
                     <td>{details.type}</td>

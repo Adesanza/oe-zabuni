@@ -21,8 +21,8 @@ const LoginForm = () => {
                             .then(unwrapResult)
                             .then(() => {
                                 dispatch(closeVerticalModalDisplay());
-                                alert("Back End Under Construction but only zabuni@optimumexposures can see this as this is the only valid user stored")
-                                // history.push("/dashboard")
+                                // alert("Back End Under Construction but only zabuni@optimumexposures can see this as this is the only valid user stored")
+                                history.push("/dashboard")
                             })
                             .catch(error => {
                                 actions.setSubmitting(false);

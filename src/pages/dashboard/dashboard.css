@@ -4,9 +4,10 @@
     margin-top: 4.56rem;
 }
 .dashboard-content {
-    background-color: whitesmoke;
-    flex-basis: 88%;
-    padding: .5rem 0 0 175px;
+    background-color: #E5E5E5;
+    width: 100%;
+    /* flex-basis: 88%; */
+    padding: .4rem 0 0 182px;
     /* border: 1px solid green; */
 }
 

@@ -16,7 +16,7 @@ export const billboardData = [
         state: 'lagos',
         lga: 'ikeja',
         city: 'maryland',
-        coordinate: '8.524242,8.123456',
+        coordinate: '8.524242, 8.123456',
         amount: '300,000,000'
     },
     {
@@ -36,7 +36,7 @@ export const billboardData = [
         state: 'lagos',
         lga: 'ikeja',
         city: 'maryland',
-        coordinate: '8.524242,8.123456',
+        coordinate: '8.524242, 8.123456',
         amount: '300,000,000'
     },
     {
@@ -56,7 +56,7 @@ export const billboardData = [
         state: 'lagos',
         lga: 'ikeja',
         city: 'maryland',
-        coordinate: '8.524242,8.123456',
+        coordinate: '8.524242, 8.123456',
         amount: '300,000,000'
     },
     {
@@ -76,7 +76,67 @@ export const billboardData = [
         state: 'lagos',
         lga: 'ikeja',
         city: 'maryland',
-        coordinate: '8.524242,8.123456',
+        coordinate: '8.524242, 8.123456',
+        amount: '300,000,000'
+    },
+    {
+        id: "zxcvb14416",
+        name: 'Rhino',
+        location: 'Apongbon ftt outer marina',
+        type: 'eye-catcher',
+        height: '12',
+        width: '20',
+        status: 'active',
+        category: 'billboard',
+        class: 'digital',
+        faces: '1',
+        slots: '1',
+        units: '1',
+        region: 'southwest',
+        state: 'lagos',
+        lga: 'ikeja',
+        city: 'maryland',
+        coordinate: '8.524242, 8.123456',
+        amount: '300,000,000'
+    },
+    {
+        id: "zxcvb14416",
+        name: 'Rhino',
+        location: 'Apongbon ftt outer marina',
+        type: 'eye-catcher',
+        height: '12',
+        width: '20',
+        status: 'active',
+        category: 'billboard',
+        class: 'digital',
+        faces: '1',
+        slots: '1',
+        units: '1',
+        region: 'southwest',
+        state: 'lagos',
+        lga: 'ikeja',
+        city: 'maryland',
+        coordinate: '8.524242, 8.123456',
+        amount: '300,000,000'
+    },
+    {
+        id: "zxcvb14416",
+        name: 'Rhino',
+        location: 'Apongbon ftt outer marina',
+        type: 'eye-catcher',
+        height: '12',
+        width: '20',
+        status: 'active',
+        category: 'billboard',
+        class: 'digital',
+        faces: '1',
+        slots: '1',
+        units: '1',
+        region: 'southwest',
+        state: 'lagos',
+        lga: 'ikeja',
+        city: 'maryland',
+        coordinate: '8.524242, 8.123456',
         amount: '300,000,000'
     }
 ];

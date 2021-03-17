@@ -4,8 +4,22 @@
 
 .select-all {
     display: inline-block;
-    color: blue;
-    border-bottom: 2.76px solid blue;
-    padding-bottom: .35rem;
+    color: #0056B3;
+    border-bottom: 2px solid #0056B3;
+    margin: 0 2rem .5rem 0;
+    cursor: pointer;
+    font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+    padding-bottom: .6rem;
+    /* margin-bottom: .78rem; */
+}
+.select-all1 {
+    display: inline-block;
+    color:#342929 60%;
+    cursor: pointer;
+    /* border-bottom: 2.76px solid #0056B3; */
+    /* padding-bottom: .35rem; */
     /* margin-bottom: .78rem; */
 }

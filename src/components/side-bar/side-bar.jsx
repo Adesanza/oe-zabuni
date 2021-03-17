@@ -32,17 +32,17 @@ const SideBar = () => {
             <SidebarDropdown data={activeSidebar.dashboard} handleActiveSidebar={handleActiveSidebar} >
                     <p onClick={() => dispatch(dashboardContent('inventory'))} >Inventory</p>
                     <p>People</p>
-                    <p>Campaign</p>
+                    <p>Campaigns</p>
                 </SidebarDropdown>
             <SidebarDropdown data={activeSidebar.marketing} handleActiveSidebar={handleActiveSidebar} >
-                    <p>Yaba market</p>
-                    <p>Kogi market</p>
-                    <p>Enugu market</p>
+                    <p>zabuni</p>
+                    <p>zabuni</p>
+                    <p>zabuni</p>
                 </SidebarDropdown>
             <SidebarDropdown data={activeSidebar.technical} handleActiveSidebar={handleActiveSidebar} >
                         <p>Javascript</p>
                         <p>React</p>
-                        <p>Firebase</p>
+                        <p>Node</p>
                 </SidebarDropdown>
             <SidebarDropdown data={activeSidebar.operations} handleActiveSidebar={handleActiveSidebar} >
                             <p>Addition</p>

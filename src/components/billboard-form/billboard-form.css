@@ -1,3 +1,10 @@
 .billboard-update-btn{
     text-transform: capitalize;
 }
+.active-status{
+    color: #F5148E;
+}
+.inactive-status{
+    color: #0056B3;
+
+}

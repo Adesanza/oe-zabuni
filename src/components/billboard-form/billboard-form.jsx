@@ -137,8 +137,8 @@ const BillboardForm = () => {
                 onBlur={handleBlur}
               >
                 <option value="">Select billboard status</option>
-                <option value="active">Active</option>
-                <option value="inactive">Inactive</option>
+                <option value="active" className="active-status">Active</option>
+                <option value="inactive" className="inactive-status">Inactive</option>
               </Form.Control>
               <Form.Text className="text-danger">
                 {touched.status && errors.status ? errors.status : null}

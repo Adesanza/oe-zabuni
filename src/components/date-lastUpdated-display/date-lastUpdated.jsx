@@ -10,7 +10,7 @@ const lastUpdated = dt.toFormat('h');
     return (
         <div className="display-date">
             <p>{date}</p>
-            <p>Data last updated <span>{lastUpdated} hours ago</span></p>
+            <p>Data last updated <span>{lastUpdated} hour(s) ago</span></p>
         </div>
     )
 }

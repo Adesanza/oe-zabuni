@@ -5,7 +5,7 @@
 }
 .dashboard-content {
     background-color: #E5E5E5;
-    width: 100%;
+    width: auto;
     /* flex-basis: 88%; */
     padding: .4rem 0 0 182px;
     /* border: 1px solid green; */

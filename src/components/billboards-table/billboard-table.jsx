@@ -21,6 +21,7 @@ const BillboardsTable = () => {
         <Table >
   <thead className="lightert">
     <tr>
+      <th>S/N</th>
       <th>NAME</th>
       <th>LOCATION</th>
       <th>TYPE</th>
@@ -45,7 +46,7 @@ const BillboardsTable = () => {
         {
             billboardData.filter(details => details.name.toLowerCase().includes(filterKey.toLowerCase()) ).map(details => (
                 <tr key={details.id} className="billboard-row table-hover">
-                    {/* <td>{details.sn}</td> */}
+                    <td>{details.sn}</td>
                     <td>{details.name}</td>
                     <td>{details.location}</td>
                     <td>{details.type}</td>

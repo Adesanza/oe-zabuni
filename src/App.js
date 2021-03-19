@@ -17,14 +17,14 @@ const App = () => {
         <Homepage />
       </Route>
       <Route path ="/dashboard">
-        {/* {
+        {
           userState ?
           (<Dashboard />)
           :
           <Redirect to='/' />
-        } */}
+        }
        {/* if you are working on the dashboard and do not want to login everytime, uncomment the code below and comment the one above */}
-        <Dashboard />
+        {/* <Dashboard /> */}
       </Route>
     </Switch>
     </>

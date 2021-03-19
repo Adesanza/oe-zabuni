@@ -1,6 +1,7 @@
 export const billboardData = [
     {   
         id: "qwert12345",
+        sn: "1",
         name: 'Ketu02',
         location: 'Along Enugu airport road, by Engineering department facing the terminal, Emene',
         type: 'led',
@@ -21,6 +22,7 @@ export const billboardData = [
     },
     {
         id: "yuio6789",
+        sn: "2",
         name: 'Tiger',
         location: 'Apongbon ftt outer marina',
         type: 'lightbox',
@@ -41,6 +43,7 @@ export const billboardData = [
     },
     {
         id: "opasd101112",
+        sn: "3",
         name: 'Lion',
         location: 'Apongbon ftt outer marina',
         type: 'rooftop',
@@ -61,6 +64,7 @@ export const billboardData = [
     },
     {
         id: "zxcvb14416",
+        sn: "4",
         name: 'Rhino',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',
@@ -80,7 +84,8 @@ export const billboardData = [
         amount: '300,000,000'
     },
     {
-        id: "zxcvb14416",
+        id: "zxcvb1441",
+        sn: "5",
         name: 'Rhino',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',
@@ -100,7 +105,8 @@ export const billboardData = [
         amount: '300,000,000'
     },
     {
-        id: "zxcvb14416",
+        id: "zxcvb144",
+        sn: "6",
         name: 'Rhino',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',
@@ -120,7 +126,8 @@ export const billboardData = [
         amount: '300,000,000'
     },
     {
-        id: "zxcvb14416",
+        id: "zxcvb144163",
+        sn: "7",
         name: 'Rhino',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',
@@ -136,6 +143,69 @@ export const billboardData = [
         state: 'lagos',
         lga: 'ikeja',
         city: 'maryland',
+        coordinate: '8.524242, 8.123456',
+        amount: '300,000,000'
+    },
+    {
+        id: "zxcvb144163p",
+        sn: "8",
+        name: 'Elephant',
+        location: 'Apongbon ftt outer marina',
+        type: 'eye-catcher',
+        height: '12',
+        width: '20',
+        status: 'inactive',
+        category: 'billboard',
+        class: 'digital',
+        faces: '1',
+        slots: '1',
+        units: '1',
+        region: 'southwest',
+        state: 'lagos',
+        lga: 'ikeja',
+        city: 'maryland',
+        coordinate: '8.524242, 8.123456',
+        amount: '300,000,000'
+    },
+    {
+        id: "nxcvb144163",
+        sn: "9",
+        name: 'Whale',
+        location: 'Apongbon ftt outer marina',
+        type: 'eye-catcher',
+        height: '12',
+        width: '20',
+        status: 'active',
+        category: 'billboard',
+        class: 'digital',
+        faces: '1',
+        slots: '1',
+        units: '1',
+        region: 'southwest',
+        state: 'lagos',
+        lga: 'ikeja',
+        city: 'maryland',
+        coordinate: '8.524242, 8.123456',
+        amount: '300,000,000'
+    },
+    {
+        id: "zxcvb144163lo",
+        sn: "10",
+        name: 'Zebra',
+        location: 'Apongbon ftt outer marina',
+        type: 'eye-catcher',
+        height: '12',
+        width: '20',
+        status: 'active',
+        category: 'billboard',
+        class: 'digital',
+        faces: '1',
+        slots: '1',
+        units: '1',
+        region: 'southwest',
+        state: 'ekiti',
+        lga: 'ado',
+        city: 'remo',
         coordinate: '8.524242, 8.123456',
         amount: '300,000,000'
     }

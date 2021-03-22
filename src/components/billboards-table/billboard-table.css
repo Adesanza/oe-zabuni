@@ -8,6 +8,7 @@ table tbody{
 table tbody tr:hover{
     background: #FFFFFF;
 box-shadow: 0px 4px 4px 1px rgba(0, 86, 179, 0.15);
+cursor: pointer;
 }
 .lightert{
     font-weight: bold;
@@ -94,16 +95,21 @@ line-height: 12px;
 }
 .delete-icon {
     color: #B50841;
-
-/* left: 2.5px;
-top: 1.5px; */
-border-radius: 0px;
-opacity: 50%;
+/* border-radius: 0px; */
+opacity: 70%;
 }
 .edit-icon{
     color: #6E6B7B;
     opacity: 0.7;
 }
 .billboard-amount > span:last-child, .edit-icon-text, .delete-icon-text {
-   font-size: 10px;
+   font-size: 8px;
+}
+.more-icon{
+    font-size: 2rem;
+    height: 16.5px;
+    width: 15px;
+    cursor: pointer;
+    padding-left: 0;
+    margin-left: 0;
 }

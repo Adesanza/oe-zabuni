@@ -1,9 +1,9 @@
 .header-nav1{
-    padding: 15px 0 15px 0;
+    padding: 15px 25px 15px 30px;
     width: 100%;
     /* height: 70px; */
     background: #FFFFFF;
-    box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08);
+    box-shadow: 0px 2px 2px rgba(0, 86, 179, 0.08);
     }
 .header-nav1 > a > img{
     padding: 0 0 0 3.67rem;
@@ -13,7 +13,7 @@
     width: 100%;
     /* height: 70px; */
     background: #FFFFFF;
-    box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08);
+    box-shadow: 0px 2px 2px rgba(0, 86, 179, 0.08)
     }
 .olab{
     padding-top: 30px;
@@ -202,8 +202,7 @@ color: #342929;
 ::placeholder{
     width: 221px;
     height: 14px;
-    font-family: Avenir Next LT Pro;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 14px;
     color: #767676;
     font-family: 'Raleway';
@@ -223,4 +222,13 @@ input[type="search"]::-webkit-search-results-decoration {
 .cgprofile{
     width: 25px;
     height: 25px;
+}
+.starting{
+    padding: 0 140px;
+}
+.texti{
+    font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 28px;
 }

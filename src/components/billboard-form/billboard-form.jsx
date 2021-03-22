@@ -40,77 +40,82 @@ const BillboardForm = () => {
       }) => (
         <>
           <Form noValidate onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicName">
-              <Form.Control
-                type="text"
-                name="name"
-                value={values.name}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Billboard name"
-              />
-              {/* <Form.Label>Name</Form.Label> */}
-              <Form.Text className="text-danger">
-                {touched.name && errors.name ? errors.name : null}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formBasicLocation">
-              <Form.Control
-                type="text"
-                name="location"
-                value={values.location}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Billboard location"
-              />
-              {/* <Form.Label>Name</Form.Label> */}
-              <Form.Text className="text-danger">
-                {touched.location && errors.location ? errors.location : null}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="controlSelectType">
-              {/* <Form.Label>Example select</Form.Label> */}
-              <Form.Control
-                as="select"
-                name="type"
-                value={values.type}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              >
-                <option value="">Select billboard type</option>
-                <option value="led">LED</option>
-                <option value="lightbox">Lightbox</option>
-                <option value="bridge-panel">Bridge Panel</option>
-                <option value="eye-catcher">Eye Catcher</option>
-                <option value="mega-board">Mega board</option>
-                <option value="portrait">Portrait</option>
-                <option value="rooftop">Rooftop</option>
-                <option value="super48-sheet">Super 48 sheet</option>
-                <option value="ultrawave">Ultra wave</option>
-                <option value="video-wall">Video wall</option>
-                <option value="wall-drape">Wall drape</option>
-                <option value="unipole">Unipole</option>
-              </Form.Control>
-              <Form.Text className="text-danger">
-                {touched.type && errors.type ? errors.type : null}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formBasicHeight">
-              <Form.Control
-                name="height"
-                value={values.height}
-                type="number"
-                min={3}
-                max={300}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Billboard height"
-              />
-              {/* <Form.Label>Name</Form.Label> */}
-              <Form.Text className="text-danger">
-                {touched.height && errors.height ? errors.height : null}
-              </Form.Text>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formBasicName">
+                <Form.Control
+                  type="text"
+                  name="name"
+                  value={values.name}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Billboard name"
+                />
+                {/* <Form.Label>Name</Form.Label> */}
+                <Form.Text className="text-danger">
+                  {touched.name && errors.name ? errors.name : null}
+                </Form.Text>
               </Form.Group>
+              <Form.Group controlId="formBasicLocation">
+                <Form.Control
+                  type="text"
+                  name="location"
+                  value={values.location}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Billboard location"
+                />
+                {/* <Form.Label>Name</Form.Label> */}
+                <Form.Text className="text-danger">
+                  {touched.location && errors.location ? errors.location : null}
+                </Form.Text>
+              </Form.Group>
+            </Form.Row>
+              <Form.Row>
+                <Form.Group as={Col} controlId="controlSelectType">
+                  {/* <Form.Label>Example select</Form.Label> */}
+                  <Form.Control
+                    as="select"
+                    name="type"
+                    value={values.type}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  >
+                    <option value="">Select billboard type</option>
+                    <option value="led">LED</option>
+                    <option value="lightbox">Lightbox</option>
+                    <option value="bridge-panel">Bridge Panel</option>
+                    <option value="eye-catcher">Eye Catcher</option>
+                    <option value="mega-board">Mega board</option>
+                    <option value="portrait">Portrait</option>
+                    <option value="rooftop">Rooftop</option>
+                    <option value="super48-sheet">Super 48 sheet</option>
+                    <option value="ultrawave">Ultra wave</option>
+                    <option value="video-wall">Video wall</option>
+                    <option value="wall-drape">Wall drape</option>
+                    <option value="unipole">Unipole</option>
+                  </Form.Control>
+                  <Form.Text className="text-danger">
+                    {touched.type && errors.type ? errors.type : null}
+                  </Form.Text>
+                </Form.Group>
+                <Form.Group controlId="formBasicHeight">
+                  <Form.Control
+                    name="height"
+                    value={values.height}
+                    type="number"
+                    min={3}
+                    max={300}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Billboard height"
+                  />
+                  {/* <Form.Label>Name</Form.Label> */}
+                  <Form.Text className="text-danger">
+                    {touched.height && errors.height ? errors.height : null}
+                  </Form.Text>
+                </Form.Group>
+                
+              </Form.Row>
             <Form.Group controlId="formBasicWidth">
               <Form.Control
                 name="width"

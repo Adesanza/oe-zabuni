@@ -3,7 +3,7 @@ export const billboardData = [
         id: "qwert12345",
         sn: "1",
         name: 'Ketu02',
-        location: 'Along Enugu airport road, by Engineering department facing the terminal, Emene',
+        location: 'Along Enugu airport road Emene',
         type: 'led',
         height: '12',
         width: '20',

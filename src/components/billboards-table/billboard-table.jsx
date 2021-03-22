@@ -1,6 +1,7 @@
 import { Table, Button } from 'react-bootstrap';
 import { GrFormEdit } from 'react-icons/gr';
 import { FaTrashAlt } from 'react-icons/fa';
+import { FiMoreVertical } from 'react-icons/fi';
 import './billboard-table.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
@@ -46,7 +47,11 @@ const BillboardsTable = () => {
         {
             billboardData.filter(details => details.name.toLowerCase().includes(filterKey.toLowerCase()) ).map(details => (
                 <tr key={details.id} className="billboard-row table-hover">
-                    <td>{details.sn}</td>
+                    <td>
+                      {/* <FiMoreVertical className="more-icon"/> */}
+                      <img src="https://res.cloudinary.com/adesanza/image/upload/v1616156307/zabuni/Group_1787_kbiyfb.svg" alt="more..." className="more-icon"/>
+                      <span>{details.sn}</span>
+                    </td>
                     <td>{details.name}</td>
                     <td>{details.location}</td>
                     <td>{details.type}</td>

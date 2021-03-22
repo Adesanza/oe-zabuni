@@ -1,0 +1,9 @@
+.signup-submit-btn{
+    background: #0056B3;
+box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08);
+border-radius: 10px;
+height: 60px;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+}

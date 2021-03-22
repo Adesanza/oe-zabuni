@@ -29,6 +29,7 @@
 }
 .sidebar-dropdown-toggle > span:last-child, .sidebar-dropdown-toggle > span:first-child {
    line-height: 1.58rem;
+   font-size: 16px;
 }
 
 .sidebar-dropdown-content {
@@ -39,8 +40,10 @@
     margin: .56rem 0;
     font-weight: lighter;
     cursor: pointer;
+    font-size: 14px;
 }
 .sidebar-dropdown-content > *:first-child {
     font-weight: 700;
+    font-size: 16px;
 }
 

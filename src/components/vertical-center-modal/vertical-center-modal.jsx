@@ -7,18 +7,21 @@ import LoginForm from "../login-form/login-form";
 import BillboardForm from "../billboard-form/billboard-form";
 import { resetBillboardFormData } from "../../redux/form/billboardFormReducer";
 import SignupForm from "../sign-up-form/sign-up-form";
+import MoreDetails from "../more-details/more-details";
 
 const modalHeading = {
   'signup': 'Sign up as a publisher',
   'login': "Login",
   'create-billboard': "Create new",
-  'edit-billboard': "Edit details"
+  'edit-billboard': "Edit details",
+  'more-details': "Details About the billboard"
 };
 
 const SelectContent = ({ type }) => {
   if (type === "login") return <LoginForm />;
   if(type === 'create-billboard' || type ==='edit-billboard') return <BillboardForm />;
   if(type === 'signup') return <SignupForm />;
+  if(type === 'more-details') return <MoreDetails />;
 };
 
 const VerticalCenterModal = ({ children }) => {

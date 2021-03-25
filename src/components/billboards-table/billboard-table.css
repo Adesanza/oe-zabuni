@@ -1,115 +1,117 @@
-table tbody{
-    /* overflow-x: scroll; */
-    background-color: white;
+table tbody {
+  /* overflow-x: scroll; */
+  background-color: white;
 }
-.billboard-table{
-    width: 100%;
+.billboard-table {
+  width: 100%;
 }
-table tbody tr:hover{
-    background: #FFFFFF;
-box-shadow: 0px 4px 4px 1px rgba(0, 86, 179, 0.15);
-cursor: pointer;
+table tbody tr:hover {
+  background: #ffffff;
+  box-shadow: 0px 4px 4px 1px rgba(0, 86, 179, 0.15);
+  cursor: pointer;
 }
-.lightert{
-    font-weight: bold;
-font-size: 12px;
-line-height: 12px;
-text-transform: uppercase;
-/* background-color: #0056B3; */
-color: #FFFFFF;
+.lightert {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  /* background-color: #0056B3; */
+  color: #ffffff;
 }
-table th:first-child{
-    border-radius:6px 0 0 0px;
-} 
-table th:last-child{
-    border-radius:0 6px 0px 0;
+table th:first-child {
+  border-radius: 6px 0 0 0px;
 }
-.table thead th{
-    vertical-align: middle;
-    background: #0056B3;
-/* border-radius: 6px 6px 0px 0px; */
+table th:last-child {
+  border-radius: 0 6px 0px 0;
 }
-.table td, .table th {
-    padding: 0.75rem 0.37rem;
-    /* vertical-align: middle; */
-    /* border-top: 1px solid #dee2e6; */
+.table thead th {
+  vertical-align: middle;
+  background: #0056b3;
+  /* border-radius: 6px 6px 0px 0px; */
 }
-.billboard-row > td {
-    text-transform: capitalize;
-    font-style: normal;
-font-weight: 600;
-font-size: 12px;
-line-height: 21px;
-/* identical to box height, or 150% */
-
-
-color: #6E6B7B;
+.table td,
+.table th {
+  padding: 0.75rem 0.37rem;
+  /* vertical-align: middle; */
+  /* border-top: 1px solid #dee2e6; */
+}
+#fonter {
+  text-align: center;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 21px;
+  color: #6e6b7b;
 }
 .create-billboard-btn {
-    /* border: 1px solid red; */
-    margin: 0;
-    /* padding: 1 .48rem; */
-    /* text-transform: uppercase; */
-    background-color: #F5148E;
-    letter-spacing: 1px;
-    font-size: 12px;
-    border-radius: 5px;
-    border: 0;
-    font-weight: 600;
-font-size: 10px;
-line-height: 12px;
+  /* border: 1px solid red; */
+  margin: 0;
+  /* padding: 1 .48rem; */
+  /* text-transform: uppercase; */
+  background-color: #f5148e;
+  letter-spacing: 1px;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 0;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
 }
-.create-billboard-btn:hover, .create-billboard-btn:not(:disabled):not(.disabled):active, .create-billboard-btn:focus{
-    background-color: #F5148E;
+.create-billboard-btn:hover,
+.create-billboard-btn:not(:disabled):not(.disabled):active,
+.create-billboard-btn:focus {
+  background-color: #f5148e;
 }
 
 .edit-delete-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    /* border: 1px solid yellow; */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  /* border: 1px solid yellow; */
 }
 
 .edit-delete-container > div {
-    padding-right: 1rem;
-    display: flex;
-    flex-flow: column nowrap;
-    cursor: pointer;
+  padding-right: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  cursor: pointer;
 }
 
 .billboard-amount {
-    display: flex;
-    flex-flow: column nowrap;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0;
+  padding: 0;
 }
-.billboard-amount > span {
-    margin: 0;
-    padding: 0;
-    /* border: 1px solid red; */
-}
-
-.edit-icon, .delete-icon {
-    font-size: 1rem;
-    align-self: center;
-    height: 16.5px;
-    width: 15px;
+.edit-icon,
+.delete-icon {
+  font-size: 1rem;
+  align-self: center;
+  height: 16.5px;
+  width: 15px;
 }
 .delete-icon {
-    color: #B50841;
-/* border-radius: 0px; */
-/* opacity: 70%; */
+  color: #b50841;
+  opacity: 0.7;
 }
-.edit-icon{
-    color: #6E6B7B;
-    opacity: 0.7;
+.edit-icon {
+  color: #6e6b7b;
+  opacity: 0.7;
 }
-.billboard-amount > span:last-child, .edit-icon-text, .delete-icon-text {
-   font-size: 8px;
+.billboard-amount > span:last-child,
+.edit-icon-text,
+.delete-icon-text {
+  font-size: 9px;
 }
-.more-icon{
-    font-size: 2rem;
-    height: 16.5px;
-    width: 15px;
-    cursor: pointer;
-    padding-left: 0;
-    margin-left: 0;
+.more-icon {
+  font-size: 2rem;
+  height: 16.5px;
+  width: 15px;
+  cursor: pointer;
+  padding-left: 0;
+  margin-left: 0;
+}
+.locate {
+  font-size: 10px;
 }

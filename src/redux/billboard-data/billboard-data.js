@@ -1,7 +1,6 @@
 export const billboardData = [
     {   
         id: "qwert12345",
-        sn: "1",
         name: 'Ketu02',
         location: 'Along Enugu airport road Emene',
         type: 'led',
@@ -22,7 +21,6 @@ export const billboardData = [
     },
     {
         id: "yuio6789",
-        sn: "2",
         name: 'Tiger',
         location: 'Apongbon ftt outer marina',
         type: 'lightbox',
@@ -43,7 +41,6 @@ export const billboardData = [
     },
     {
         id: "opasd101112",
-        sn: "3",
         name: 'Lion',
         location: 'Apongbon ftt outer marina',
         type: 'rooftop',
@@ -64,7 +61,6 @@ export const billboardData = [
     },
     {
         id: "zxcvb14416",
-        sn: "4",
         name: 'Rhino',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',
@@ -85,7 +81,6 @@ export const billboardData = [
     },
     {
         id: "zxcvb1441",
-        sn: "5",
         name: 'Rhino',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',
@@ -106,7 +101,6 @@ export const billboardData = [
     },
     {
         id: "zxcvb144",
-        sn: "6",
         name: 'Rhino',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',
@@ -127,7 +121,6 @@ export const billboardData = [
     },
     {
         id: "zxcvb144163",
-        sn: "7",
         name: 'Rhino',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',
@@ -148,7 +141,6 @@ export const billboardData = [
     },
     {
         id: "zxcvb144163p",
-        sn: "8",
         name: 'Elephant',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',
@@ -169,7 +161,6 @@ export const billboardData = [
     },
     {
         id: "nxcvb144163",
-        sn: "9",
         name: 'Whale',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',
@@ -190,7 +181,6 @@ export const billboardData = [
     },
     {
         id: "zxcvb144163lo",
-        sn: "10",
         name: 'Zebra',
         location: 'Apongbon ftt outer marina',
         type: 'eye-catcher',

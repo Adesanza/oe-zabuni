@@ -40,36 +40,36 @@ const BillboardsTable = () => {
       <th>CITY</th>
       <th>COORDINATE</th>
       <th>AMOUNT</th>
-      <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATENEW</Button></th>
+      <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATE NEW</Button></th>
     </tr>
   </thead>
   <tbody className="table-hover">
         {
             billboardData.filter(details => details.name.toLowerCase().includes(filterKey.toLowerCase()) ).map(details => (
                 <tr key={details.id} className="billboard-row table-hover">
-                    <td>
+                    <td id="fonter">
                       {/* <FiMoreVertical className="more-icon"/> */}
-                      <img src="https://res.cloudinary.com/adesanza/image/upload/v1616156307/zabuni/Group_1787_kbiyfb.svg" alt="more..." className="more-icon"/>
+                      <img src="https://res.cloudinary.com/adesanza/image/upload/v1616156307/zabuni/Group_1787_kbiyfb.svg" alt="more..." className="more-icon" onClick={() => dispatch(verticalModalContent('more-details'))}/>
                       <span>{details.sn}</span>
                     </td>
-                    <td>{details.name}</td>
-                    <td>{details.location}</td>
-                    <td>{details.type}</td>
-                    <td>{`${details.height}m`}</td>
-                    <td>{`${details.width}m`}</td>
-                    <td className="active-status inactive-status">{details.status}</td>
-                    <td>{details.category}</td>
-                    <td>{details.class}</td>
-                    <td>{details.faces}</td>
-                    <td>{details.slots}</td>
-                    <td>{details.units}</td>
-                    <td>{details.region}</td>
-                    <td>{details.state}</td>
-                    <td>{details.lga}</td>
-                    <td>{details.city}</td>
-                    <td>{details.coordinate}</td>
-                    <td className="billboard-amount"><span></span>{details.amount}<span>Per annum</span></td>
-                    <td>
+                    <td id="fonter">{details.name}</td>
+                    <td className="locate">{details.location}</td>
+                    <td id="fonter">{details.type}</td>
+                    <td id="fonter">{`${details.height}m`}</td>
+                    <td id="fonter">{`${details.width}m`}</td>
+                    <td id="fonter">{details.status}</td>
+                    <td id="fonter">{details.category}</td>
+                    <td id="fonter">{details.class}</td>
+                    <td id="fonter">{details.faces}</td>
+                    <td id="fonter">{details.slots}</td>
+                    <td id="fonter">{details.units}</td>
+                    <td id="fonter">{details.region}</td>
+                    <td id="fonter">{details.state}</td>
+                    <td id="fonter">{details.lga}</td>
+                    <td id="fonter">{details.city}</td>
+                    <td id="fonter">{details.coordinate}</td>
+                    <td id="fonter" className="billboard-amount"><span></span>{details.amount}<span>Per annum</span></td>
+                    <td id="fonter">
                       <div className="edit-delete-container">
                       <div onClick={() => handleEdit(details.id)}>
                         <GrFormEdit className="edit-icon"/>

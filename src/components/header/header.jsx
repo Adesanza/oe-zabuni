@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
 import './header.css';
 import { FaSearch } from "react-icons/fa";
-import { FaArrowDown } from "react-icons/fa";
+import { RiArrowDownSLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 
 
@@ -51,7 +51,7 @@ const Header = () => {
                         <input className="searcher" placeholder="Where will you like to place your advert?" type="search" />
                     </div>
                     <li>
-                    <button className="homeb start" onClick={() => dispatch(verticalModalContent('signup'))}>Sign Up as  <FaArrowDown className="ArrowDown"/></button>
+                    <button className="homeb start" onClick={() => dispatch(verticalModalContent('signup'))}>Sign Up as  <RiArrowDownSLine className="ArrowDown"/></button>
                 </li>
                 <li>
                     <button type="button" data-toggle="modal" data-target="#myModal" className="homeb1 start1" onClick={() => dispatch(verticalModalContent('login'))}>

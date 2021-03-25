@@ -98,41 +98,7 @@ const BillboardForm = () => {
                     {touched.type && errors.type ? errors.type : null}
                   </Form.Text>
                 </Form.Group>
-                <Form.Group controlId="formBasicHeight">
-                  <Form.Control
-                    name="height"
-                    value={values.height}
-                    type="number"
-                    min={3}
-                    max={300}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    placeholder="Billboard height"
-                  />
-                  {/* <Form.Label>Name</Form.Label> */}
-                  <Form.Text className="text-danger">
-                    {touched.height && errors.height ? errors.height : null}
-                  </Form.Text>
-                </Form.Group>
-                
-              </Form.Row>
-            <Form.Group controlId="formBasicWidth">
-              <Form.Control
-                name="width"
-                value={values.width}
-                type="number"
-                min={3}
-                max={300}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Billboard width"
-              />
-              {/* <Form.Label>Name</Form.Label> */}
-              <Form.Text className="text-danger">
-                {touched.width && errors.width ? errors.width : null}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="controlSelectStatus">
+                <Form.Group as={Col} controlId="controlSelectStatus">
               {/* <Form.Label>Example select</Form.Label> */}
               <Form.Control
                 as="select"
@@ -149,23 +115,60 @@ const BillboardForm = () => {
                 {touched.status && errors.status ? errors.status : null}
               </Form.Text>
             </Form.Group>
-            <Form.Group controlId="controlSelectCategory">
-              {/* <Form.Label>Example select</Form.Label> */}
+                
+              </Form.Row>
+              <Form.Row>
+              <Form.Group as={Col} controlId="formBasicHeight">
+                  <Form.Control
+                    name="height"
+                    value={values.height}
+                    type="number"
+                    min={3}
+                    max={300}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Billboard height"
+                  />
+                  {/* <Form.Label>Name</Form.Label> */}
+                  <Form.Text className="text-danger">
+                    {touched.height && errors.height ? errors.height : null}
+                  </Form.Text>
+                </Form.Group>
+                <Form.Group as={Col} controlId="formBasicWidth">
               <Form.Control
-                as="select"
-                name="category"
-                value={values.category}
+                name="width"
+                value={values.width}
+                type="number"
+                min={3}
+                max={300}
                 onChange={handleChange}
                 onBlur={handleBlur}
-              >
-                <option value="">Select billboard category</option>
-                <option value="billboard">Billboard</option>
-              </Form.Control>
+                placeholder="Billboard width"
+              />
+              {/* <Form.Label>Name</Form.Label> */}
               <Form.Text className="text-danger">
-                {touched.category && errors.category ? errors.category : null}
+                {touched.width && errors.width ? errors.width : null}
               </Form.Text>
             </Form.Group>
-            <Form.Group controlId="controlSelectClass">
+              </Form.Row>
+            <Form.Row>
+              <Form.Group as={Col} controlId="controlSelectCategory">
+                {/* <Form.Label>Example select</Form.Label> */}
+                <Form.Control
+                  as="select"
+                  name="category"
+                  value={values.category}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                >
+                  <option value="">Select billboard category</option>
+                  <option value="billboard">Billboard</option>
+                </Form.Control>
+                <Form.Text className="text-danger">
+                  {touched.category && errors.category ? errors.category : null}
+                </Form.Text>
+              </Form.Group>
+              <Form.Group as={Col} controlId="controlSelectClass">
               {/* <Form.Label>Example select</Form.Label> */}
               <Form.Control
                 as="select"
@@ -182,97 +185,104 @@ const BillboardForm = () => {
                 {touched.class && errors.class ? errors.class : null}
               </Form.Text>
             </Form.Group>
-            <Form.Group controlId="controlSelectRegion">
-              {/* <Form.Label>Example select</Form.Label> */}
-              <Form.Control
-                as="select"
-                name="region"
-                value={values.region}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              >
-                <option value="">Select billboard region</option>
-                <option value="southwest">Southwest</option>
-                <option value="southeast">Southeast</option>
-                <option value="northcentral">Northcentral</option>
-                <option value="northeast">Northeast</option>
-                <option value="northwest">Northwest</option>
-                <option value="southsouth">Southsouth</option>
-              </Form.Control>
-              <Form.Text className="text-danger">
-                {touched.class && errors.region ? errors.region : null}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formBasicState">
-              <Form.Control
-                type="text"
-                name="state"
-                value={values.state}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Billboard state"
-              />
-              {/* <Form.Label>Name</Form.Label> */}
-              <Form.Text className="text-danger">
-                {touched.state && errors.state ? errors.state : null}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formBasicLga">
-              <Form.Control
-                type="text"
-                name="lga"
-                value={values.lga}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Billboard lga"
-              />
-              {/* <Form.Label>Name</Form.Label> */}
-              <Form.Text className="text-danger">
-                {touched.lga && errors.lga ? errors.lga : null}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formBasicCity">
-              <Form.Control
-                type="text"
-                name="city"
-                value={values.city}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Billboard city"
-              />
-              {/* <Form.Label>Name</Form.Label> */}
-              <Form.Text className="text-danger">
-                {touched.city && errors.city ? errors.city : null}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formBasicCoordinate">
-              <Form.Control
-                type="text"
-                name="coordinate"
-                value={values.coordinate}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Billboard coordinate"
-              />
-              {/* <Form.Label>Name</Form.Label> */}
-              <Form.Text className="text-danger">
-                {touched.coordinate && errors.coordinate ? errors.coordinate : null}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formBasicAmount">
-              <Form.Control
-                type="text"
-                name="amount"
-                value={values.amount}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Billboard amount"
-              />
-              {/* <Form.Label>Name</Form.Label> */}
-              <Form.Text className="text-danger">
-                {touched.amount && errors.amount ? errors.amount : null}
-              </Form.Text>
-            </Form.Group>
+            </Form.Row>
+            <Form.Row>
+              <Form.Group as={Col} controlId="controlSelectRegion">
+                {/* <Form.Label>Example select</Form.Label> */}
+                <Form.Control
+                  as="select"
+                  name="region"
+                  value={values.region}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                >
+                  <option value="">Select billboard region</option>
+                  <option value="southwest">Southwest</option>
+                  <option value="southeast">Southeast</option>
+                  <option value="northcentral">Northcentral</option>
+                  <option value="northeast">Northeast</option>
+                  <option value="northwest">Northwest</option>
+                  <option value="southsouth">Southsouth</option>
+                </Form.Control>
+                <Form.Text className="text-danger">
+                  {touched.class && errors.region ? errors.region : null}
+                </Form.Text>
+              </Form.Group>
+              <Form.Group controlId="formBasicState">
+                <Form.Control
+                  type="text"
+                  name="state"
+                  value={values.state}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Billboard state"
+                />
+                {/* <Form.Label>Name</Form.Label> */}
+                <Form.Text className="text-danger">
+                  {touched.state && errors.state ? errors.state : null}
+                </Form.Text>
+              </Form.Group>
+            </Form.Row>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formBasicLga">
+                <Form.Control
+                  type="text"
+                  name="lga"
+                  value={values.lga}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Billboard lga"
+                />
+                {/* <Form.Label>Name</Form.Label> */}
+                <Form.Text className="text-danger">
+                  {touched.lga && errors.lga ? errors.lga : null}
+                </Form.Text>
+              </Form.Group>
+              <Form.Group as={Col} controlId="formBasicCity">
+                <Form.Control
+                  type="text"
+                  name="city"
+                  value={values.city}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Billboard city"
+                />
+                {/* <Form.Label>Name</Form.Label> */}
+                <Form.Text className="text-danger">
+                  {touched.city && errors.city ? errors.city : null}
+                </Form.Text>
+              </Form.Group>
+            </Form.Row>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formBasicCoordinate">
+                <Form.Control
+                  type="text"
+                  name="coordinate"
+                  value={values.coordinate}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Billboard coordinate"
+                />
+                {/* <Form.Label>Name</Form.Label> */}
+                <Form.Text className="text-danger">
+                  {touched.coordinate && errors.coordinate ? errors.coordinate : null}
+                </Form.Text>
+              </Form.Group>
+              <Form.Group as={Col} controlId="formBasicAmount">
+                <Form.Control
+                  type="text"
+                  name="amount"
+                  value={values.amount}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Billboard amount"
+                />
+                {/* <Form.Label>Name</Form.Label> */}
+                <Form.Text className="text-danger">
+                  {touched.amount && errors.amount ? errors.amount : null}
+                </Form.Text>
+              </Form.Group>
+            </Form.Row>
             <Form.Row>
               <Form.Group as={Col} controlId="formBasicFaces">
                 <Form.Control

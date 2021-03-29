@@ -1,26 +1,26 @@
 .side-bar {
-    position: fixed;
-    background-color: #0056B3;
-    height: 100%;
-    flex-basis: 14%;
-    padding-top: 1rem;
+  position: fixed;
+  background-color: #0056b3;
+  height: 100%;
+  /* flex-basis: 14%; */
+  padding-top: 1rem;
 }
 
 .sidebar-settings {
-    display: flex;
-    flex-flow: row nowrap;
-    /* justify-content: space-evenly; */
-    padding: .59rem .79rem;
-    color: white;
-    text-transform: capitalize;
-    cursor: pointer;
+  display: flex;
+  flex-flow: row nowrap;
+  /* justify-content: space-evenly; */
+  padding: 0.59rem 0.79rem;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
 }
 
 .sidebar-settings > *:first-child {
-    padding-left: 1.72rem;
-    align-self: flex-start;
+  padding-left: 1.72rem;
+  align-self: flex-start;
 }
 .sidebar-settings > *:last-child {
-    padding-left: .62rem;
-    line-height: 1.58rem;
+  padding-left: 0.62rem;
+  line-height: 1.58rem;
 }

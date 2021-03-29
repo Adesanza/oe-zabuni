@@ -1,7 +1,7 @@
 import { Table, Button } from 'react-bootstrap';
 import { GrFormEdit } from 'react-icons/gr';
 import { FaTrashAlt } from 'react-icons/fa';
-import { FiMoreVertical } from 'react-icons/fi';
+// import { FiMoreVertical } from 'react-icons/fi';
 import './billboard-table.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
@@ -22,7 +22,6 @@ const BillboardsTable = () => {
         <Table >
   <thead className="lightert">
     <tr>
-      <th>S/N</th>
       <th>NAME</th>
       <th>LOCATION</th>
       <th>TYPE</th>
@@ -38,20 +37,20 @@ const BillboardsTable = () => {
       <th>STATE</th>
       <th>LGA</th>
       <th>CITY</th>
-      <th>COORDINATE</th>
+      <th>COORDINATE (LAT/LONG)</th>
       <th>AMOUNT</th>
-      <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATE NEW</Button></th>
+      <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATENEW</Button></th>
     </tr>
   </thead>
   <tbody className="table-hover">
         {
             billboardData.filter(details => details.name.toLowerCase().includes(filterKey.toLowerCase()) ).map(details => (
                 <tr key={details.id} className="billboard-row table-hover">
-                    <td id="fonter">
-                      {/* <FiMoreVertical className="more-icon"/> */}
+                    {/* <td id="fonter">
+                      {/* <FiMoreVertical className="more-icon"/> 
                       <img src="https://res.cloudinary.com/adesanza/image/upload/v1616156307/zabuni/Group_1787_kbiyfb.svg" alt="more..." className="more-icon" onClick={() => dispatch(verticalModalContent('more-details'))}/>
                       <span>{details.sn}</span>
-                    </td>
+                    </td> */}
                     <td id="fonter">{details.name}</td>
                     <td className="locate">{details.location}</td>
                     <td id="fonter">{details.type}</td>

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const dashboardReducer = createSlice({
-    name: 'dashboard',
+    name: 'management',
     initialState: "inventory",
     reducers: {
         dashboardContent: (state, action) => action.payload 

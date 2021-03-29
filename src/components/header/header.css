@@ -1,233 +1,231 @@
-.header-nav1{
-    padding: 15px 25px 15px 30px;
-    width: 100%;
-    /* height: 70px; */
-    background: #FFFFFF;
-    box-shadow: 0px 2px 2px rgba(0, 86, 179, 0.08);
-    }
-.header-nav1 > a > img{
-    padding: 0 0 0 3.67rem;
+.header-nav1 {
+  padding: 15px 25px 15px 30px;
+  width: 100%;
+  /* height: 70px; */
+  background: #ffffff;
+  box-shadow: 0px 2px 2px rgba(0, 86, 179, 0.08);
 }
-.header-nav{
-    padding: 10px 50px 3px 25px;
-    width: 100%;
-    /* height: 70px; */
-    background: #FFFFFF;
-    box-shadow: 0px 2px 2px rgba(0, 86, 179, 0.08)
-    }
-.olab{
-    padding-top: 30px;
+.header-nav1 > a > img {
+  padding: 0 0 0 3.67rem;
 }
-
-.later{
-    background-image: url(https://res.cloudinary.com/adesanza/image/upload/v1615208022/zabuni/Vector_38_lcgpqa.svg);
-    background-color: #E5E5E5;
-    background-repeat: no-repeat;
-    background-size: contain;
-width: 100%;
-height: 100%;
-padding: 0 0 350px 0;
-
+.header-nav {
+  padding: 10px 50px 3px 25px;
+  width: 100%;
+  /* height: 70px; */
+  background: #ffffff;
+  box-shadow: 0px 2px 2px rgba(0, 86, 179, 0.08);
 }
-.loader{
-    margin-top: 2rem;
-    padding: 2rem 0 0 0;
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-color: #FFFFFF;
-}
-.accurate{
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-color: #FFFFFF;
-
-} 
-.navbar-nav{
-    margin-left: auto;
-}
-#navs{
-    font-size: 16px;
-    padding: 10px 30px 0 0;
-    color: #342929;
-}
-.homeb{
-    background-color: #0056B3;
-    border-radius: 5px ;
-    border: none;
-    margin-top: 5px;
-    margin-right: 22px;
-    padding:7px 15px;
-    font-size: 16px;
-}
-.homeb1{
-    background-color: white;
-    margin-top: 5px;
-    margin-right: 30px;
-    padding:7px 30px;
-    font-size: 16px;
-    border: 1px solid #0056B3;
-    border-radius: 5px;
-}
-.start1{
-    color: #0056B3;
-}
-a:hover{
-    color: #F5148E;
-    text-decoration: none;
+.olab {
+  padding-top: 30px;
 }
 
-.taking{
-    width: 100%;
-    padding: 160px 70px 50px;
-    background-color: #E5E5E5;
-    margin-left: 0;
+.later {
+  background-image: url(https://res.cloudinary.com/adesanza/image/upload/v1615208022/zabuni/Vector_38_lcgpqa.svg);
+  background-color: #e5e5e5;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 350px 0;
 }
-.taking1{
-    padding: 0 70px 30px;
-    background-color: #E5E5E5;
+.loader {
+  margin-top: 2rem;
+  padding: 2rem 0 0 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  color: #ffffff;
+}
+.accurate {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: #ffffff;
+}
+.navbar-nav {
+  margin-left: auto;
+}
+#navs {
+  font-size: 16px;
+  padding: 10px 30px 0 0;
+  color: #342929;
+}
+.homeb {
+  background-color: #0056b3;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+  margin-right: 22px;
+  padding: 7px 15px;
+  font-size: 16px;
+}
+.homeb1 {
+  background-color: white;
+  margin-top: 5px;
+  margin-right: 30px;
+  padding: 7px 30px;
+  font-size: 16px;
+  border: 1px solid #0056b3;
+  border-radius: 5px;
+}
+.start1 {
+  color: #0056b3;
+}
+a:hover {
+  color: #f5148e;
+  text-decoration: none;
 }
 
-.start, .start2{
-    color: #ECECEC;
-
+.taking {
+  width: 100%;
+  padding: 160px 70px 50px;
+  background-color: #e5e5e5;
+  margin-left: 0;
 }
-.start2{   
-    margin: 5px;
-    font-size: 24px;
-}
-.grow{
-    font-size: 54px;
-    font-style: normal;
-    font-weight: 800;
-    color:#342929;
-    line-height: 70px;
-}
-#feature{
-    color: #0056B3;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 32px;
-}
-.differ{
-    text-align: center;
-    padding-top: 45px;
-    padding-bottom: 20px;
+.taking1 {
+  padding: 0 70px 30px;
+  background-color: #e5e5e5;
 }
 
-.linkss{
-    display: flex;
-    padding: 17px;
-    text-decoration: none;
+.start,
+.start2 {
+  color: #ececec;
 }
-.loww{
-    width: 419px;
-    height: 60px;
-    border: 0.7px solid #000000;
-    box-sizing: border-box;
-    filter: drop-shadow(0px 2px 2px rgba(181, 8, 65, 0.08));
-    border-radius: 10px;
-    margin: 10px;
-    opacity: 0.5px;
+.start2 {
+  margin: 5px;
+  font-size: 24px;
 }
-.lower{
-    margin-top: 10px;
-    width: 419px;
-    height: 60px;
-    color: #FFFFFF;
-    background: #393333;
-    border: 0.7px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08);
-    border-radius: 10px;
+.grow {
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 800;
+  color: #342929;
+  line-height: 70px;
+}
+#feature {
+  color: #0056b3;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+}
+.differ {
+  text-align: center;
+  padding-top: 45px;
+  padding-bottom: 20px;
+}
+
+.linkss {
+  display: flex;
+  padding: 17px;
+  text-decoration: none;
+}
+.loww {
+  width: 419px;
+  height: 60px;
+  border: 0.7px solid #000000;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 2px 2px rgba(181, 8, 65, 0.08));
+  border-radius: 10px;
+  margin: 10px;
+  opacity: 0.5px;
+}
+.lower {
+  margin-top: 10px;
+  width: 419px;
+  height: 60px;
+  color: #ffffff;
+  background: #393333;
+  border: 0.7px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08);
+  border-radius: 10px;
 }
 .modal-header {
-    border-bottom: 0 none;
+  border-bottom: 0 none;
 }
 
 .modal-footer {
-    border-top: 0 none;
+  border-top: 0 none;
 }
 footer ul {
-    list-style: none;
-  }
+  list-style: none;
+}
 footer h3 {
-    font-weight: 100;
-    margin-bottom: 0;
-  } 
-#advert{
-    width: 237px;
-height: 48px;
-font-style: normal;
-font-weight: normal;
-font-size: 17px;
-line-height: 24px;
-text-align: center;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+#advert {
+  width: 237px;
+  height: 48px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 24px;
+  text-align: center;
 
-color: #342929;
+  color: #342929;
 }
-#pink{
-    width: 96px;
-    height: 23px;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    color: #0056B3;
+#pink {
+  width: 96px;
+  height: 23px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  color: #0056b3;
 }
-.bolar{
-    margin: 30px 30px 0 0;
-    height: 36px;
-    opacity: 0.5;
-    border: 1px solid #0056B3;
-    box-sizing: border-box;
-    border-radius: 5px;
+.bolar {
+  margin: 30px 30px 0 0;
+  height: 36px;
+  opacity: 0.5;
+  border: 1px solid #0056b3;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
-.reserved{
-    padding-left: 40%;
+.reserved {
+  padding-left: 40%;
 }
-.searcher{
-    width: 200px;
-    opacity: 0.5;
-    border: 0;
-    outline: none;
-    background-color: white;
+.searcher {
+  width: 200px;
+  opacity: 0.5;
+  border: 0;
+  outline: none;
+  background-color: white;
 }
 /* .search1{
     margin-top: 14px;
     color: rgba(52, 41, 41, 0.6);
      border: 1px solid black; 
 } */
-::placeholder{
-    width: 221px;
-    height: 14px;
-    font-size: 10px;
-    line-height: 14px;
-    color: #767676;
-    font-family: 'Raleway';
-    border: 0;
+::placeholder {
+  width: 221px;
+  height: 14px;
+  font-size: 12px;
+  line-height: 14px;
+  color: #767676;
+  font-family: 'Raleway';
+  border: 0;
 }
 .searchContainer {
-    display: inline-flex;
-    margin-right: 35px;
-    border-bottom-style: groove;
-  }
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  -webkit-appearance:none;
+  display: inline-flex;
+  margin-right: 35px;
+  border-bottom-style: groove;
 }
-.cgprofile{
-    width: 25px;
-    height: 25px;
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
 }
-.starting{
-    padding: 0 140px;
+.cgprofile {
+  width: 25px;
+  height: 25px;
 }
-.texti{
-    font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 28px;
+.starting {
+  padding: 0 140px;
+}
+.texti {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 28px;
 }

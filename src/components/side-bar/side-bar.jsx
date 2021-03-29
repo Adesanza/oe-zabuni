@@ -13,12 +13,12 @@ const SideBar = () => {
         const updateSidebar = {...dropdownData};
     
         console.log("data",updateSidebar)
-        setactiveSidebar({...dropdownData,dashboard:{active: true, title:'dashboard'}});
+        setactiveSidebar({...dropdownData,management:{active: true, title:'management'}});
     }, [])
     const handleActiveSidebar = (sidebarTitle) => {
-        if(sidebarTitle === 'dashboard'){
+        if(sidebarTitle === 'management'){
             console.log("searx")
-            dispatch(dashboardContent('dashboard'));
+            dispatch(dashboardContent('management'));
         }
         const updateSidebar = {...activeSidebar};
         // console.log("updayte",updateSidebar == dropdownData);
@@ -29,7 +29,7 @@ const SideBar = () => {
     }
     return (
         <div className="side-bar">
-            <SidebarDropdown data={activeSidebar.dashboard} handleActiveSidebar={handleActiveSidebar} >
+            <SidebarDropdown data={activeSidebar.management} handleActiveSidebar={handleActiveSidebar} >
                     <p onClick={() => dispatch(dashboardContent('inventory'))} >Inventory</p>
                     <p>People</p>
                     <p>Campaigns</p>

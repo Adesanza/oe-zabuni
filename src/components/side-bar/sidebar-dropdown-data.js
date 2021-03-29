@@ -1,7 +1,7 @@
 export const dropdownData =  {
-    dashboard: {
+    management: {
         active: false,
-        title: "dashboard"
+        title: "management"
     },
     marketing: {
         active: false,

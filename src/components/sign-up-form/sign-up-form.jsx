@@ -1,6 +1,7 @@
 import { Form, Button } from 'react-bootstrap';
 import './sign-up-form.css';
 import { Formik } from 'formik';
+import { BsEyeSlash } from "react-icons/bs";
 import { registerScehma } from '../../utils/form/yup-schemas';
 import { useDispatch } from 'react-redux';
 import { closeVerticalModalDisplay, verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
@@ -41,6 +42,7 @@ const SignupForm = () => {
                     <Form.Text className="text-danger">{touched.email && errors.email ? errors.email : null}</Form.Text>
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">
+                <BsEyeSlash className=""/>
                     <Form.Control type="password" placeholder="Password" name="password" value={values.password} onChange={handleChange} onBlur={handleBlur} />
                     <Form.Text className="text-danger">{touched.password && errors.password ? errors.password : null}</Form.Text>
                 </Form.Group>

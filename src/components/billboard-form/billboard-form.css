@@ -16,3 +16,15 @@
   font-weight: 500;
   font-size: 24px;
 }
+#formfont::placeholder {
+  width: 221px;
+  height: 14px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #767676;
+  font-family: 'Raleway';
+  border: 0;
+}
+#formf {
+  font-size: 12px;
+}

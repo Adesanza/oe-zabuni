@@ -48,7 +48,8 @@ const BillboardForm = () => {
                   value={values.name}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Billboard name"
+                  placeholder="Name"
+                  id="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
@@ -62,7 +63,8 @@ const BillboardForm = () => {
                   value={values.location}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Billboard location"
+                  placeholder="Location"
+                  id="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
@@ -79,8 +81,9 @@ const BillboardForm = () => {
                     value={values.type}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    id="formf"
                   >
-                    <option value="">Select billboard type</option>
+                    <option value="">Type</option>
                     <option value="led">LED</option>
                     <option value="lightbox">Lightbox</option>
                     <option value="bridge-panel">Bridge Panel</option>
@@ -106,8 +109,9 @@ const BillboardForm = () => {
                 value={values.status}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                id="formf"
               >
-                <option value="">Select billboard status</option>
+                <option value="">Status</option>
                 <option value="active" className="active-status">Active</option>
                 <option value="inactive" className="inactive-status">Inactive</option>
               </Form.Control>
@@ -127,7 +131,8 @@ const BillboardForm = () => {
                     max={300}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="Billboard height"
+                    placeholder="Height"
+                    id="formfont"
                   />
                   {/* <Form.Label>Name</Form.Label> */}
                   <Form.Text className="text-danger">
@@ -143,7 +148,8 @@ const BillboardForm = () => {
                 max={300}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Billboard width"
+                placeholder="Width"
+                id="formfont"
               />
               {/* <Form.Label>Name</Form.Label> */}
               <Form.Text className="text-danger">
@@ -160,8 +166,9 @@ const BillboardForm = () => {
                   value={values.category}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  id="formf"
                 >
-                  <option value="">Select billboard category</option>
+                  <option value="">Category</option>
                   <option value="billboard">Billboard</option>
                 </Form.Control>
                 <Form.Text className="text-danger">
@@ -176,8 +183,9 @@ const BillboardForm = () => {
                 value={values.class}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                id="formf"
               >
-                <option value="">Select billboard class</option>
+                <option value="">Class</option>
                 <option value="digital">Digital</option>
                 <option value="static">Static</option>
               </Form.Control>
@@ -195,8 +203,9 @@ const BillboardForm = () => {
                   value={values.region}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  id="formf"
                 >
-                  <option value="">Select billboard region</option>
+                  <option value="">Region</option>
                   <option value="southwest">Southwest</option>
                   <option value="southeast">Southeast</option>
                   <option value="northcentral">Northcentral</option>
@@ -215,7 +224,8 @@ const BillboardForm = () => {
                   value={values.state}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Billboard state"
+                  placeholder="State"
+                  id="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
@@ -231,7 +241,8 @@ const BillboardForm = () => {
                   value={values.lga}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Billboard lga"
+                  placeholder="LGA"
+                  id="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
@@ -245,7 +256,8 @@ const BillboardForm = () => {
                   value={values.city}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Billboard city"
+                  placeholder="City"
+                  id="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
@@ -261,7 +273,8 @@ const BillboardForm = () => {
                   value={values.coordinate}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Billboard coordinate"
+                  placeholder="Coordinate"
+                  id="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
@@ -275,7 +288,8 @@ const BillboardForm = () => {
                   value={values.amount}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Billboard amount"
+                  placeholder="Amount"
+                  id="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
@@ -293,7 +307,8 @@ const BillboardForm = () => {
                   value={values.faces}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="faces"
+                  placeholder="Faces"
+                  id="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
@@ -309,7 +324,8 @@ const BillboardForm = () => {
                   value={values.slots}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="slots"
+                  placeholder="Slots"
+                  id="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
@@ -325,7 +341,8 @@ const BillboardForm = () => {
                   value={values.units}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="units"
+                  placeholder="Units"
+                  id="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">

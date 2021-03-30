@@ -1,5 +1,5 @@
 import './homepage.css';
-import { FaArrowRight } from "react-icons/fa";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 const Homepage = () => {
     return (
@@ -10,7 +10,7 @@ const Homepage = () => {
                 <h1 className="grow">Get analysis of all OOH <br/>in Nigeria on ZABUNI</h1>
                 <p className="texti">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, iure officiis tenetur ipsam soluta ex, perferendis nemo unde distinctio consequatur in, ratione debitis cupiditate alias. Accusantium, repellat. Magni, deleniti omnis.</p>
                 <div className="olab">
-                    <button className="homeb start2">Learn How  <FaArrowRight className=""/></button>
+                    <button className="homeb start2">Learn How <AiOutlineArrowRight className="obob"/></button>
                 </div> 
             </div>
             <div className="col-md-6">

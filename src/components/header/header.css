@@ -94,6 +94,7 @@ a:hover {
 .start2 {
   margin: 5px;
   font-size: 24px;
+  padding-left: 35px;
 }
 .grow {
   font-size: 54px;
@@ -188,7 +189,6 @@ footer h3 {
   width: 200px;
   opacity: 0.5;
   border: 0;
-  outline: none;
   background-color: white;
 }
 /* .search1{
@@ -196,10 +196,11 @@ footer h3 {
     color: rgba(52, 41, 41, 0.6);
      border: 1px solid black; 
 } */
-::placeholder {
+.searcher::placeholder,
+.searchBox::placeholder {
   width: 221px;
   height: 14px;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 14px;
   color: #767676;
   font-family: 'Raleway';

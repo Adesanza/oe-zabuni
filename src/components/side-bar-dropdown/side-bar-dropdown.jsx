@@ -1,12 +1,19 @@
 import { FaCaretRight, FaCaretDown } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router";
+import { resetDashboard } from '../../redux/dashboard/dashboardReducer';
 import './side-bar-dropdown.css';
 
 const SidebarDropdown = ({ data, children }) => {
     let history = useHistory();
+    let dispatch = useDispatch()
     return (
         <div className="side-bar-dropdown">
-            <div className={`${data.active && 'sidebar-dropdown-active'} sidebar-dropdown-toggle`} onClick={() => history.push(data.title)}>
+            <div className={`${data.active && 'sidebar-dropdown-active'} sidebar-dropdown-toggle`} 
+                onClick={() => {
+                    dispatch(resetDashboard())
+                    history.push(data.title)
+                    }}>
                     {
                         data.active ?
                         (<span><FaCaretDown/></span>)

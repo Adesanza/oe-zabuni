@@ -18,7 +18,7 @@ export const fetchUserOnRegister = createAsyncThunk(
 
 const userReducer = createSlice({
     name: 'userState',
-    initialState: null,
+    initialState: {},
     reducers: {
         logUserOut: state => state = null
     },

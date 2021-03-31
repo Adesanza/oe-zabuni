@@ -17,7 +17,7 @@ const Dashboard = () => {
                     <SearchInputField />
                 </div>
                 {
-                    dashboardState === 'inventory' ?
+                    dashboardState === 'management' ?
                     (<DisplayBillboards />)
                     :
                     <div className="dashy">

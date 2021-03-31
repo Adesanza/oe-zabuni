@@ -5,6 +5,7 @@ import './header.css';
 import { FaSearch } from "react-icons/fa";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
+import { logUserOut } from '../../redux/user/userReducer';
 
 
 const Header = () => {
@@ -23,14 +24,14 @@ const Header = () => {
                         <ul className="navbar-nav">
                             <li className="nav-item dropdown">
                                 
-                            <Link className="nav-link dropdown-toggle dropping" to="/" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div className="nav-link dropdown-toggle dropping" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               {`${userState.first_name} ${userState.last_name}`}  <CgProfile className="cgprofile"/>
-                            </Link>
+                            </div>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <Link className="dropdown-item" to="/">Dashboard</Link>
-                              <a className="dropdown-item" href="/">Edit Profile</a>
-                              <a className="dropdown-item" href="/">Settings</a>
-                              <a className="dropdown-item" href="/">Log Out</a>
+                              <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
+                              <Link className="dropdown-item" to="/">Edit Profile</Link>
+                              <Link className="dropdown-item" to="/">Settings</Link>
+                              <p className="dropdown-item header-logout" onClick={() => dispatch(logUserOut())}>Log Out</p>
                             </div>
                           </li>   
                         </ul>

@@ -22,7 +22,7 @@ const LoginForm = () => {
                             .then(() => {
                                 dispatch(closeVerticalModalDisplay());
                                 // alert("Back End Under Construction but only zabuni@optimumexposures can see this as this is the only valid user stored")
-                                history.push("/dashboard")
+                                history.push("/management")
                             })
                             .catch(error => {
                                 actions.setSubmitting(false);

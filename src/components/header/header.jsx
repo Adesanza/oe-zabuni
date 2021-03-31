@@ -28,7 +28,7 @@ const Header = () => {
                               {`${userState.first_name} ${userState.last_name}`}  <CgProfile className="cgprofile"/>
                             </div>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
+                              <Link className="dropdown-item" to="/management">Dashboard</Link>
                               <Link className="dropdown-item" to="/">Edit Profile</Link>
                               <Link className="dropdown-item" to="/">Settings</Link>
                               <p className="dropdown-item header-logout" onClick={() => dispatch(logUserOut())}>Log Out</p>

@@ -16,15 +16,50 @@ const App = () => {
       <Route exact path ="/">
         <Homepage />
       </Route>
-      <Route path ="/dashboard">
+      <Route path ="/management">
         {
           userState ?
-          (<Dashboard />)
+          (<Dashboard type="management"/>)
           :
           <Redirect to='/' />
         }
-       {/* if you are working on the dashboard and do not want to login everytime, uncomment the code below and comment the one above */}
-        {/* <Dashboard /> */}
+     
+      </Route>
+      <Route path ="/marketing">
+        {
+          userState ?
+          (<Dashboard type="marketing"/>)
+          :
+          <Redirect to='/' />
+        }
+     
+      </Route>
+      <Route path ="/technical">
+        {
+          userState ?
+          (<Dashboard type="technical"/>)
+          :
+          <Redirect to='/' />
+        }
+     
+      </Route>
+      <Route path ="/operations">
+        {
+          userState ?
+          (<Dashboard type="operations"/>)
+          :
+          <Redirect to='/' />
+        }
+     
+      </Route>
+      <Route path ="/finance">
+        {
+          userState ?
+          (<Dashboard type="finance"/>)
+          :
+          <Redirect to='/' />
+        }
+     
       </Route>
     </Switch>
     </>

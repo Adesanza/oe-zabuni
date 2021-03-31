@@ -1,0 +1,8 @@
+.dashy {
+  display: flex;
+  flex-flow: row;
+}
+/* .dashy > * {
+  width: 35%;
+  border: 1px solid red;
+} */

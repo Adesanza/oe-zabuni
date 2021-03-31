@@ -1,10 +1,12 @@
 import { FaCaretRight, FaCaretDown } from "react-icons/fa";
+import { useHistory } from "react-router";
 import './side-bar-dropdown.css';
 
-const SidebarDropdown = ({ data, handleActiveSidebar, children }) => {
+const SidebarDropdown = ({ data, children }) => {
+    let history = useHistory();
     return (
         <div className="side-bar-dropdown">
-            <div className={`${data.active && 'sidebar-dropdown-active'} sidebar-dropdown-toggle`} onClick={() => handleActiveSidebar(data.title)}>
+            <div className={`${data.active && 'sidebar-dropdown-active'} sidebar-dropdown-toggle`} onClick={() => history.push(data.title)}>
                     {
                         data.active ?
                         (<span><FaCaretDown/></span>)

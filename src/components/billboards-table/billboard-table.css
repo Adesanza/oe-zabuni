@@ -2,7 +2,7 @@ table tbody {
   background-color: white;
 }
 .billboard-table {
-  overflow: scroll;
+  /* overflow: scroll; */
   width: 100%;
 }
 table tbody tr:hover {
@@ -36,13 +36,15 @@ table th:last-child {
   /* vertical-align: middle; */
   /* border-top: 1px solid #dee2e6; */
 }
-#fonter {
+#fonter,.active,.inactive {
   text-align: center;
   text-transform: capitalize;
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
   line-height: 21px;
+}
+#fonter {
   color: #6e6b7b;
 }
 .create-billboard-btn {
@@ -116,4 +118,10 @@ table th:last-child {
 .locate {
   font-size: 10px;
   color: #6e6b7b;
+}
+.active {
+  color: #f5148e;
+}
+.inactive {
+  color: #0056b3;
 }

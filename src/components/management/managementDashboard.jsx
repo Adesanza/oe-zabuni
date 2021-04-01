@@ -12,7 +12,7 @@ const ManagementDashboard = () => {
     // const [managementChild,updateManagementChild] = useState({active:false, type: null})
     return (
             dashboardManagementState.child === 'inventory' ? 
-                <DisplayBillboards />
+                <DisplayBillboards showCreate/>
             :
             dashboardManagementState.child === 'people' ?
                 <PeopleManagement />

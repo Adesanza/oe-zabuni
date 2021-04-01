@@ -8,7 +8,7 @@ import { verticalModalContent } from '../../redux/vertical-modal/verticalModalRe
 import { deleteBillboard } from '../../redux/billboard-data/billboardDataReducer';
 import { editBillboardData } from '../../redux/form/billboardFormReducer';
 
-const BillboardsTable = () => {
+const BillboardsTable = ({showCreate}) => {
   const billboardData = useSelector(state => state.billboardData);
   const filterKey = useSelector(({ filterBillboard }) => filterBillboard.keyword);
   const dispatch = useDispatch();
@@ -39,7 +39,13 @@ const BillboardsTable = () => {
       <th>CITY</th>
       <th>COORDINATE (LAT/LONG)</th>
       <th>AMOUNT</th>
-      <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATENEW</Button></th>
+      {
+        showCreate ?
+        <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATENEW</Button></th>
+        :
+        null
+      }
+      
     </tr>
   </thead>
   <tbody className="table-hover">
@@ -56,7 +62,7 @@ const BillboardsTable = () => {
                     <td id="fonter">{details.type}</td>
                     <td id="fonter">{`${details.height}m`}</td>
                     <td id="fonter">{`${details.width}m`}</td>
-                    <td id="fonter">{details.status}</td>
+                    <td className={details.status==='active' ? 'active' : 'inactive'} >{details.status}</td>
                     <td id="fonter">{details.category}</td>
                     <td id="fonter">{details.class}</td>
                     <td id="fonter">{details.faces}</td>
@@ -68,7 +74,9 @@ const BillboardsTable = () => {
                     <td id="fonter">{details.city}</td>
                     <td id="fonter">{details.coordinate}</td>
                     <td id="fonter" className="billboard-amount"><span></span>{details.amount}<span>Per annum</span></td>
-                    <td id="fonter">
+                    {
+                      showCreate ?
+                      <td id="fonter">
                       <div className="edit-delete-container">
                       <div onClick={() => handleEdit(details.id)}>
                         <GrFormEdit className="edit-icon"/>
@@ -80,6 +88,9 @@ const BillboardsTable = () => {
                       </div>
                       </div>
                     </td>
+                      :
+                      null
+                    }
                 </tr>
             ))
         }

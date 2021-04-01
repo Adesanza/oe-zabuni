@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 import { managementDashboard, resetDashboard } from '../../redux/dashboard/dashboardReducer';
 import SidebarDropdown from '../side-bar-dropdown/side-bar-dropdown';
@@ -9,6 +9,7 @@ import { dropdownData } from './sidebar-dropdown-data';
 const SideBar = () => {
   const [activeSidebar, setactiveSidebar] = useState(dropdownData);
   const dispatch = useDispatch();
+  const dashboardState = useSelector(({dashboard}) => dashboard);
   let location = useLocation();
   // console.log(location.pathname)
   // console.log("state",activeSidebar === dropdownData)
@@ -44,9 +45,9 @@ const SideBar = () => {
       <SidebarDropdown
         data={activeSidebar.management}
       >
-        <p onClick={() => dispatch(managementDashboard('inventory'))}>Inventory</p>
-        <p onClick={() => dispatch(managementDashboard('people'))}>People</p>
-        <p onClick={() => dispatch(managementDashboard('campaign'))}>Campaigns</p>
+        <p onClick={() => dispatch(managementDashboard('inventory'))} className={dashboardState.management.child==='inventory' && 'highlight'}>Inventory</p>
+        <p onClick={() => dispatch(managementDashboard('people'))} className={dashboardState.management.child==='people' && 'highlight'}>People</p>
+        <p onClick={() => dispatch(managementDashboard('campaign'))} className={dashboardState.management.child==='campaign' && 'highlight'}>Campaigns</p>
       </SidebarDropdown>
       <SidebarDropdown
         data={activeSidebar.marketing}

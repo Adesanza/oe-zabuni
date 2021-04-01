@@ -1,6 +1,7 @@
 .dashy {
   display: flex;
   flex-flow: row;
+  color: chocolate;
 }
 /* .dashy > * {
   width: 35%;

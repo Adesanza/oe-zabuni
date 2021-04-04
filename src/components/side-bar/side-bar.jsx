@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
-import { managementDashboard, resetDashboard } from '../../redux/dashboard/dashboardReducer';
+import { managementDashboard } from '../../redux/dashboard/dashboardReducer';
 import SidebarDropdown from '../side-bar-dropdown/side-bar-dropdown';
 import './side-bar.css';
 import { dropdownData } from './sidebar-dropdown-data';
@@ -11,35 +11,13 @@ const SideBar = () => {
   const dispatch = useDispatch();
   const dashboardState = useSelector(({dashboard}) => dashboard);
   let location = useLocation();
-  // console.log(location.pathname)
-  // console.log("state",activeSidebar === dropdownData)
-  useEffect(() => {
-    const updateSidebar = { ...dropdownData };
 
-    console.log('data', updateSidebar);
+  useEffect(() => {
     setactiveSidebar({
       ...dropdownData,
       [location.pathname.replace('/', '')]: { active: true, title: location.pathname.replace('/', '') },
     });
   }, [location.pathname]);
-//   const handleActiveSidebar = (sidebarTitle) => {
-//     if (sidebarTitle === 'management') {
-//       console.log('searx');
-//       dispatch(dashboardContent('management'));
-//     }
-//     const updateSidebar = { ...activeSidebar };
-//     // console.log("updayte",updateSidebar == dropdownData);
-//     console.log('title', sidebarTitle);
-//     // updateSidebar[sidebarTitle].active = !updateSidebar[sidebarTitle].active;
-//     console.log('data', updateSidebar);
-//     setactiveSidebar({
-//       ...dropdownData,
-//       [sidebarTitle]: {
-//         active: !updateSidebar[sidebarTitle].active,
-//         title: sidebarTitle,
-//       },
-//     });
-//   };
   return (
     <div className="side-bar">
       <SidebarDropdown
@@ -77,10 +55,6 @@ const SideBar = () => {
         <p>Naira</p>
         <p>Kobo</p>
       </SidebarDropdown>
-      {/* <div className="sidebar-settings">
-                <span><FaVectorSquare/></span>
-                <span>settings</span>
-            </div> */}
     </div>
   );
 };

@@ -9,7 +9,7 @@ const SidebarDropdown = ({ data, children }) => {
     let dispatch = useDispatch()
     return (
         <div className="side-bar-dropdown">
-            <div className={`${data.active && 'sidebar-dropdown-active'} sidebar-dropdown-toggle`} 
+            <div className={`${data.active ? 'sidebar-dropdown-active' : ''} sidebar-dropdown-toggle`} 
                 onClick={() => {
                     dispatch(resetDashboard())
                     history.push(data.title)

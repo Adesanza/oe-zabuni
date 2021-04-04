@@ -6,6 +6,7 @@ import filterBillboardReducer from "./filter-Billboard/filterBillboardReducer";
 import billboardFormReducer from "./form/billboardFormReducer";
 import userReducer from "./user/userReducer";
 import verticalModalReducer from "./vertical-modal/verticalModalReducer";
+import overheadModalReducer from "./overhead-modal/overheadModalReducer";
 
 
 
@@ -17,7 +18,8 @@ export const store = configureStore({
         filterBillboard: filterBillboardReducer,
         billboardData: billboardDataReducer,
         billboardForm: billboardFormReducer,
-        dashboard: dashboardReducer
+        dashboard: dashboardReducer,
+        overheadModal: overheadModalReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 })

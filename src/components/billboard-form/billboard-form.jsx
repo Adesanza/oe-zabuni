@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createBillboard, editBillboard } from "../../redux/billboard-data/billboardDataReducer";
 import { closeVerticalModalDisplay } from "../../redux/vertical-modal/verticalModalReducer";
 import { resetBillboardFormData } from "../../redux/form/billboardFormReducer";
+import { overheadModalContainer } from "../../redux/overhead-modal/overheadModalReducer";
 
 const BillboardForm = () => {
   const formDataState = useSelector(state => state.billboardForm);
@@ -26,7 +27,7 @@ const BillboardForm = () => {
             let newValues = {...values, id: Date.now().toString() }
             dispatch(createBillboard(newValues))
           }
-          
+          dispatch(overheadModalContainer('confirmation'))
       }}
     >
       {({

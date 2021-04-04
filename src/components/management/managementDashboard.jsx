@@ -23,18 +23,42 @@ const ManagementDashboard = () => {
                 :
             <div className="dashy">
                 <div className="row">
-                    {/* <h1>Hello I will be the graph and I am awaiting a full data.. winks</h1> */}
-                    <div class="col-md-2 digital">
-                        <p class="midilo">Digital</p>
-                        <div class="col">Active</div>
-                        <div class="col">Inactive</div>
-    
-                    </div>
-                    <div class="col-md-2 digital">
-                        <p class="midilo">Digital</p>
-                        <div class="col">Active</div>
-                        <div class="col">Inactive</div>
-    
+                    <div className="col-md-4">
+                        <div class="row">
+                            <div className="col-md-6 digital">
+                                <p>Digital</p>
+                                <div class="">Active</div>
+                                <div class="">Inactive</div>
+                            </div>
+                            <div className="col-md-6 digital">
+                                <p>Digital</p>
+                                <div class="">Active</div>
+                                <div class="">Inactive</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 types">
+                            <p>Types</p>
+                            <div class="">Active</div>
+                            <div class="">Inactive</div>
+                        </div>
+                        <div class="row">
+                            <div className="col-md-3 total">
+                                <p>Total</p>
+                                <div class="">Active</div>
+                                <div class="">Inactive</div>
+                            </div>
+                            <div className="col-md-9 billboards">
+                                <p>Billboards</p>
+                                <div class="">Active</div>
+                                <div class="">Inactive</div>
+                            </div>
+        
+                        </div>
+                        <div class="col-md-12 lagos">
+                            <p>Lagos</p>
+                            <div class="">Active</div>
+                            <div class="">Inactive</div>
+                        </div>
                     </div>
                     <div className="hermis col-md-8">
                     <BillboardsTable />

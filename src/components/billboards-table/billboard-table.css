@@ -36,7 +36,9 @@ table th:last-child {
   /* vertical-align: middle; */
   /* border-top: 1px solid #dee2e6; */
 }
-#fonter,.active,.inactive {
+#fonter,
+.active,
+.inactive {
   text-align: center;
   text-transform: capitalize;
   font-style: normal;

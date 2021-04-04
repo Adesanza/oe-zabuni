@@ -24,40 +24,40 @@ const ManagementDashboard = () => {
             <div className="dashy">
                 <div className="row">
                     <div className="col-md-4">
-                        <div class="row">
+                        <div className="row">
                             <div className="col-md-6 digital">
                                 <p>Digital</p>
-                                <div class="">Active</div>
-                                <div class="">Inactive</div>
+                                <div className="">Active</div>
+                                <div className="">Inactive</div>
                             </div>
                             <div className="col-md-6 digital">
                                 <p>Digital</p>
-                                <div class="">Active</div>
-                                <div class="">Inactive</div>
+                                <div className="">Active</div>
+                                <div className="">Inactive</div>
                             </div>
                         </div>
-                        <div class="col-md-12 types">
+                        <div className="col-md-12 types">
                             <p>Types</p>
-                            <div class="">Active</div>
-                            <div class="">Inactive</div>
+                            <div className="">Active</div>
+                            <div className="">Inactive</div>
                         </div>
-                        <div class="row">
+                        <div className="row">
                             <div className="col-md-3 total">
                                 <p>Total</p>
-                                <div class="">Active</div>
-                                <div class="">Inactive</div>
+                                <div className="">Active</div>
+                                <div className="">Inactive</div>
                             </div>
                             <div className="col-md-9 billboards">
                                 <p>Billboards</p>
-                                <div class="">Active</div>
-                                <div class="">Inactive</div>
+                                <div className="">Active</div>
+                                <div className="">Inactive</div>
                             </div>
         
                         </div>
-                        <div class="col-md-12 lagos">
+                        <div className="col-md-12 lagos">
                             <p>Lagos</p>
-                            <div class="">Active</div>
-                            <div class="">Inactive</div>
+                            <div className="">Active</div>
+                            <div className="">Inactive</div>
                         </div>
                     </div>
                     <div className="hermis col-md-8">

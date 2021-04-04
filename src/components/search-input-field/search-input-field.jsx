@@ -11,7 +11,7 @@ const SearchInputField = () => {
   const handleChange = (evet) => {
     const { value } = evet.target;
     setInputValue(value);
-    dispatch(filterBillboardData(value));
+    dispatch(filterBillboardData({type:'search',keyword:value}));
   }
   return (
     <div className="searchContainer">

@@ -23,9 +23,9 @@ const SideBar = () => {
       <SidebarDropdown
         data={activeSidebar.management}
       >
-        <p onClick={() => dispatch(managementDashboard('inventory'))} className={dashboardState.management.child==='inventory' && 'highlight'}>Inventory</p>
-        <p onClick={() => dispatch(managementDashboard('people'))} className={dashboardState.management.child==='people' && 'highlight'}>People</p>
-        <p onClick={() => dispatch(managementDashboard('campaign'))} className={dashboardState.management.child==='campaign' && 'highlight'}>Campaigns</p>
+        <p onClick={() => dispatch(managementDashboard('inventory'))} className={dashboardState.management.child==='inventory' ? 'highlight' : ''}>Inventory</p>
+        <p onClick={() => dispatch(managementDashboard('people'))} className={dashboardState.management.child==='people' ? 'highlight' : ''}>People</p>
+        <p onClick={() => dispatch(managementDashboard('campaign'))} className={dashboardState.management.child==='campaign' ? 'highlight' : ''}>Campaigns</p>
       </SidebarDropdown>
       <SidebarDropdown
         data={activeSidebar.marketing}

@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const filterBillboardReducer = createSlice({
     name: 'filterBillboard',
-    initialState: {keyword: ''},
+    initialState: {type: 'all', keyword: ''},
     reducers: {
-        filterBillboardData: (state, action) => {state.keyword = action.payload }
+        filterBillboardData: (state, action) => {state.type = action.payload.type; state.keyword = action.payload.keyword }
     }
 })
 

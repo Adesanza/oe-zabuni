@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router';
 import './App.css';
-import AlertModal from './components/alert-modal/alertModal';
 import Header from './components/header/header';
 import OverheadModalContainer from './components/overhead-modal/overheadModalContainer';
 import VerticalCenterModal from './components/vertical-center-modal/vertical-center-modal';

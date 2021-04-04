@@ -352,7 +352,7 @@ const BillboardForm = () => {
               </Form.Group>
             </Form.Row>
             <Button type="submit" block className="billboard-update-btn">
-              {isEditing ? 'update' : 'submit'}
+              {isEditing ? 'update' : 'create'}
             </Button>
           </Form>
         </>

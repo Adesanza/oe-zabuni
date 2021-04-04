@@ -41,7 +41,7 @@ const BillboardsTable = ({showCreate}) => {
       <th>AMOUNT</th>
       {
         showCreate ?
-        <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATENEW</Button></th>
+        <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATE</Button></th>
         :
         null
       }

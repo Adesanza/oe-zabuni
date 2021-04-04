@@ -1,15 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
 import './header.css';
 import { FaSearch } from "react-icons/fa";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { logUserOut } from '../../redux/user/userReducer';
+import { resetDashboard } from '../../redux/dashboard/dashboardReducer';
 
 
 const Header = () => {
     const dispatch = useDispatch();
+    let history = useHistory();
     const userState = useSelector(state => state.user);
     return (
             userState ?
@@ -28,10 +30,15 @@ const Header = () => {
                               {`${userState.first_name} ${userState.last_name}`}  <CgProfile className="cgprofile"/>
                             </div>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <Link className="dropdown-item" to="/management">Dashboard</Link>
+                              <p className="dropdown-item user-options"
+                                onClick={() => {
+                                  dispatch(resetDashboard())
+                                  history.push('/management')
+                                }}
+                              >Dashboard</p>
                               <Link className="dropdown-item" to="/">Edit Profile</Link>
                               <Link className="dropdown-item" to="/">Settings</Link>
-                              <p className="dropdown-item header-logout" onClick={() => dispatch(logUserOut())}>Log Out</p>
+                              <p className="dropdown-item user-options" onClick={() => dispatch(logUserOut())}>Log Out</p>
                             </div>
                           </li>   
                         </ul>

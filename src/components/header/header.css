@@ -230,7 +230,7 @@ input[type='search']::-webkit-search-results-decoration {
   font-size: 14px;
   line-height: 28px;
 }
-.header-logout{
+.user-options {
   margin: 0;
   cursor: pointer;
 }

@@ -1,6 +1,7 @@
 // import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import DisplayBillboards from '../billboards-display/billboards-display';
+import BillboardsTable from '../billboards-table/billboard-table';
 import CampaignManagement from '../campaigns-mgt/campaigns-mgt';
 import PeopleManagement from '../people-mgt/people-mgt';
 // import BillboardsTable from '../../components/billboards-table/billboard-table';
@@ -21,13 +22,51 @@ const ManagementDashboard = () => {
                 <CampaignManagement />
                 :
             <div className="dashy">
-                <div>
-                    <h1>Hello I will be the graph and I am awaiting a full data.. winks</h1>
-                </div>
-                <DisplayBillboards />
-            </div> 
-            
+                <div className="row">
+                    <div className="col-md-4">
+                        <div class="row">
+                            <div className="col-md-6 digital">
+                                <p>Digital</p>
+                                <div class="">Active</div>
+                                <div class="">Inactive</div>
+                            </div>
+                            <div className="col-md-6 digital">
+                                <p>Digital</p>
+                                <div class="">Active</div>
+                                <div class="">Inactive</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 types">
+                            <p>Types</p>
+                            <div class="">Active</div>
+                            <div class="">Inactive</div>
+                        </div>
+                        <div class="row">
+                            <div className="col-md-3 total">
+                                <p>Total</p>
+                                <div class="">Active</div>
+                                <div class="">Inactive</div>
+                            </div>
+                            <div className="col-md-9 billboards">
+                                <p>Billboards</p>
+                                <div class="">Active</div>
+                                <div class="">Inactive</div>
+                            </div>
         
+                        </div>
+                        <div class="col-md-12 lagos">
+                            <p>Lagos</p>
+                            <div class="">Active</div>
+                            <div class="">Inactive</div>
+                        </div>
+                    </div>
+                    <div className="hermis col-md-8">
+                    <BillboardsTable />
+                    </div>
+                    
+                </div>
+                
+            </div> 
     )
 }
 

@@ -1,14 +1,15 @@
-import { useSelector } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router';
 import './App.css';
 import Header from './components/header/header';
 import OverheadModalContainer from './components/overhead-modal/overheadModalContainer';
 import VerticalCenterModal from './components/vertical-center-modal/vertical-center-modal';
+import { useUserData } from './hooks/user-hooks/user-hook';
 import Dashboard from './pages/dashboard/dashboard';
 import Homepage from './pages/homepage/homepage';
 
 const App = () => {
-  const userState = useSelector(state => state.user);
+  const { getUser } = useUserData();
+  const userState = getUser();
   return (
     <>
     <Header />

@@ -7,10 +7,12 @@ import { closeVerticalModalDisplay, verticalModalContent } from '../../redux/ver
 import { fetchUserOnLogin } from '../../redux/user/userReducer';
 import { unwrapResult } from '@reduxjs/toolkit';
 import { useHistory } from 'react-router';
+import { useUserData } from '../../hooks/user-hooks/user-hook';
 // zabuni@optimumexposures.com
 const LoginForm = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const { setUser } = useUserData();
     return (
         <Formik validationSchema={loginSchema} initialValues={{email: '', password: ''}} onSubmit={(values, actions) => {
             // dispatch(closeVerticalModalDisplay());
@@ -19,7 +21,9 @@ const LoginForm = () => {
                         console.log({ values, actions });
                         dispatch(fetchUserOnLogin(values))
                             .then(unwrapResult)
-                            .then(() => {
+                            .then((data) => {
+                                console.log("datta",data)
+                                setUser(data.data);
                                 dispatch(closeVerticalModalDisplay());
                                 // alert("Back End Under Construction but only zabuni@optimumexposures can see this as this is the only valid user stored")
                                 history.push("/management")

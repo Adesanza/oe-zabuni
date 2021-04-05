@@ -5,14 +5,15 @@ import './header.css';
 import { FaSearch } from "react-icons/fa";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
-import { logUserOut } from '../../redux/user/userReducer';
 import { resetDashboard } from '../../redux/dashboard/dashboardReducer';
+import { useUserData } from '../../hooks/user-hooks/user-hook';
 
 
 const Header = () => {
     const dispatch = useDispatch();
     let history = useHistory();
     const userState = useSelector(state => state.user);
+    const { logUserOut } = useUserData();
     return (
             userState ?
             (
@@ -38,7 +39,10 @@ const Header = () => {
                               >Dashboard</p>
                               <Link className="dropdown-item" to="/">Edit Profile</Link>
                               <Link className="dropdown-item" to="/">Settings</Link>
-                              <p className="dropdown-item user-options" onClick={() => dispatch(logUserOut())}>Log Out</p>
+                              <p className="dropdown-item user-options" onClick={() => {
+                                logUserOut();
+                                history.push('/')
+                                }}>Log Out</p>
                             </div>
                           </li>   
                         </ul>

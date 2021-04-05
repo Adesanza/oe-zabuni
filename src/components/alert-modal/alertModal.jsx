@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { closeOverheadModalDisplay } from "../../redux/overhead-modal/overheadModalReducer";
 import './alertModal.css';
 

@@ -20,7 +20,8 @@ const userReducer = createSlice({
     name: 'userState',
     initialState: null,
     reducers: {
-        logUserOut: state => state = null
+        logUserOut: state => state = null,
+        setUserData: (state, { payload }) => state = payload ? {...state,...payload} : payload
     },
     extraReducers: (builder) => {
         builder.addCase(fetchUserOnLogin.fulfilled, (state, { payload }) => payload.data)
@@ -29,7 +30,7 @@ const userReducer = createSlice({
     }
 })
 
-export const { logUserOut }  = userReducer.actions;
+export const { logUserOut, setUserData }  = userReducer.actions;
 export default userReducer.reducer;
 
 // builder.addCase(fetchUserOnRegister.fulfilled, (state, { payload }) => {state.userState = {...payload}})

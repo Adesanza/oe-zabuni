@@ -22,8 +22,8 @@ const LoginForm = () => {
                         dispatch(fetchUserOnLogin(values))
                             .then(unwrapResult)
                             .then((data) => {
-                                console.log("datta",data)
-                                setUser(data.data);
+                                // console.log("datta",data)
+                                // setUser(data.data);
                                 dispatch(closeVerticalModalDisplay());
                                 // alert("Back End Under Construction but only zabuni@optimumexposures can see this as this is the only valid user stored")
                                 history.push("/management")

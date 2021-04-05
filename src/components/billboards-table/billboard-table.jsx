@@ -58,26 +58,26 @@ const BillboardsTable = ({showCreate}) => {
                       <img src="https://res.cloudinary.com/adesanza/image/upload/v1616156307/zabuni/Group_1787_kbiyfb.svg" alt="more..." className="more-icon" onClick={() => dispatch(verticalModalContent('more-details'))}/>
                       <span>{details.sn}</span>
                     </td> */}
-                    <td id="fonter">{details.name}</td>
+                    <td className="fonter">{details.name}</td>
                     <td className="locate">{details.location}</td>
-                    <td id="fonter">{details.type}</td>
-                    <td id="fonter">{`${details.height}m`}</td>
-                    <td id="fonter">{`${details.width}m`}</td>
+                    <td className="fonter">{details.type}</td>
+                    <td className="fonter">{`${details.height}m`}</td>
+                    <td className="fonter">{`${details.width}m`}</td>
                     <td className={details.status==='active' ? 'active' : 'inactive'} >{details.status}</td>
-                    <td id="fonter">{details.category}</td>
-                    <td id="fonter">{details.class}</td>
-                    <td id="fonter">{details.faces}</td>
-                    <td id="fonter">{details.slots}</td>
-                    <td id="fonter">{details.units}</td>
-                    <td id="fonter">{details.region}</td>
-                    <td id="fonter">{details.state}</td>
-                    <td id="fonter">{details.lga}</td>
-                    <td id="fonter">{details.city}</td>
-                    <td id="fonter">{details.coordinate}</td>
-                    <td id="fonter" className="billboard-amount"><span></span>{details.amount}<span>Per annum</span></td>
+                    <td className="fonter">{details.category}</td>
+                    <td className="fonter">{details.class}</td>
+                    <td className="fonter">{details.faces}</td>
+                    <td className="fonter">{details.slots}</td>
+                    <td className="fonter">{details.units}</td>
+                    <td className="fonter">{details.region}</td>
+                    <td className="fonter">{details.state}</td>
+                    <td className="fonter">{details.lga}</td>
+                    <td className="fonter">{details.city}</td>
+                    <td className="fonter">{details.coordinate}</td>
+                    <td className="fonter billboard-amount"><span></span>{details.amount}<span>Per annum</span></td>
                     {
                       showCreate ?
-                      <td id="fonter">
+                      <td className="fonter">
                       <div className="edit-delete-container">
                       <div onClick={() => handleEdit(details.id)}>
                         <GrFormEdit className="edit-icon"/>

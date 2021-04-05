@@ -8,10 +8,7 @@ const AlertModal = () => {
 
   return (
     <>
-        <Modal.Header closeButton>
-          <Modal.Title>Alert Modal</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Successful content</Modal.Body>
+        <Modal.Body>Input successfully Updated</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => dispatch(closeOverheadModalDisplay()) }>
             Close

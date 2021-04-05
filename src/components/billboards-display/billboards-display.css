@@ -5,12 +5,14 @@
   display: inline-block;
   margin: 0.7rem 1.67rem 1rem 0;
   cursor: pointer;
-  font-size: .89rem;
+  font-size: 0.89rem;
 }
-.display-billboards-active{
+.display-billboards-active {
   color: #0056b3;
   border-bottom: 2px solid #0056b3;
   font-weight: 600;
+  text-align: center;
+  padding: 8px 8px;
 }
 /* .select-all {
   display: inline-block;

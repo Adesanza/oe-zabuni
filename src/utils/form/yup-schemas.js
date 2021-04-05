@@ -11,7 +11,7 @@ export const createBillboardSchema = Yup.object().shape({
     type: Yup.string().oneOf(['led','lightbox','bridge-panel','eye-catcher','mega-board','portrait','rooftop','super48-sheet','ultrawave','unipole','video-wall','wall-drape'],'Invalid type').required("Must select an option"),
     height: Yup.number().min(3).max(300).required("Height is required"),
     width: Yup.number().min(3).max(300).required("Width is required"),
-    status: Yup.string().oneOf(['active','inactive'],'Invalid status').required("Must select an option"),
+    status: Yup.string().oneOf(['active','inactive','vacant'],'Invalid status').required("Must select an option"),
     category: Yup.string().oneOf(['billboard'],'Invalid status').required("Must select an option"),
     class: Yup.string().oneOf(['digital', 'static'],'Invalid status').required("Must select an option"),
     region: Yup.string().oneOf(['southwest', 'southsouth', 'northcentral', 'southeast', 'northeast', 'northwest' ],'Invalid status').required("Must select an option"),

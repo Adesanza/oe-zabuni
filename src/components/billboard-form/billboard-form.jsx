@@ -115,6 +115,7 @@ const BillboardForm = () => {
                 <option value="">Status</option>
                 <option value="active" className="active-status">Active</option>
                 <option value="inactive" className="inactive-status">Inactive</option>
+                <option value="vacant" className="vacant-status">Vacant</option>
               </Form.Control>
               <Form.Text className="text-danger">
                 {touched.status && errors.status ? errors.status : null}

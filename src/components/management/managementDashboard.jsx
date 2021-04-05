@@ -23,7 +23,7 @@ const ManagementDashboard = () => {
                 :
             <div className="dashy">
                 <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 pl-0">
                         <div className="row">
                             <div className="col-md-6 digital">
                                 <p>Digital</p>

@@ -36,7 +36,7 @@ table th:last-child {
   /* vertical-align: middle; */
   /* border-top: 1px solid #dee2e6; */
 }
-#fonter,
+.fonter,
 .active,
 .inactive {
   text-align: center;
@@ -46,7 +46,7 @@ table th:last-child {
   font-size: 12px;
   line-height: 21px;
 }
-#fonter {
+.fonter {
   color: #6e6b7b;
 }
 .create-billboard-btn {

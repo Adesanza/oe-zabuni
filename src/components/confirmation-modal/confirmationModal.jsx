@@ -8,10 +8,10 @@ const ConfirmationModal = () => {
 
   return (
     <center>
-        <Modal.Body><h2 class="modal-titl">Are you sure you want to <br /> delete these inputs</h2>
+        <Modal.Body><h2 className="modal-titl">Are you sure you want to <br /> delete these inputs</h2>
             <div>
-                <button id="gena" variant="secondary" onClick={() => dispatch(closeOverheadModalDisplay()) }>Yes</button>
-                <button id="gena" variant="secondary" onClick={() => dispatch(closeOverheadModalDisplay()) }>No</button>
+                <button className="gena" variant="secondary" onClick={() => dispatch(overheadModalContainer('alert-success')) }>Yes</button>
+                <button className="gena" variant="secondary" onClick={() => dispatch(closeOverheadModalDisplay()) }>No</button>
             </div></Modal.Body>
     </center>
   );

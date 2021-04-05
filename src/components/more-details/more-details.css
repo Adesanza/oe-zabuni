@@ -1,0 +1,29 @@
+.more-details-container{
+    border: 1px solid chocolate;
+    /* padding: 5rem; */
+    margin: 0 -2rem;
+}
+
+.billboard-img-area {
+    border: 1px solid green;
+    display: flex;
+    flex-flow: row wrap;
+}
+/* .billboard-img-area > * {
+    border: 1px solid blue;
+} */
+.billboard-img-area > p:first-child {
+    flex-basis: 100%;
+}
+
+.billboard-img-area > .left-width {
+    flex-basis: 25%;
+    align-self: center;
+}
+.billboard-img-area > .billboard-image-container {
+    flex-basis: 65%;
+}
+
+.billboard-image-container > img{
+    width: 100%;
+}

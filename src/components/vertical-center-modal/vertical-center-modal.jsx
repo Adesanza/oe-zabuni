@@ -13,8 +13,7 @@ const modalHeading = {
   'signup': 'Sign up as a publisher',
   'login': "Login",
   'create-billboard': "Create new",
-  'edit-billboard': "Edit details",
-  'more-details': "Details About the billboard"
+  'edit-billboard': "Edit details"
 };
 
 const SelectContent = ({ type }) => {
@@ -52,7 +51,12 @@ const VerticalCenterModal = ({ children }) => {
         />
       </Modal.Header>
       <Modal.Body>
-        <h3 className="modal-heading">{modalHeading[modalState.type]}</h3>
+        {
+          modalState.type !== 'more-details' ?
+          (<h3 className="modal-heading">{modalHeading[modalState.type]}</h3>)
+          :
+          null
+        }
         <SelectContent type={modalState.type} />
       </Modal.Body>
     </Modal>

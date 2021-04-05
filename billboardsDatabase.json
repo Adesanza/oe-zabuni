@@ -8,7 +8,7 @@
     "region": "northcentral",
     "category": "billboard",
     "class": "static",
-    "type": "bridge_Panel",
+    "type": "bridge_panel",
     "height_m": "25",
     "width_m": "15",
     "height_px": "0",

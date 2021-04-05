@@ -18,13 +18,16 @@ export const fetchUserOnRegister = createAsyncThunk(
 
 const userReducer = createSlice({
     name: 'userState',
-    initialState: null,
+    initialState: JSON.parse(window.sessionStorage.getItem('zabuni_user')) || null,
     reducers: {
         logUserOut: state => state = null,
         setUserData: (state, { payload }) => state = payload ? {...state,...payload} : payload
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchUserOnLogin.fulfilled, (state, { payload }) => payload.data)
+        builder.addCase(fetchUserOnLogin.fulfilled, (state, { payload }) => {
+            window.sessionStorage.setItem('zabuni_user',JSON.stringify(payload.data));
+            return payload.data;
+        })
         builder.addCase(fetchUserOnLogin.rejected, (state,action) => {state = null})
         
     }

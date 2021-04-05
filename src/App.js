@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router';
 import './App.css';
 import Header from './components/header/header';
@@ -9,7 +10,7 @@ import Homepage from './pages/homepage/homepage';
 
 const App = () => {
   const { getUser } = useUserData();
-  const userState = getUser();
+  const userState = useSelector(state => state.user);
   return (
     <>
     <Header />

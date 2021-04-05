@@ -7,10 +7,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
 import { deleteBillboard } from '../../redux/billboard-data/billboardDataReducer';
 import { editBillboardData } from '../../redux/form/billboardFormReducer';
+import { billboardFilter } from '../../utils/billboard-table/filter-billboard';
 
 const BillboardsTable = ({showCreate}) => {
   const billboardData = useSelector(state => state.billboardData);
-  const filterKey = useSelector(({ filterBillboard }) => filterBillboard.keyword);
+  const filterKey = useSelector(state => state.filterBillboard);
   const dispatch = useDispatch();
   const handleEdit = (id) => {
     const toBeEdited = billboardData.find(billboard => billboard.id === id);
@@ -50,8 +51,8 @@ const BillboardsTable = ({showCreate}) => {
   </thead>
   <tbody className="table-hover">
         {
-            billboardData.filter(details => details.name.toLowerCase().includes(filterKey.toLowerCase()) ).map(details => (
-                <tr key={details.id} className="billboard-row table-hover">
+            billboardFilter(filterKey,billboardData).map(details => (
+                <tr key={details.id} className="billboard-row table-hover" onClickCapture={() => dispatch(verticalModalContent('more-details'))}>
                     {/* <td id="fonter">
                       {/* <FiMoreVertical className="more-icon"/> 
                       <img src="https://res.cloudinary.com/adesanza/image/upload/v1616156307/zabuni/Group_1787_kbiyfb.svg" alt="more..." className="more-icon" onClick={() => dispatch(verticalModalContent('more-details'))}/>

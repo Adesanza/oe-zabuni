@@ -83,7 +83,7 @@ const BillboardsTable = ({showCreate}) => {
                         <GrFormEdit className="edit-icon"/>
                         <span className="edit-icon-text">Edit</span>
                       </div>
-                      <div onClick={() => dispatch(deleteBillboard(details.id))}>
+                      <div onClickCapture={() => dispatch(deleteBillboard(details.id))}>
                         <FaTrashAlt className="delete-icon"/>
                         <span className="delete-icon-text">Delete</span>
                       </div>

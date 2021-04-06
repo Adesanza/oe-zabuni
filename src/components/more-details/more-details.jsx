@@ -16,6 +16,31 @@ const MoreDetails = () => {
                     </div>
                 </div>
             </div>
+            <div className="row justify-content-between">
+                <div>Name: </div>
+                <div>Type</div>
+                <div>Status</div>
+            </div>
+            <div className="row">
+                <div>Location</div>
+            </div>
+            <div className="row">
+                <div>Face</div>
+                <div>Slot</div>
+                <div>Unit</div>
+            </div>
+            <div className="row">
+                <div>Region</div>
+                <div>State</div>
+                <div>LGA</div>
+            </div>
+            <div className="row">
+                <div>City</div>
+                <div>Coordinate</div>
+            </div>
+            <div className="row">
+                <div>Amount</div>
+            </div>
         </div>
     );
 }

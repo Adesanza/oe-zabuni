@@ -481,7 +481,7 @@
     "unit": "1",
     "slot": "1",
     "revenue": "6,000,000",
-    "status": "active"
+    "status": "inactive"
   },
   {
     "name": "TIN003RO",
@@ -987,7 +987,7 @@
     "unit": "1",
     "slot": "1",
     "revenue": "24,000,000",
-    "status": "active"
+    "status": "vacant"
   },
   {
     "name": "IDD007UN",
@@ -1229,7 +1229,7 @@
     "unit": "1",
     "slot": "1",
     "revenue": "6,000,000",
-    "status": "active"
+    "status": "inactive"
   },
   {
     "name": "OKP018UN",
@@ -1317,7 +1317,7 @@
     "unit": "1",
     "slot": "1",
     "revenue": "6,000,000",
-    "status": "active"
+    "status": "vacant"
   },
   {
     "name": "YAL022UN",
@@ -1405,6 +1405,6 @@
     "unit": "1",
     "slot": "1",
     "revenue": "25,000,000",
-    "status": "active"
+    "status": "vacant"
   }
 ]

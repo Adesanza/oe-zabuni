@@ -22,6 +22,31 @@
   /* max-width: 300px; */
   overflow-x: scroll;
 }
+/****************************** scroll bar edit **********************/
+/* width */
+.hermis::-webkit-scrollbar {
+  width: 10px;
+  height: 12px;
+  border-radius: 10px;
+}
+
+/* Track */
+.hermis::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+.hermis::-webkit-scrollbar-thumb {
+  background: #0056b3;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.hermis::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+  border-radius: 10px;
+} /****************************** end of scroll bar edit **********************/
 .types {
   background: #ffffff;
   border: 0.2px solid #0056b3;

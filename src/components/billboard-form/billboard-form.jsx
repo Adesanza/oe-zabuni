@@ -7,6 +7,7 @@ import { createBillboard, editBillboard } from "../../redux/billboard-data/billb
 import { closeVerticalModalDisplay } from "../../redux/vertical-modal/verticalModalReducer";
 import { resetBillboardFormData } from "../../redux/form/billboardFormReducer";
 import { overheadModalContainer } from "../../redux/overhead-modal/overheadModalReducer";
+import { setAlertContent } from "../../redux/alert/alertPopupReducer";
 
 const BillboardForm = () => {
   const formDataState = useSelector(state => state.billboardForm);
@@ -23,11 +24,14 @@ const BillboardForm = () => {
           if(isEditing){
             dispatch(editBillboard(values))
             dispatch(resetBillboardFormData())
+            dispatch(setAlertContent('alert-success-edit-billboard'))
+            dispatch(overheadModalContainer('alert'))
           }else{
             let newValues = {...values, id: Date.now().toString() }
             dispatch(createBillboard(newValues))
+            dispatch(setAlertContent('alert-success-create-billboard'))
+            dispatch(overheadModalContainer('alert'))
           }
-          dispatch(overheadModalContainer('confirmation'))
       }}
     >
       {({
@@ -87,15 +91,15 @@ const BillboardForm = () => {
                     <option value="">Type</option>
                     <option value="led">LED</option>
                     <option value="lightbox">Lightbox</option>
-                    <option value="bridge-panel">Bridge Panel</option>
-                    <option value="eye-catcher">Eye Catcher</option>
-                    <option value="mega-board">Mega board</option>
+                    <option value="bridge_panel">Bridge Panel</option>
+                    <option value="eye_catcher">Eye Catcher</option>
+                    <option value="mega_board">Mega board</option>
                     <option value="portrait">Portrait</option>
                     <option value="rooftop">Rooftop</option>
-                    <option value="super48-sheet">Super 48 sheet</option>
+                    <option value="super48_sheet">Super 48 sheet</option>
                     <option value="ultrawave">Ultra wave</option>
-                    <option value="video-wall">Video wall</option>
-                    <option value="wall-drape">Wall drape</option>
+                    <option value="video_wall">Video wall</option>
+                    <option value="wall_drape">Wall drape</option>
                     <option value="unipole">Unipole</option>
                   </Form.Control>
                   <Form.Text className="text-danger">
@@ -124,38 +128,74 @@ const BillboardForm = () => {
                 
               </Form.Row>
               <Form.Row>
-              <Form.Group as={Col} controlId="formBasicHeight">
+              <Form.Group as={Col} controlId="formBasicHeightInMetre">
                   <Form.Control
-                    name="height"
-                    value={values.height}
+                    name="height_m"
+                    value={values.height_m}
                     type="number"
                     min={3}
                     max={300}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="Height"
+                    placeholder="Height (m)"
                     id="formfont"
                   />
                   {/* <Form.Label>Name</Form.Label> */}
                   <Form.Text className="text-danger">
-                    {touched.height && errors.height ? errors.height : null}
+                    {touched.height_m && errors.height_m ? errors.height_m : null}
                   </Form.Text>
                 </Form.Group>
-                <Form.Group as={Col} controlId="formBasicWidth">
+                <Form.Group as={Col} controlId="formBasicWidthInMetre">
               <Form.Control
-                name="width"
-                value={values.width}
+                name="width_m"
+                value={values.width_m}
                 type="number"
                 min={3}
                 max={300}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Width"
+                placeholder="Width (m)"
                 id="formfont"
               />
               {/* <Form.Label>Name</Form.Label> */}
               <Form.Text className="text-danger">
-                {touched.width && errors.width ? errors.width : null}
+                {touched.width_m && errors.width_m ? errors.width_m : null}
+              </Form.Text>
+            </Form.Group>
+              </Form.Row>
+              <Form.Row>
+              <Form.Group as={Col} controlId="formBasicHeightInPx">
+                  <Form.Control
+                    name="height_px"
+                    value={values.height_px}
+                    type="number"
+                    min={3}
+                    max={300}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Height (px)"
+                    id="formfont"
+                  />
+                  {/* <Form.Label>Name</Form.Label> */}
+                  <Form.Text className="text-danger">
+                    {touched.height_px && errors.height_px ? errors.height_px : null}
+                  </Form.Text>
+                </Form.Group>
+                <Form.Group as={Col} controlId="formBasicWidthInPx">
+              <Form.Control
+                name="width_px"
+                value={values.width_px}
+                type="number"
+                min={3}
+                max={300}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                placeholder="Width (px)"
+                id="formfont"
+              />
+              {/* <Form.Label>Name</Form.Label> */}
+              <Form.Text className="text-danger">
+                {touched.width_px && errors.width_px ? errors.width_px : null}
               </Form.Text>
             </Form.Group>
               </Form.Row>
@@ -219,21 +259,59 @@ const BillboardForm = () => {
                   {touched.class && errors.region ? errors.region : null}
                 </Form.Text>
               </Form.Group>
-              <Form.Group controlId="formBasicState">
-                <Form.Control
-                  type="text"
-                  name="state"
-                  value={values.state}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="State"
-                  id="formfont"
-                />
-                {/* <Form.Label>Name</Form.Label> */}
-                <Form.Text className="text-danger">
-                  {touched.state && errors.state ? errors.state : null}
-                </Form.Text>
-              </Form.Group>
+              <Form.Group as={Col} controlId="controlSelectState">
+                  {/* <Form.Label>Example select</Form.Label> */}
+                  <Form.Control
+                    as="select"
+                    name="state"
+                    value={values.state}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    id="formf"
+                  >
+                    <option value="">Select State</option>
+                    <option value="fct">Abuja FCT</option>
+                    <option value="abia">Abia</option>
+                    <option value="adamawa">Adamawa</option>
+                    <option value="akwa_ibom">Akwa Ibom</option>
+                    <option value="anambra">Anambra</option>
+                    <option value="bauchi">Bauchi</option>
+                    <option value="bayelsa">Bayelsa</option>
+                    <option value="benue">Benue</option>
+                    <option value="borno">Borno</option>
+                    <option value="cross_river">Cross River</option>
+                    <option value="delta">Delta</option>
+                    <option value="ebonyi">Ebonyi</option>
+                    <option value="edo">Edo</option>
+                    <option value="ekiti">Ekiti</option>
+                    <option value="enugu">Enugu</option>
+                    <option value="gombe">Gombe</option>
+                    <option value="imo">Imo</option>
+                    <option value="jigawa">Jigawa</option>
+                    <option value="kaduna">Kaduna</option>
+                    <option value="kano">Kano</option>
+                    <option value="katsina">Katsina</option>
+                    <option value="kebbi">Kebbi</option>
+                    <option value="kogi">Kogi</option>
+                    <option value="kwara">Kwara</option>
+                    <option value="lagos">Lagos</option>
+                    <option value="nassarawa">Nassarawa</option>
+                    <option value="niger">Niger</option>
+                    <option value="ogun">Ogun</option>
+                    <option value="ondo">Ondo</option>
+                    <option value="osun">Osun</option>
+                    <option value="oyo">Oyo</option>
+                    <option value="plateau">Plateau</option>
+                    <option value="rivers">Rivers</option>
+                    <option value="sokoto">Sokoto</option>
+                    <option value="taraba">Taraba</option>
+                    <option value="yobe">Yobe</option>
+                    <option value="zamfara">Zamfara</option>
+                  </Form.Control>
+                  <Form.Text className="text-danger">
+                    {touched.state && errors.state ? errors.state : null}
+                  </Form.Text>
+                </Form.Group>
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} controlId="formBasicLga">
@@ -305,8 +383,8 @@ const BillboardForm = () => {
                   type="number"
                   min={1}
                   max={50}
-                  name="faces"
-                  value={values.faces}
+                  name="face"
+                  value={values.face}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Faces"
@@ -314,7 +392,7 @@ const BillboardForm = () => {
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
-                  {touched.faces && errors.faces ? errors.faces : null}
+                  {touched.face && errors.face ? errors.face : null}
                 </Form.Text>
               </Form.Group>
               <Form.Group as={Col} controlId="formBasicSlots">
@@ -322,8 +400,8 @@ const BillboardForm = () => {
                   type="number"
                   min={1}
                   max={50}
-                  name="slots"
-                  value={values.slots}
+                  name="slot"
+                  value={values.slot}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Slots"
@@ -331,7 +409,7 @@ const BillboardForm = () => {
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
-                  {touched.slots && errors.slots ? errors.slots : null}
+                  {touched.slot && errors.slot ? errors.slot : null}
                 </Form.Text>
               </Form.Group>
               <Form.Group as={Col} controlId="formBasicUnits">
@@ -339,8 +417,8 @@ const BillboardForm = () => {
                   type="number"
                   min={1}
                   max={50}
-                  name="units"
-                  value={values.units}
+                  name="unit"
+                  value={values.unit}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Units"
@@ -348,7 +426,7 @@ const BillboardForm = () => {
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
-                  {touched.units && errors.units ? errors.units : null}
+                  {touched.unit && errors.unit ? errors.unit : null}
                 </Form.Text>
               </Form.Group>
             </Form.Row>

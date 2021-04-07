@@ -8,8 +8,10 @@ const init = {
         name: '',
         location: '',
         type: '',
-        height: '',
-        width: '',
+        height_m: '',
+        width_m: '',
+        height_px: '',
+        width_px: '',
         status: '',
         category: '',
         class: '',
@@ -19,9 +21,9 @@ const init = {
         lga: '',
         city: '',
         amount: '',
-        faces: '',
-        slots: '',
-        units: ''
+        face: '',
+        slot: '',
+        unit: ''
     }
 }
 

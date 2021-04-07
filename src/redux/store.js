@@ -7,6 +7,8 @@ import billboardFormReducer from "./form/billboardFormReducer";
 import userReducer from "./user/userReducer";
 import verticalModalReducer from "./vertical-modal/verticalModalReducer";
 import overheadModalReducer from "./overhead-modal/overheadModalReducer";
+import confirmationPopupReducer from "./confirmation/confirmationPopupReducer";
+import alertPopupReducer from "./alert/alertPopupReducer";
 
 
 
@@ -19,7 +21,9 @@ export const store = configureStore({
         billboardData: billboardDataReducer,
         billboardForm: billboardFormReducer,
         dashboard: dashboardReducer,
-        overheadModal: overheadModalReducer
+        overheadModal: overheadModalReducer,
+        confirmationPopup: confirmationPopupReducer,
+        alertContent: alertPopupReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 })

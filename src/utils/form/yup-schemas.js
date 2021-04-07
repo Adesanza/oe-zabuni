@@ -8,21 +8,23 @@ export const loginSchema = Yup.object().shape({
 export const createBillboardSchema = Yup.object().shape({
     name: Yup.string().max(15,"Must be 15 characters or less").required("Billboard name is required"),
     location: Yup.string().max(150,"Must be 150 characters or less").required("Billboard location is required"),
-    type: Yup.string().oneOf(['led','lightbox','bridge-panel','eye-catcher','mega-board','portrait','rooftop','super48-sheet','ultrawave','unipole','video-wall','wall-drape'],'Invalid type').required("Must select an option"),
-    height: Yup.number().min(3).max(300).required("Height is required"),
-    width: Yup.number().min(3).max(300).required("Width is required"),
+    type: Yup.string().oneOf(['led','lightbox','bridge_panel','eye_catcher','mega_board','portrait','rooftop','super48_sheet','ultrawave','unipole','video_wall','wall_drape'],'Invalid type').required("Must select an option"),
+    height_m: Yup.number().min(3).max(300).required("Height (m) is required"),
+    width_m: Yup.number().min(3).max(300).required("Width (m) is required"),
+    height_px: Yup.number().min(0).max(4000).required("Height (px) is required"),
+    width_px: Yup.number().min(0).max(4000).required("Width (px) is required"),
     status: Yup.string().oneOf(['active','inactive','vacant'],'Invalid status').required("Must select an option"),
     category: Yup.string().oneOf(['billboard'],'Invalid status').required("Must select an option"),
     class: Yup.string().oneOf(['digital', 'static'],'Invalid status').required("Must select an option"),
     region: Yup.string().oneOf(['southwest', 'southsouth', 'northcentral', 'southeast', 'northeast', 'northwest' ],'Invalid status').required("Must select an option"),
     state: Yup.string().max(15,"Must be 15 characters or less").required("Billboard state is required"),
-    lga: Yup.string().max(20,"Must be 20 characters or less").required("Billboard lga is required"),
-    city: Yup.string().max(15,"Must be 15 characters or less").required("Billboard city is required"),
+    lga: Yup.string().max(50,"Must be 50 characters or less").required("Billboard lga is required"),
+    city: Yup.string().max(50,"Must be 50 characters or less").required("Billboard city is required"),
     amount: Yup.string().max(15,"Must be 15 characters or less").required("Billboard price is required"),
     coordinate: Yup.string().min(3).max(25,"Must be 25 characters or less").required("Billboard coordinate is required"),
-    faces: Yup.number().min(1).max(50).required("Billboard face is required"),
-    slots: Yup.number().min(1).max(50).required("Billboard slot is required"),
-    units: Yup.number().min(1).max(50).required("Billboard unit is required")
+    face: Yup.number().min(1).max(50).required("Billboard face is required"),
+    slot: Yup.number().min(1).max(50).required("Billboard slot is required"),
+    unit: Yup.number().min(1).max(50).required("Billboard unit is required")
 })
 
 export const registerScehma = Yup.object().shape({

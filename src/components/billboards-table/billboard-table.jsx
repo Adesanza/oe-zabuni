@@ -8,6 +8,9 @@ import { verticalModalContent } from '../../redux/vertical-modal/verticalModalRe
 import { deleteBillboard } from '../../redux/billboard-data/billboardDataReducer';
 import { editBillboardData } from '../../redux/form/billboardFormReducer';
 import { billboardFilter } from '../../utils/billboard-table/filter-billboard';
+import { formatBillboardState, formatBillboardType } from '../../utils/billboard-table/format-text';
+import { overheadModalContainer } from '../../redux/overhead-modal/overheadModalReducer';
+import { setConfirmationAction } from '../../redux/confirmation/confirmationPopupReducer';
 
 const BillboardsTable = ({showCreate}) => {
   const billboardData = useSelector(state => state.billboardData);
@@ -52,7 +55,7 @@ const BillboardsTable = ({showCreate}) => {
   <tbody className="table-hover">
         {
             billboardFilter(filterKey,billboardData).map(details => (
-                <tr key={details.id} className="billboard-row table-hover" onClickCapture={() => dispatch(verticalModalContent('more-details'))}>
+                <tr key={details.id} className="billboard-row table-hover" onClick={() => dispatch(verticalModalContent('more-details'))}>
                     {/* <td id="fonter">
                       {/* <FiMoreVertical className="more-icon"/> 
                       <img src="https://res.cloudinary.com/adesanza/image/upload/v1616156307/zabuni/Group_1787_kbiyfb.svg" alt="more..." className="more-icon" onClick={() => dispatch(verticalModalContent('more-details'))}/>
@@ -60,17 +63,39 @@ const BillboardsTable = ({showCreate}) => {
                     </td> */}
                     <td className="fonter">{details.name}</td>
                     <td className="locate">{details.location}</td>
-                    <td className="fonter">{details.type}</td>
-                    <td className="fonter">{`${details.height}m`}</td>
-                    <td className="fonter">{`${details.width}m`}</td>
+                    <td className="fonter">{formatBillboardType(details.type)}</td>
+                    <td className="fonter">
+                        <span>{`${details.height_m}m`}</span>
+                      {
+                        details.class === 'digital' ?
+                        <>
+                        <br />
+                        <span>{`${details.height_px}px`}</span>
+                        </>
+                        :
+                        null
+                      }
+                    </td>
+                    <td className="fonter">
+                        <span>{`${details.width_m}m`}</span>
+                      {
+                        details.class === 'digital' ?
+                        <>
+                        <br />
+                        <span>{`${details.width_px}px`}</span>
+                        </>
+                        :
+                        null
+                      }
+                    </td>
                     <td className={details.status==='active' ? 'active' : 'inactive'} >{details.status}</td>
                     <td className="fonter">{details.category}</td>
                     <td className="fonter">{details.class}</td>
-                    <td className="fonter">{details.faces}</td>
-                    <td className="fonter">{details.slots}</td>
-                    <td className="fonter">{details.units}</td>
+                    <td className="fonter">{details.face}</td>
+                    <td className="fonter">{details.slot}</td>
+                    <td className="fonter">{details.unit}</td>
                     <td className="fonter">{details.region}</td>
-                    <td className="fonter">{details.state}</td>
+                    <td className="fonter">{formatBillboardState(details.state)}</td>
                     <td className="fonter">{details.lga}</td>
                     <td className="fonter">{details.city}</td>
                     <td className="fonter">{details.coordinate}</td>
@@ -79,11 +104,19 @@ const BillboardsTable = ({showCreate}) => {
                       showCreate ?
                       <td className="fonter">
                       <div className="edit-delete-container">
-                      <div onClick={() => handleEdit(details.id)}>
+                      <div onClick={(e) => {
+                        e.stopPropagation();
+                        handleEdit(details.id)
+                      }}>
                         <GrFormEdit className="edit-icon"/>
                         <span className="edit-icon-text">Edit</span>
                       </div>
-                      <div onClick={() => dispatch(deleteBillboard(details.id))}>
+                      <div onClick={(e) => {
+                        e.stopPropagation();
+                        dispatch(setConfirmationAction({type:'delete-billboard', id: details.id}))
+                        dispatch(overheadModalContainer('confirmation'))
+                        // dispatch(deleteBillboard(details.id));
+                      }}>
                         <FaTrashAlt className="delete-icon"/>
                         <span className="delete-icon-text">Delete</span>
                       </div>

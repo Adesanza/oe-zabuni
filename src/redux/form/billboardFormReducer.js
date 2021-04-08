@@ -1,6 +1,7 @@
 import {
     createSlice
 } from "@reduxjs/toolkit";
+import { getStateLga } from "../../utils/form/state-lga";
 
 const init = {
     isEditing: false,
@@ -24,7 +25,8 @@ const init = {
         face: '',
         slot: '',
         unit: ''
-    }
+    },
+    lgaData: []
 }
 
 const billboardFormReducer = createSlice({
@@ -36,6 +38,10 @@ const billboardFormReducer = createSlice({
             state.formData = {
                 ...action.payload
             }
+            state.lgaData = [...getStateLga(action.payload.state)]
+        },
+        showLgaData: (state, action) => {
+            state.lgaData = [...getStateLga(action.payload)]
         },
         resetBillboardFormData: (state, action) => init
     }
@@ -43,6 +49,7 @@ const billboardFormReducer = createSlice({
 
 export const {
     editBillboardData,
+    showLgaData,
     resetBillboardFormData
 } = billboardFormReducer.actions;
 

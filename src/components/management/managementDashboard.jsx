@@ -1,5 +1,6 @@
-// import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllBillboards } from '../../redux/billboard-data/billboardDataReducer';
 import DisplayBillboards from '../billboards-display/billboards-display';
 import BillboardsTable from '../billboards-table/billboard-table';
 import CampaignManagement from '../campaigns-mgt/campaigns-mgt';
@@ -9,8 +10,11 @@ import './management-dashboard.css';
 
 const ManagementDashboard = () => {
     const dashboardManagementState = useSelector(({dashboard}) => dashboard.management);
-    console.log(dashboardManagementState)
-    // const [managementChild,updateManagementChild] = useState({active:false, type: null})
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(fetchAllBillboards());
+        console.log('hi form effect')
+    },[])
     return (
             dashboardManagementState.child === 'inventory' ? 
                 <DisplayBillboards showCreate/>

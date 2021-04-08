@@ -1,7 +1,7 @@
 import { Button, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { setAlertContent } from "../../redux/alert/alertPopupReducer";
-import { deleteBillboard } from "../../redux/billboard-data/billboardDataReducer";
+import { deleteABillboard, deleteBillboard } from "../../redux/billboard-data/billboardDataReducer";
 import { resetConfirmationAction } from "../../redux/confirmation/confirmationPopupReducer";
 import { closeOverheadModalDisplay, overheadModalContainer } from "../../redux/overhead-modal/overheadModalReducer";
 import './confirmationModal.css';
@@ -16,7 +16,7 @@ const ConfirmationModal = () => {
             <div>
                 <button className="gena" variant="secondary" onClick={() => {
                     if(confirmationState.type === 'delete-billboard' && confirmationState.id) {
-                      dispatch(deleteBillboard(confirmationState.id))
+                      dispatch(deleteABillboard(confirmationState.id))
                       dispatch(setAlertContent('alert-success-delete-billboard'))
                       dispatch(overheadModalContainer('alert'))
                     }else {

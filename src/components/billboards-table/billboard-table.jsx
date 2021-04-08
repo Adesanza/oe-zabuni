@@ -17,7 +17,7 @@ const BillboardsTable = ({showCreate}) => {
   const filterKey = useSelector(state => state.filterBillboard);
   const dispatch = useDispatch();
   const handleEdit = (id) => {
-    const toBeEdited = billboardData.find(billboard => billboard.id === id);
+    const toBeEdited = billboardData.find(billboard => billboard._id === id);
     dispatch(editBillboardData(toBeEdited));
     dispatch(verticalModalContent('edit-billboard'))
   }
@@ -55,7 +55,7 @@ const BillboardsTable = ({showCreate}) => {
   <tbody className="table-hover">
         {
             billboardFilter(filterKey,billboardData).map(details => (
-                <tr key={details.id} className="billboard-row table-hover" onClick={() => dispatch(verticalModalContent('more-details'))}>
+                <tr key={details._id} className="billboard-row table-hover" onClick={() => dispatch(verticalModalContent('more-details'))}>
                     {/* <td id="fonter">
                       {/* <FiMoreVertical className="more-icon"/> 
                       <img src="https://res.cloudinary.com/adesanza/image/upload/v1616156307/zabuni/Group_1787_kbiyfb.svg" alt="more..." className="more-icon" onClick={() => dispatch(verticalModalContent('more-details'))}/>
@@ -106,14 +106,14 @@ const BillboardsTable = ({showCreate}) => {
                       <div className="edit-delete-container">
                       <div onClick={(e) => {
                         e.stopPropagation();
-                        handleEdit(details.id)
+                        handleEdit(details._id)
                       }}>
                         <GrFormEdit className="edit-icon"/>
                         <span className="edit-icon-text">Edit</span>
                       </div>
                       <div onClick={(e) => {
                         e.stopPropagation();
-                        dispatch(setConfirmationAction({type:'delete-billboard', id: details.id}))
+                        dispatch(setConfirmationAction({type:'delete-billboard', id: details._id}))
                         dispatch(overheadModalContainer('confirmation'))
                         // dispatch(deleteBillboard(details.id));
                       }}>

@@ -3,32 +3,42 @@ import { Formik } from "formik";
 import "./billboard-form.css";
 import { createBillboardSchema } from "../../utils/form/yup-schemas";
 import { useDispatch, useSelector } from "react-redux";
-import { createBillboard, editBillboard } from "../../redux/billboard-data/billboardDataReducer";
+import { createABillboard, createBillboard, editABillboard, editBillboard } from "../../redux/billboard-data/billboardDataReducer";
 import { closeVerticalModalDisplay } from "../../redux/vertical-modal/verticalModalReducer";
-import { resetBillboardFormData } from "../../redux/form/billboardFormReducer";
+import { resetBillboardFormData, showLgaData } from "../../redux/form/billboardFormReducer";
 import { overheadModalContainer } from "../../redux/overhead-modal/overheadModalReducer";
 import { setAlertContent } from "../../redux/alert/alertPopupReducer";
+import { unwrapResult } from "@reduxjs/toolkit";
 
 const BillboardForm = () => {
   const formDataState = useSelector(state => state.billboardForm);
-  const { isEditing, formData } = formDataState;
+  const { isEditing, formData, lgaData } = formDataState;
   const dispatch = useDispatch();
   console.log(formData);
   return (
     <Formik
       validationSchema={createBillboardSchema}
       initialValues={formData}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={async(values, { setSubmitting }) => {
           console.log(values)
-          dispatch(closeVerticalModalDisplay());
+          setSubmitting(true);
           if(isEditing){
-            dispatch(editBillboard(values))
-            dispatch(resetBillboardFormData())
-            dispatch(setAlertContent('alert-success-edit-billboard'))
-            dispatch(overheadModalContainer('alert'))
+            try {
+              await dispatch(editABillboard(values))
+              let result  = await unwrapResult();
+              console.log("unwrap",result)
+              dispatch(resetBillboardFormData())
+              dispatch(closeVerticalModalDisplay());
+              dispatch(setAlertContent('alert-success-edit-billboard'))
+              dispatch(overheadModalContainer('alert'))
+            } catch (error) {
+              console.log("unwrap-error",error)
+              alert("Failed to update billboard")
+            }
+            
           }else{
-            let newValues = {...values, id: Date.now().toString() }
-            dispatch(createBillboard(newValues))
+            let newValues = {...values, className: Date.now().toString() }
+            dispatch(createABillboard(newValues))
             dispatch(setAlertContent('alert-success-create-billboard'))
             dispatch(overheadModalContainer('alert'))
           }
@@ -55,7 +65,7 @@ const BillboardForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Name"
-                  id="formfont"
+                  className="formfont"
                 />
                 <Form.Text className="text-danger">
                   {touched.name && errors.name ? errors.name : null}
@@ -70,7 +80,7 @@ const BillboardForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Location"
-                  id="formfont"
+                  className="formfont"
                 />
                 <Form.Text className="text-danger">
                   {touched.location && errors.location ? errors.location : null}
@@ -86,7 +96,7 @@ const BillboardForm = () => {
                     value={values.type}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    id="formf"
+                    className="formf"
                   >
                     <option value="">Type</option>
                     <option value="led">LED</option>
@@ -114,7 +124,7 @@ const BillboardForm = () => {
                 value={values.status}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                id="formf"
+                className="formf"
               >
                 <option value="">Status</option>
                 <option value="active" className="active-status">Active</option>
@@ -139,7 +149,7 @@ const BillboardForm = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     placeholder="Height (m)"
-                    id="formfont"
+                    className="formfont"
                   />
                   <Form.Text className="text-danger">
                     {touched.height_m && errors.height_m ? errors.height_m : null}
@@ -156,7 +166,7 @@ const BillboardForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Width (m)"
-                id="formfont"
+                className="formfont"
               />
               <Form.Text className="text-danger">
                 {touched.width_m && errors.width_m ? errors.width_m : null}
@@ -175,7 +185,7 @@ const BillboardForm = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     placeholder="Height (px)"
-                    id="formfont"
+                    className="formfont"
                   />
                   <Form.Text className="text-danger">
                     {touched.height_px && errors.height_px ? errors.height_px : null}
@@ -192,7 +202,7 @@ const BillboardForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Width (px)"
-                id="formfont"
+                className="formfont"
               />
               <Form.Text className="text-danger">
                 {touched.width_px && errors.width_px ? errors.width_px : null}
@@ -208,7 +218,7 @@ const BillboardForm = () => {
                   value={values.category}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  id="formf"
+                  className="formf"
                 >
                   <option value="">Category</option>
                   <option value="billboard">Billboard</option>
@@ -225,7 +235,7 @@ const BillboardForm = () => {
                 value={values.class}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                id="formf"
+                className="formf"
               >
                 <option value="">Class</option>
                 <option value="digital">Digital</option>
@@ -246,7 +256,7 @@ const BillboardForm = () => {
                   value={values.region}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  id="formf"
+                  className="formf"
                 >
                   <option value="">Select Region</option>
                   <option value="southwest">Southwest</option>
@@ -267,9 +277,13 @@ const BillboardForm = () => {
                     as="select"
                     name="state"
                     value={values.state}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      console.log(e.target.value)
+                      dispatch(showLgaData(e.target.value))
+                      handleChange(e);
+                    }}
                     onBlur={handleBlur}
-                    id="formf"
+                    className="formf"
                   >
                     <option value="">Select State</option>
                     <option value="fct">Abuja FCT</option>
@@ -316,6 +330,7 @@ const BillboardForm = () => {
                 </Form.Group>
             </Form.Row>
             <Form.Row>
+<<<<<<< HEAD
               <Form.Group as={Col} controlId="formBasicLga">
               <Form.Label className="form-label">Local Govt</Form.Label>
                 <Form.Control
@@ -327,6 +342,24 @@ const BillboardForm = () => {
                   placeholder="LGA"
                   id="formfont"
                 />
+=======
+            <Form.Group as={Col} controlId="controlSelectLga">
+                  {/* <Form.Label>Example select</Form.Label> */}
+                  <Form.Control
+                    as="select"
+                    name="lga"
+                    value={values.lga}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className="formf"
+                  >
+                    <option value="">Select Lga</option>
+                    {
+                      lgaData.map(lga => <option key={lga} value={lga}>{lga}</option> )
+                    }
+                    </Form.Control>
+                {/* <Form.Label>Name</Form.Label> */}
+>>>>>>> fe040115d6db7b1b6d21e27d302c33cc5537400a
                 <Form.Text className="text-danger">
                   {touched.lga && errors.lga ? errors.lga : null}
                 </Form.Text>
@@ -340,7 +373,7 @@ const BillboardForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="City"
-                  id="formfont"
+                  className="formfont"
                 />
                 <Form.Text className="text-danger">
                   {touched.city && errors.city ? errors.city : null}
@@ -357,7 +390,7 @@ const BillboardForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Coordinate"
-                  id="formfont"
+                  className="formfont"
                 />
                 <Form.Text className="text-danger">
                   {touched.coordinate && errors.coordinate ? errors.coordinate : null}
@@ -372,7 +405,7 @@ const BillboardForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Amount"
-                  id="formfont"
+                  className="formfont"
                 />
                 <Form.Text className="text-danger">
                   {touched.amount && errors.amount ? errors.amount : null}
@@ -391,7 +424,7 @@ const BillboardForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Faces"
-                  id="formfont"
+                  className="formfont"
                 />
                 <Form.Text className="text-danger">
                   {touched.face && errors.face ? errors.face : null}
@@ -408,7 +441,7 @@ const BillboardForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Slots"
-                  id="formfont"
+                  className="formfont"
                 />
                 <Form.Text className="text-danger">
                   {touched.slot && errors.slot ? errors.slot : null}
@@ -425,7 +458,7 @@ const BillboardForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Units"
-                  id="formfont"
+                  className="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">

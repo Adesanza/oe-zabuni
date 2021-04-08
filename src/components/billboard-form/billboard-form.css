@@ -16,8 +16,7 @@
   font-weight: 500;
   font-size: 24px;
 }
-#formfont::placeholder {
-  width: 221px;
+.formfont::placeholder {
   height: 14px;
   font-size: 14px;
   line-height: 14px;
@@ -25,7 +24,7 @@
   font-family: 'Raleway';
   border: 0;
 }
-#formf {
+.formf {
   font-size: 12px;
 }
 .form-label {

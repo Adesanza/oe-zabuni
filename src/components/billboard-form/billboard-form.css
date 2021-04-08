@@ -28,3 +28,9 @@
 #formf {
   font-size: 12px;
 }
+.form-label {
+  display: flex;
+  font-size: 10px;
+  /* margin: 0; */
+  text-align: left;
+}

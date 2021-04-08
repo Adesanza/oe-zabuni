@@ -47,6 +47,7 @@ const BillboardForm = () => {
           <Form noValidate onSubmit={handleSubmit}>
             <Form.Row>
               <Form.Group as={Col} controlId="formBasicName">
+              <Form.Label>Name</Form.Label>
                 <Form.Control
                   type="text"
                   name="name"
@@ -56,12 +57,12 @@ const BillboardForm = () => {
                   placeholder="Name"
                   id="formfont"
                 />
-                {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
                   {touched.name && errors.name ? errors.name : null}
                 </Form.Text>
               </Form.Group>
               <Form.Group controlId="formBasicLocation">
+              <Form.Label className="form-label">Location</Form.Label>
                 <Form.Control
                   type="text"
                   name="location"
@@ -71,7 +72,6 @@ const BillboardForm = () => {
                   placeholder="Location"
                   id="formfont"
                 />
-                {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
                   {touched.location && errors.location ? errors.location : null}
                 </Form.Text>
@@ -79,7 +79,7 @@ const BillboardForm = () => {
             </Form.Row>
               <Form.Row>
                 <Form.Group as={Col} controlId="controlSelectType">
-                  {/* <Form.Label>Example select</Form.Label> */}
+                  <Form.Label className="form-label">Type</Form.Label>
                   <Form.Control
                     as="select"
                     name="type"
@@ -99,7 +99,7 @@ const BillboardForm = () => {
                     <option value="super48_sheet">Super 48 sheet</option>
                     <option value="ultrawave">Ultra wave</option>
                     <option value="video_wall">Video wall</option>
-                    <option value="wall_drape">Wall drape</option>
+                    <option value="wall_drape">Wall Drape</option>
                     <option value="unipole">Unipole</option>
                   </Form.Control>
                   <Form.Text className="text-danger">
@@ -107,7 +107,7 @@ const BillboardForm = () => {
                   </Form.Text>
                 </Form.Group>
                 <Form.Group as={Col} controlId="controlSelectStatus">
-              {/* <Form.Label>Example select</Form.Label> */}
+              <Form.Label className="form-label">Status</Form.Label>
               <Form.Control
                 as="select"
                 name="status"
@@ -129,6 +129,7 @@ const BillboardForm = () => {
               </Form.Row>
               <Form.Row>
               <Form.Group as={Col} controlId="formBasicHeightInMetre">
+              <Form.Label className="form-label">Height<span>  in metre</span></Form.Label>
                   <Form.Control
                     name="height_m"
                     value={values.height_m}
@@ -140,12 +141,12 @@ const BillboardForm = () => {
                     placeholder="Height (m)"
                     id="formfont"
                   />
-                  {/* <Form.Label>Name</Form.Label> */}
                   <Form.Text className="text-danger">
                     {touched.height_m && errors.height_m ? errors.height_m : null}
                   </Form.Text>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formBasicWidthInMetre">
+                <Form.Label className="form-label">Width in metre</Form.Label>
               <Form.Control
                 name="width_m"
                 value={values.width_m}
@@ -157,7 +158,6 @@ const BillboardForm = () => {
                 placeholder="Width (m)"
                 id="formfont"
               />
-              {/* <Form.Label>Name</Form.Label> */}
               <Form.Text className="text-danger">
                 {touched.width_m && errors.width_m ? errors.width_m : null}
               </Form.Text>
@@ -165,6 +165,7 @@ const BillboardForm = () => {
               </Form.Row>
               <Form.Row>
               <Form.Group as={Col} controlId="formBasicHeightInPx">
+              <Form.Label className="form-label">Height in px</Form.Label>
                   <Form.Control
                     name="height_px"
                     value={values.height_px}
@@ -176,12 +177,12 @@ const BillboardForm = () => {
                     placeholder="Height (px)"
                     id="formfont"
                   />
-                  {/* <Form.Label>Name</Form.Label> */}
                   <Form.Text className="text-danger">
                     {touched.height_px && errors.height_px ? errors.height_px : null}
                   </Form.Text>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formBasicWidthInPx">
+                <Form.Label className="form-label">Width in px</Form.Label>
               <Form.Control
                 name="width_px"
                 value={values.width_px}
@@ -193,7 +194,6 @@ const BillboardForm = () => {
                 placeholder="Width (px)"
                 id="formfont"
               />
-              {/* <Form.Label>Name</Form.Label> */}
               <Form.Text className="text-danger">
                 {touched.width_px && errors.width_px ? errors.width_px : null}
               </Form.Text>
@@ -201,7 +201,7 @@ const BillboardForm = () => {
               </Form.Row>
             <Form.Row>
               <Form.Group as={Col} controlId="controlSelectCategory">
-                {/* <Form.Label>Example select</Form.Label> */}
+              <Form.Label className="form-label">Category</Form.Label>
                 <Form.Control
                   as="select"
                   name="category"
@@ -218,7 +218,7 @@ const BillboardForm = () => {
                 </Form.Text>
               </Form.Group>
               <Form.Group as={Col} controlId="controlSelectClass">
-              {/* <Form.Label>Example select</Form.Label> */}
+              <Form.Label className="form-label">Class</Form.Label>
               <Form.Control
                 as="select"
                 name="class"
@@ -238,6 +238,7 @@ const BillboardForm = () => {
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} controlId="controlSelectRegion">
+              <Form.Label className="form-label">Region</Form.Label>
                 {/* <Form.Label>Example select</Form.Label> */}
                 <Form.Control
                   as="select"
@@ -247,7 +248,7 @@ const BillboardForm = () => {
                   onBlur={handleBlur}
                   id="formf"
                 >
-                  <option value="">Region</option>
+                  <option value="">Select Region</option>
                   <option value="southwest">Southwest</option>
                   <option value="southeast">Southeast</option>
                   <option value="northcentral">Northcentral</option>
@@ -260,6 +261,7 @@ const BillboardForm = () => {
                 </Form.Text>
               </Form.Group>
               <Form.Group as={Col} controlId="controlSelectState">
+              <Form.Label className="form-label">State</Form.Label>
                   {/* <Form.Label>Example select</Form.Label> */}
                   <Form.Control
                     as="select"
@@ -315,6 +317,7 @@ const BillboardForm = () => {
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} controlId="formBasicLga">
+              <Form.Label className="form-label">Local Govt</Form.Label>
                 <Form.Control
                   type="text"
                   name="lga"
@@ -324,12 +327,12 @@ const BillboardForm = () => {
                   placeholder="LGA"
                   id="formfont"
                 />
-                {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
                   {touched.lga && errors.lga ? errors.lga : null}
                 </Form.Text>
               </Form.Group>
               <Form.Group as={Col} controlId="formBasicCity">
+              <Form.Label className="form-label">City</Form.Label>
                 <Form.Control
                   type="text"
                   name="city"
@@ -339,7 +342,6 @@ const BillboardForm = () => {
                   placeholder="City"
                   id="formfont"
                 />
-                {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
                   {touched.city && errors.city ? errors.city : null}
                 </Form.Text>
@@ -347,6 +349,7 @@ const BillboardForm = () => {
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} controlId="formBasicCoordinate">
+              <Form.Label className="form-label">Co-ordinate</Form.Label>
                 <Form.Control
                   type="text"
                   name="coordinate"
@@ -356,12 +359,12 @@ const BillboardForm = () => {
                   placeholder="Coordinate"
                   id="formfont"
                 />
-                {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
                   {touched.coordinate && errors.coordinate ? errors.coordinate : null}
                 </Form.Text>
               </Form.Group>
               <Form.Group as={Col} controlId="formBasicAmount">
+              <Form.Label className="form-label">Amount</Form.Label>
                 <Form.Control
                   type="text"
                   name="amount"
@@ -371,7 +374,6 @@ const BillboardForm = () => {
                   placeholder="Amount"
                   id="formfont"
                 />
-                {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
                   {touched.amount && errors.amount ? errors.amount : null}
                 </Form.Text>
@@ -379,6 +381,7 @@ const BillboardForm = () => {
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} controlId="formBasicFaces">
+              <Form.Label className="form-label">Faces</Form.Label>
                 <Form.Control
                   type="number"
                   min={1}
@@ -390,12 +393,12 @@ const BillboardForm = () => {
                   placeholder="Faces"
                   id="formfont"
                 />
-                {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
                   {touched.face && errors.face ? errors.face : null}
                 </Form.Text>
               </Form.Group>
               <Form.Group as={Col} controlId="formBasicSlots">
+              <Form.Label className="form-label">Slots</Form.Label>
                 <Form.Control
                   type="number"
                   min={1}
@@ -407,12 +410,12 @@ const BillboardForm = () => {
                   placeholder="Slots"
                   id="formfont"
                 />
-                {/* <Form.Label>Name</Form.Label> */}
                 <Form.Text className="text-danger">
                   {touched.slot && errors.slot ? errors.slot : null}
                 </Form.Text>
               </Form.Group>
               <Form.Group as={Col} controlId="formBasicUnits">
+              <Form.Label className="form-label">Units</Form.Label>
                 <Form.Control
                   type="number"
                   min={1}

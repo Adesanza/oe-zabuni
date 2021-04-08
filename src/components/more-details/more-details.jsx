@@ -2,46 +2,62 @@ import './more-details.css';
 
 const MoreDetails = () => {
     return (
-        <div className='more-details-container'>
-            <div className="content">
-                <p className='billboard-name'>lion</p>
-                <div className="billboard-img-area">
-                    <p className="upper-width">Width is <span>42 metre</span><span>4500 pixel</span></p>
-                    <p className="left-width">
-                        <span>20 metre</span>
-                        <span>1250 pixel</span>
-                    </p>
-                    <div className="billboard-image-container">
-                         <img src="https://nmgprod.s3.amazonaws.com/media/files/ea/72/ea72617b8188ed5571c1f20adaec2576/cover_image.jpg.760x400_q85_crop_upscale.jpg" alt="billboard preview"/>
-                    </div>
+        <center>
+            <p className="more-details-header">LION</p>
+            <div>
+                <img className="lolo" src="https://res.cloudinary.com/adesanza/image/upload/v1617877527/zabuni/Group_2114_r3npfs.svg" alt=""/>
+                <p>Live Stream</p>
+            </div>
+            <div className="">
+                <div className="row justify-content-between dayo">
+                    <p>Name: Lion </p>
+                    <p>Type: LED</p>
+                    <p>Status: Active</p>
                 </div>
-            </div>
-            <div className="row justify-content-between">
-                <div>Name: </div>
-                <div>Type</div>
-                <div>Status</div>
-            </div>
-            <div className="row">
-                <div>Location</div>
-            </div>
-            <div className="row">
-                <div>Face</div>
-                <div>Slot</div>
-                <div>Unit</div>
-            </div>
-            <div className="row">
-                <div>Region</div>
-                <div>State</div>
-                <div>LGA</div>
-            </div>
-            <div className="row">
-                <div>City</div>
-                <div>Coordinate</div>
-            </div>
-            <div className="row">
-                <div>Amount</div>
-            </div>
-        </div>
+                <div className="row justify-content-between dayo">
+                    <p>Category: Billboard </p>
+                    <p>Class: Digital</p>
+                    <p>Region: SouthEast</p>
+                </div>
+                <div className="row dayo">
+                    <p>Location:<span className="dayo-add"> Ikorodu/Western Avenue at Abati Barracks Near Ojuelegba</span></p>
+                </div>
+                <div className="row dayo">
+                    <p>Height: 20 metre, 1250 pixel</p>
+                </div>
+                <div className="row dayo">
+                    <p>Width: 20 metre, 1250 pixel</p>
+                </div>
+                <div className="row justify-content-between dayo">
+                    <p>Faces: 3</p>
+                    <p>Slots: 1</p>
+                    <p>Units: 1</p>
+                </div>
+                <div className="row justify-content-between dayo">
+                    <p>State: Lagos State</p>
+                    <p>LGA: Municapal Area Council</p>
+                </div>
+                <div className="row justify-content-between dayo">
+                    <p>City: Ogba</p>
+                    <p>Coordinate: 7.12344324, 6.12345678</p>
+                </div>
+                <div className="row dayo">
+                    <p>Amount: 100,000,000 /per annum</p>
+                </div>
+           </div>
+        </center>
+        // <div className='more-details-container'>
+        //     <div className="content">
+        //         <p className='billboard-name'>lion</p>
+        //         <div className="billboard-img-area">
+        //             <p className="upper-width">Width: <span>42 metre</span><br/><span>4500 pixel</span></p>
+        //             <p className="left-width">
+        //                 <span>20metre</span><br/>
+        //                 <span>1250pixel</span>
+        //             </p>
+                    
+        //             <div className="billboard-image-container">
+        //                  <img src="https://res.cloudinary.com/adesanza/image/upload/v1617877527/zabuni/Group_2114_r3npfs.svg" alt="billboard preview" />
     );
 }
 export default MoreDetails;

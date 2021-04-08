@@ -5,7 +5,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 import './billboard-table.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
-import { deleteBillboard } from '../../redux/billboard-data/billboardDataReducer';
+// import { deleteBillboard } from '../../redux/billboard-data/billboardDataReducer';
 import { editBillboardData } from '../../redux/form/billboardFormReducer';
 import { billboardFilter } from '../../utils/billboard-table/filter-billboard';
 import { formatBillboardState, formatBillboardType } from '../../utils/billboard-table/format-text';
@@ -22,7 +22,7 @@ const BillboardsTable = ({showCreate}) => {
     dispatch(verticalModalContent('edit-billboard'))
   }
     return (
-        <div className="billboard-table">
+        <div className="billboard-table hermis">
         <Table >
   <thead className="lightert">
     <tr>

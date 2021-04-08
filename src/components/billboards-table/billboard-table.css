@@ -1,6 +1,9 @@
 table tbody {
   background-color: white;
 }
+.table {
+  margin-bottom: 0.5rem;
+}
 .billboard-table {
   /* overflow: scroll; */
   width: 100%;

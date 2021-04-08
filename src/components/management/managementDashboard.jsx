@@ -60,7 +60,7 @@ const ManagementDashboard = () => {
                             <div className="">Inactive</div>
                         </div>
                     </div>
-                    <div className="hermis col-md-8">
+                    <div className="col-md-8">
                     <BillboardsTable />
                     </div>
                     

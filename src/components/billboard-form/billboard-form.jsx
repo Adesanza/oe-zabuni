@@ -330,21 +330,8 @@ const BillboardForm = () => {
                 </Form.Group>
             </Form.Row>
             <Form.Row>
-<<<<<<< HEAD
-              <Form.Group as={Col} controlId="formBasicLga">
-              <Form.Label className="form-label">Local Govt</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="lga"
-                  value={values.lga}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="LGA"
-                  id="formfont"
-                />
-=======
             <Form.Group as={Col} controlId="controlSelectLga">
-                  {/* <Form.Label>Example select</Form.Label> */}
+            <Form.Label className="form-label">Local Govt</Form.Label>
                   <Form.Control
                     as="select"
                     name="lga"
@@ -358,8 +345,6 @@ const BillboardForm = () => {
                       lgaData.map(lga => <option key={lga} value={lga}>{lga}</option> )
                     }
                     </Form.Control>
-                {/* <Form.Label>Name</Form.Label> */}
->>>>>>> fe040115d6db7b1b6d21e27d302c33cc5537400a
                 <Form.Text className="text-danger">
                   {touched.lga && errors.lga ? errors.lga : null}
                 </Form.Text>

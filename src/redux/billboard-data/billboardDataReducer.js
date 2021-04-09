@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import billboardDataApi from "../../utils/billboard-table/billboard-api";
-import { billboardData } from "./billboard-data";
 
 export const fetchAllBillboards = createAsyncThunk(
     "billboardState/fetchByGetAllStatus",

@@ -10,7 +10,7 @@ const OverheadModalContainer = () => {
     const dispatch = useDispatch();
     return (
       <>
-        <Modal show={modalState.show} onHide={() => dispatch(closeOverheadModalDisplay()) }>
+        <Modal show={modalState.show} onHide={() => dispatch(closeOverheadModalDisplay()) } animation={false} >
           {
               modalState.type === 'confirmation' ? 
               <ConfirmationModal />

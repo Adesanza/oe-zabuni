@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import "./billboard-form.css";
 import { createBillboardSchema } from "../../utils/form/yup-schemas";
 import { useDispatch, useSelector } from "react-redux";
-import { createABillboard, createBillboard, editABillboard, editBillboard } from "../../redux/billboard-data/billboardDataReducer";
+import { createABillboard, editABillboard } from "../../redux/billboard-data/billboardDataReducer";
 import { closeVerticalModalDisplay } from "../../redux/vertical-modal/verticalModalReducer";
 import { resetBillboardFormData, showLgaData } from "../../redux/form/billboardFormReducer";
 import { overheadModalContainer } from "../../redux/overhead-modal/overheadModalReducer";
@@ -19,28 +19,38 @@ const BillboardForm = () => {
     <Formik
       validationSchema={createBillboardSchema}
       initialValues={formData}
-      onSubmit={async(values, { setSubmitting }) => {
+      onSubmit={(values, { setSubmitting }) => {
           console.log(values)
           setSubmitting(true);
           if(isEditing){
-            try {
-              await dispatch(editABillboard(values))
-              let result  = await unwrapResult();
-              console.log("unwrap",result)
-              dispatch(resetBillboardFormData())
-              dispatch(closeVerticalModalDisplay());
-              dispatch(setAlertContent('alert-success-edit-billboard'))
-              dispatch(overheadModalContainer('alert'))
-            } catch (error) {
-              console.log("unwrap-error",error)
-              alert("Failed to update billboard")
-            }
-            
+              dispatch(editABillboard(values))
+                .then(unwrapResult)
+                .then(data => {
+                  console.log("unwrap-edit-billboard",data)
+                  dispatch(resetBillboardFormData())
+                  dispatch(closeVerticalModalDisplay())
+                  dispatch(setAlertContent('alert-success-edit-billboard'))
+                  dispatch(overheadModalContainer('alert'))
+                })
+                .catch(err => {
+                  console.log("unwrap-error-edit-billboard",err)
+                  setSubmitting(false);
+                  alert("Failed to update billboard")
+                })
           }else{
-            let newValues = {...values, className: Date.now().toString() }
-            dispatch(createABillboard(newValues))
-            dispatch(setAlertContent('alert-success-create-billboard'))
-            dispatch(overheadModalContainer('alert'))
+            dispatch(createABillboard(values))
+            .then(unwrapResult)
+                .then(data => {
+                  console.log("unwrap-create-billboard",data)
+                  dispatch(closeVerticalModalDisplay())
+                  dispatch(setAlertContent('alert-success-create-billboard'))
+                  dispatch(overheadModalContainer('alert'))
+                })
+                .catch(err => {
+                  console.log("unwrap-error-create-billboard",err)
+                  setSubmitting(false);
+                  alert("Failed to create billboard")
+                })
           }
       }}
     >
@@ -52,6 +62,7 @@ const BillboardForm = () => {
         touched,
         isValid,
         errors,
+        isSubmitting
       }) => (
         <>
           <Form noValidate onSubmit={handleSubmit}>
@@ -449,7 +460,7 @@ const BillboardForm = () => {
                 </Form.Text>
               </Form.Group>
             </Form.Row>
-            <Button type="submit" block className="billboard-update-btn">
+            <Button type="submit" block className="billboard-update-btn" disabled={isSubmitting}>
               {isEditing ? 'update' : 'create'}
             </Button>
           </Form>

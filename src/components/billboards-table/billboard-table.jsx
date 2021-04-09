@@ -1,20 +1,23 @@
 import { Table, Button } from 'react-bootstrap';
 import { GrFormEdit } from 'react-icons/gr';
 import { FaTrashAlt } from 'react-icons/fa';
-// import { FiMoreVertical } from 'react-icons/fi';
 import './billboard-table.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
-import { deleteBillboard } from '../../redux/billboard-data/billboardDataReducer';
 import { editBillboardData } from '../../redux/form/billboardFormReducer';
 import { billboardFilter } from '../../utils/billboard-table/filter-billboard';
 import { formatBillboardState, formatBillboardType } from '../../utils/billboard-table/format-text';
 import { overheadModalContainer } from '../../redux/overhead-modal/overheadModalReducer';
 import { setConfirmationAction } from '../../redux/confirmation/confirmationPopupReducer';
+import TablePagination from '../pagination/pagination';
+import { useState } from 'react';
 
 const BillboardsTable = ({showCreate}) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [tableSize] = useState(10);
   const billboardData = useSelector(state => state.billboardData);
   const filterKey = useSelector(state => state.filterBillboard);
+  const filteredBillboardData = billboardFilter(filterKey,billboardData,currentPage,tableSize);
   const dispatch = useDispatch();
   const handleEdit = (id) => {
     const toBeEdited = billboardData.find(billboard => billboard._id === id);
@@ -54,7 +57,7 @@ const BillboardsTable = ({showCreate}) => {
   </thead>
   <tbody className="table-hover">
         {
-            billboardFilter(filterKey,billboardData).map(details => (
+            filteredBillboardData.result.map(details => (
                 <tr key={details._id} className="billboard-row table-hover" onClick={() => dispatch(verticalModalContent('more-details'))}>
                     {/* <td id="fonter">
                       {/* <FiMoreVertical className="more-icon"/> 
@@ -130,6 +133,7 @@ const BillboardsTable = ({showCreate}) => {
         }
   </tbody>
 </Table>
+<TablePagination currentTablePage={currentPage} pageData={filteredBillboardData.result}  setCurrentPage={setCurrentPage} pageEnd={filteredBillboardData.pageEnd} />
 </div>
     )
 }

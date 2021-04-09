@@ -81,7 +81,7 @@ const BillboardForm = () => {
                   {touched.name && errors.name ? errors.name : null}
                 </Form.Text>
               </Form.Group>
-              <Form.Group controlId="formBasicLocation">
+              <Form.Group as={Col} controlId="formBasicLocation">
               <Form.Label className="form-label">Location</Form.Label>
                 <Form.Control
                   type="text"
@@ -114,6 +114,7 @@ const BillboardForm = () => {
                     <option value="bridge_panel">Bridge Panel</option>
                     <option value="eye_catcher">Eye Catcher</option>
                     <option value="mega_board">Mega board</option>
+                    <option value="gantry">Gantry</option>
                     <option value="portrait">Portrait</option>
                     <option value="rooftop">Rooftop</option>
                     <option value="super48_sheet">Super 48 sheet</option>

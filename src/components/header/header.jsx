@@ -37,7 +37,11 @@ const Header = () => {
                                   history.push('/management')
                                 }}
                               >Dashboard</p>
-                              <Link className="dropdown-item" to="/">Edit Profile</Link>
+                              <p className="dropdown-item user-options" 
+                               onClick={() => {
+                                dispatch(verticalModalContent('edit-user-profile'))
+                              }}
+                              >Edit Profile</p>
                               <Link className="dropdown-item" to="/">Settings</Link>
                               <p className="dropdown-item user-options" onClick={() => {
                                 logUserOut();

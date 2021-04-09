@@ -1,28 +1,26 @@
 import { Table, Button } from 'react-bootstrap';
-import { GrFormEdit } from 'react-icons/gr';
-import { FaTrashAlt } from 'react-icons/fa';
+import { RiDeleteBin6Line, RiPencilLine } from 'react-icons/ri';
 import './billboard-table.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
 import { editBillboardData } from '../../redux/form/billboardFormReducer';
-import { billboardFilter } from '../../utils/billboard-table/filter-billboard';
+// import { billboardFilter } from '../../utils/billboard-table/filter-billboard';
 import { formatBillboardState, formatBillboardType } from '../../utils/billboard-table/format-text';
 import { overheadModalContainer } from '../../redux/overhead-modal/overheadModalReducer';
 import { setConfirmationAction } from '../../redux/confirmation/confirmationPopupReducer';
-import TablePagination from '../pagination/pagination';
-import { useState } from 'react';
+// import TablePagination from '../pagination/pagination';
 
-const BillboardsTable = ({showCreate}) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [tableSize] = useState(10);
-  const billboardData = useSelector(state => state.billboardData);
-  const filterKey = useSelector(state => state.filterBillboard);
-  const filteredBillboardData = billboardFilter(filterKey,billboardData,currentPage,tableSize);
+const BillboardsTable = ({showCreate, billboardData, filteredBillboardData}) => {
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [tableSize] = useState(10);
+  // const billboardData = useSelector(state => state.billboardData);
+  // const filterKey = useSelector(state => state.filterBillboard);
+  // const filteredBillboardData = billboardFilter(filterKey,billboardData,currentPage,tableSize);
   const dispatch = useDispatch();
-  const handleEdit = (id) => {
+  const handleEdit = (id,moreDeatils = false) => {
     const toBeEdited = billboardData.find(billboard => billboard._id === id);
     dispatch(editBillboardData(toBeEdited));
-    dispatch(verticalModalContent('edit-billboard'))
+    if(!moreDeatils) dispatch(verticalModalContent('edit-billboard'))
   }
     return (
         <div className="billboard-table hermis">
@@ -58,7 +56,11 @@ const BillboardsTable = ({showCreate}) => {
   <tbody className="table-hover">
         {
             filteredBillboardData.result.map(details => (
-                <tr key={details._id} className="billboard-row table-hover" onClick={() => dispatch(verticalModalContent('more-details'))}>
+                <tr key={details._id} className="billboard-row table-hover" 
+                    onClick={() => {
+                      handleEdit(details._id,true)
+                      dispatch(verticalModalContent('more-details'))
+                    }}>
                     {/* <td id="fonter">
                       {/* <FiMoreVertical className="more-icon"/> 
                       <img src="https://res.cloudinary.com/adesanza/image/upload/v1616156307/zabuni/Group_1787_kbiyfb.svg" alt="more..." className="more-icon" onClick={() => dispatch(verticalModalContent('more-details'))}/>
@@ -91,7 +93,7 @@ const BillboardsTable = ({showCreate}) => {
                         null
                       }
                     </td>
-                    <td className={details.status==='active' ? 'active' : 'inactive'} >{details.status}</td>
+                    <td className={details.status==='active' ? 'active' : details.status==='inactive' ? 'inactive' : 'vacant'} >{details.status}</td>
                     <td className="fonter">{details.category}</td>
                     <td className="fonter">{details.class}</td>
                     <td className="fonter">{details.face}</td>
@@ -111,7 +113,7 @@ const BillboardsTable = ({showCreate}) => {
                         e.stopPropagation();
                         handleEdit(details._id)
                       }}>
-                        <GrFormEdit className="edit-icon"/>
+                        <RiPencilLine className="edit-icon"/>
                         <span className="edit-icon-text">Edit</span>
                       </div>
                       <div onClick={(e) => {
@@ -120,7 +122,7 @@ const BillboardsTable = ({showCreate}) => {
                         dispatch(overheadModalContainer('confirmation'))
                         // dispatch(deleteBillboard(details.id));
                       }}>
-                        <FaTrashAlt className="delete-icon"/>
+                        <RiDeleteBin6Line className="delete-icon"/>
                         <span className="delete-icon-text">Delete</span>
                       </div>
                       </div>
@@ -133,7 +135,7 @@ const BillboardsTable = ({showCreate}) => {
         }
   </tbody>
 </Table>
-<TablePagination currentTablePage={currentPage} pageData={filteredBillboardData.result}  setCurrentPage={setCurrentPage} pageEnd={filteredBillboardData.pageEnd} />
+{/* <TablePagination currentTablePage={currentPage} pageData={filteredBillboardData.result}  setCurrentPage={setCurrentPage} pageEnd={filteredBillboardData.pageEnd} gotoNextPage={filteredBillboardData.nextPage}/> */}
 </div>
     )
 }

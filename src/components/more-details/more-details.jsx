@@ -1,51 +1,55 @@
+import { useSelector } from "react-redux";
+import { formatBillboardType } from "../../utils/billboard-table/format-text";
 import './more-details.css';
 
 const MoreDetails = () => {
+    const formDataState = useSelector(state => state.billboardForm);
+    const { formData } = formDataState;
     return (
-        <center>
-            <p className="more-details-header">LION</p>
+        <div>
+            <p className="more-details-header">{formData.name}</p>
             <div>
                 <img className="lolo" src="https://res.cloudinary.com/adesanza/image/upload/v1617877527/zabuni/Group_2114_r3npfs.svg" alt=""/>
                 <p>Live Stream</p>
             </div>
             <div className="">
                 <div className="row justify-content-between dayo">
-                    <p>Name: Lion </p>
-                    <p>Type: LED</p>
-                    <p>Status: Active</p>
+                    <p>Name: {formData.name} </p>
+                    <p>Type: {formatBillboardType(formData.type)}</p>
+                    <p>Status: {formData.status}</p>
                 </div>
                 <div className="row justify-content-between dayo">
-                    <p>Category: Billboard </p>
-                    <p>Class: Digital</p>
-                    <p>Region: SouthEast</p>
+                    <p>Category: {formData.category}</p>
+                    <p>Class: {formData.class}</p>
+                    <p>Region: {formData.region}</p>
                 </div>
                 <div className="row dayo">
-                    <p>Location:<span className="dayo-add"> Ikorodu/Western Avenue at Abati Barracks Near Ojuelegba</span></p>
+                    <p>Location:<span className="dayo-add">{formData.location}</span></p>
                 </div>
                 <div className="row dayo">
-                    <p>Height: 20 metre, 1250 pixel</p>
+                    <p>Height: {`${formData.height_m} metre${formData.class === 'digital' ? `, ${formData.height_px} pixel` : ''}`}</p>
                 </div>
                 <div className="row dayo">
-                    <p>Width: 20 metre, 1250 pixel</p>
+                    <p>Width: {`${formData.width_m} metre${formData.class === 'digital' ? `, ${formData.width_px} pixel` : ''}`}</p>
                 </div>
                 <div className="row justify-content-between dayo">
-                    <p>Faces: 3</p>
-                    <p>Slots: 1</p>
-                    <p>Units: 1</p>
+                    <p>Faces: {formData.face}</p>
+                    <p>Slots: {formData.slot}</p>
+                    <p>Units: {formData.unit}</p>
                 </div>
                 <div className="row justify-content-between dayo">
-                    <p>State: Lagos State</p>
-                    <p>LGA: Municapal Area Council</p>
+                    <p>State: {formData.state}</p>
+                    <p>LGA: {formData.lga}</p>
                 </div>
                 <div className="row justify-content-between dayo">
-                    <p>City: Ogba</p>
-                    <p>Coordinate: 7.12344324, 6.12345678</p>
+                    <p>City: {formData.city}</p>
+                    <p>Coordinate: {formData.coordinate}</p>
                 </div>
                 <div className="row dayo">
-                    <p>Amount: 100,000,000 /per annum</p>
+                    <p>Amount: {formData.amount} /per annum</p>
                 </div>
            </div>
-        </center>
+        </div>
         // <div className='more-details-container'>
         //     <div className="content">
         //         <p className='billboard-name'>lion</p>

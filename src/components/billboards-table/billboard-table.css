@@ -41,7 +41,8 @@ table th:last-child {
 }
 .fonter,
 .active,
-.inactive {
+.inactive,
+.vacant {
   text-align: center;
   text-transform: capitalize;
   font-style: normal;
@@ -129,4 +130,7 @@ table th:last-child {
 }
 .inactive {
   color: #0056b3;
+}
+.vacant {
+  color: #24f25e;
 }

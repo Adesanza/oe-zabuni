@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllBillboards } from '../../redux/billboard-data/billboardDataReducer';
+import BillboardCategory from '../billboard-category/billboard-category';
 import DisplayBillboards from '../billboards-display/billboards-display';
-import BillboardsTable from '../billboards-table/billboard-table';
+// import BillboardsTable from '../billboards-table/billboard-table';
 import CampaignManagement from '../campaigns-mgt/campaigns-mgt';
+import DoughnutChart from '../doughnut-chart/doughnut-chart';
 import PeopleManagement from '../people-mgt/people-mgt';
 // import BillboardsTable from '../../components/billboards-table/billboard-table';
 import './management-dashboard.css';
@@ -16,7 +18,7 @@ const ManagementDashboard = () => {
     },[])
     return (
             dashboardManagementState.child === 'inventory' ? 
-                <DisplayBillboards showCreate/>
+                <DisplayBillboards showCreate showCategoryNav/>
             :
             dashboardManagementState.child === 'people' ?
                 <PeopleManagement />
@@ -25,13 +27,15 @@ const ManagementDashboard = () => {
                 <CampaignManagement />
                 :
             <div className="dashy">
+                <BillboardCategory />
                 <div className="row">
                     <div className="col-md-4 pl-0">
                         <div className="row">
                             <div className="col-md-6 digital">
                                 <p>Digital</p>
-                                <div className="">Active</div>
-                                <div className="">Inactive</div>
+                                <div>Active</div>
+                                <div>Inactive</div>
+                                <div>Vacant</div>
                             </div>
                             <div className="col-md-6 digital">
                                 <p>Digital</p>
@@ -64,7 +68,7 @@ const ManagementDashboard = () => {
                         </div>
                     </div>
                     <div className="col-md-8">
-                    <BillboardsTable />
+                    <DisplayBillboards />
                     </div>
                     
                 </div>

@@ -8,7 +8,7 @@ export const loginSchema = Yup.object().shape({
 export const createBillboardSchema = Yup.object().shape({
     name: Yup.string().max(15,"Must be 15 characters or less").required("Billboard name is required"),
     location: Yup.string().max(150,"Must be 150 characters or less").required("Billboard location is required"),
-    type: Yup.string().oneOf(['led','lightbox','bridge_panel','eye_catcher','mega_board','portrait','rooftop','super48_sheet','ultrawave','unipole','video_wall','wall_drape'],'Invalid type').required("Must select an option"),
+    type: Yup.string().oneOf(['led','lightbox','bridge_panel','eye_catcher','mega_board','portrait','rooftop','super48_sheet','ultrawave','unipole','video_wall','wall_drape','gantry'],'Invalid type').required("Must select an option"),
     height_m: Yup.number().min(3).max(300).required("Height (m) is required"),
     width_m: Yup.number().min(3).max(300).required("Width (m) is required"),
     height_px: Yup.number().min(0).max(4000).required("Height (px) is required"),

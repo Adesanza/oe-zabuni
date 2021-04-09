@@ -5,9 +5,9 @@
 }
 .dashboard-content {
   background-color: #e5e5e5;
-  width: auto;
+  width: 100%;
   flex-basis: 100%;
-  padding: 1rem 0 0 197px;
+  padding: 1rem 0 0 192px;
   /* border: 1px solid green; */
 }
 

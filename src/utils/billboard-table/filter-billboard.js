@@ -12,11 +12,15 @@ const billboardFilter = (filterData,billboardData,tablePage,tableSize) => {
 const paginateBillboard = (tablePage, tableSize, data) => {
     let result = data.slice((tablePage - 1) * tableSize, tablePage * tableSize);
     let pageEnd = false;
-    
-    if(result.length < tableSize) pageEnd  = true;
+    let nextPage = true;
+    if(tablePage === 1 && result.length < tableSize) {
+        nextPage = false;
+        pageEnd = true;
+    }else if(result.length < tableSize) pageEnd  = true;
 
     return {
         result,
+        nextPage,
         pageEnd
     };
 }

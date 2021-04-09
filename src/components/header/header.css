@@ -234,3 +234,6 @@ input[type='search']::-webkit-search-results-decoration {
   margin: 0;
   cursor: pointer;
 }
+.dropping {
+  text-transform: capitalize;
+}

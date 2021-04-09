@@ -12,8 +12,7 @@ const ManagementDashboard = () => {
     const dashboardManagementState = useSelector(({dashboard}) => dashboard.management);
     const dispatch = useDispatch();
     useEffect(()=>{
-        dispatch(fetchAllBillboards());
-        console.log('hi form effect')
+        dispatch(fetchAllBillboards()); //eslint-disable-next-line
     },[])
     return (
             dashboardManagementState.child === 'inventory' ? 

@@ -4,8 +4,8 @@ const billboardRoute = {
     get: "https://oe-zabuni-api.herokuapp.com/billboard/all",
     create: "https://oe-zabuni-api.herokuapp.com/billboard/create",
     edit: "https://oe-zabuni-api.herokuapp.com/billboard/",
-    delete: "https://oe-zabuni-api.herokuapp.com/billboard/",
-}
+    delete: "https://oe-zabuni-api.herokuapp.com/billboard/"
+};
 
 const billboardDataApi =  {
     get: async () => {
@@ -40,7 +40,7 @@ const billboardDataApi =  {
                 throw new Error("Failed to delete billboard");
             }
             return response.data;
-    },
+    }
    
 }
 

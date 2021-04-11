@@ -5,7 +5,6 @@ import BillboardCategory from '../billboard-category/billboard-category';
 import DisplayBillboards from '../billboards-display/billboards-display';
 // import BillboardsTable from '../billboards-table/billboard-table';
 import CampaignManagement from '../campaigns-mgt/campaigns-mgt';
-import DoughnutChart from '../doughnut-chart/doughnut-chart';
 import PeopleManagement from '../people-mgt/people-mgt';
 // import BillboardsTable from '../../components/billboards-table/billboard-table';
 import './management-dashboard.css';

@@ -144,6 +144,7 @@ a:hover {
 }
 .modal-header {
   border-bottom: 0 none;
+  padding: 1.5rem 2rem;
 }
 
 .modal-footer {

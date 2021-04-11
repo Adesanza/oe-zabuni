@@ -3,14 +3,16 @@ import { Formik } from "formik";
 import "./billboard-form.css";
 import { createBillboardSchema } from "../../utils/form/yup-schemas";
 import { useDispatch, useSelector } from "react-redux";
-import { createABillboard, editABillboard } from "../../redux/billboard-data/billboardDataReducer";
 import { closeVerticalModalDisplay } from "../../redux/vertical-modal/verticalModalReducer";
 import { resetBillboardFormData, showLgaData } from "../../redux/form/billboardFormReducer";
 import { overheadModalContainer } from "../../redux/overhead-modal/overheadModalReducer";
 import { setAlertContent } from "../../redux/alert/alertPopupReducer";
-import { unwrapResult } from "@reduxjs/toolkit";
+import { mutate } from "swr";
+import billboardDataApi, { billboardRoute } from "../../utils/billboard-table/billboard-api";
+import { useBillboardData } from "../../hooks/billboard-data-hook";
 
 const BillboardForm = () => {
+  const { billboardData } = useBillboardData(billboardRoute.get);
   const formDataState = useSelector(state => state.billboardForm);
   const { isEditing, formData, lgaData } = formDataState;
   const dispatch = useDispatch();
@@ -18,38 +20,42 @@ const BillboardForm = () => {
     <Formik
       validationSchema={createBillboardSchema}
       initialValues={formData}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={async (values, { setSubmitting }) => {
           console.log(values)
           setSubmitting(true);
+          let updatedBillboardData = [...billboardData]
           if(isEditing){
-              dispatch(editABillboard(values))
-                .then(unwrapResult)
-                .then(data => {
-                  console.log("unwrap-edit-billboard",data)
+            try {
+              const updatedBillboard = await billboardDataApi.edit(values);
+              const idx = billboardData.findIndex(billboard => billboard._id === updatedBillboard.billboardData._id);
+              if(idx >= 0) {
+                    updatedBillboardData.splice(idx,1,updatedBillboard.billboardData)
+                const mutated = await mutate(billboardRoute.get,{billboardData: updatedBillboardData},false);
+                console.log("mutaded",mutated)
                   dispatch(resetBillboardFormData())
                   dispatch(closeVerticalModalDisplay())
                   dispatch(setAlertContent('alert-success-edit-billboard'))
                   dispatch(overheadModalContainer('alert'))
-                })
-                .catch(err => {
-                  console.log("unwrap-error-edit-billboard",err)
+              } 
+            } catch (err) {
+              console.log("mutate-error-edit-billboard",err)
                   setSubmitting(false);
                   alert("Failed to update billboard")
-                })
+            }
           }else{
-            dispatch(createABillboard(values))
-            .then(unwrapResult)
-                .then(data => {
-                  console.log("unwrap-create-billboard",data)
+            try {
+                  const createdBillboard = await billboardDataApi.create(values);
+                  updatedBillboardData.push(createdBillboard.billboardData)
+                  await mutate(billboardRoute.get,{billboardData: updatedBillboardData},false);
                   dispatch(closeVerticalModalDisplay())
                   dispatch(setAlertContent('alert-success-create-billboard'))
                   dispatch(overheadModalContainer('alert'))
-                })
-                .catch(err => {
-                  console.log("unwrap-error-create-billboard",err)
+
+            } catch (err) {
+                  console.log("mutate-error-create-billboard",err)
                   setSubmitting(false);
                   alert("Failed to create billboard")
-                })
+            }
           }
       }}
     >

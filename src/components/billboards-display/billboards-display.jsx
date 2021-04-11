@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useBillboardData } from '../../hooks/billboard-data-hook';
 import { billboardFilter } from "../../utils/billboard-table/filter-billboard";
 import BillboardCategory from "../billboard-category/billboard-category";
 import BillboardsTable from "../billboards-table/billboard-table";
@@ -9,7 +10,9 @@ import "./billboards-display.css";
 const DisplayBillboards = ({ showCreate, showCategoryNav }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [tableSize] = useState(10);
-  const billboardData = useSelector(state => state.billboardData);
+  const { billboardData } = useBillboardData();
+  // console.log("bill",billboardData);
+  // const billboardData = useSelector(state => state.billboardData);
   const filterKey = useSelector(state => state.filterBillboard);
   const filteredBillboardData = billboardFilter(filterKey,billboardData,currentPage,tableSize);
   useEffect(() => {

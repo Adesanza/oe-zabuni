@@ -10,6 +10,7 @@ const billboardFilter = (filterData,billboardData,tablePage,tableSize) => {
 }
 
 const paginateBillboard = (tablePage, tableSize, data) => {
+    // console.log("paginate",data)
     let result = data.slice((tablePage - 1) * tableSize, tablePage * tableSize);
     let pageEnd = false;
     let nextPage = true;

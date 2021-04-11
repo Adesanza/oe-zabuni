@@ -6,7 +6,7 @@ import { FaSearch } from "react-icons/fa";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { resetDashboard } from '../../redux/dashboard/dashboardReducer';
-import { useUserData } from '../../hooks/user-hooks/user-hook';
+import { useUserData } from '../../hooks/user-hook';
 
 
 const Header = () => {

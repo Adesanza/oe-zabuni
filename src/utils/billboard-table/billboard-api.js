@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const billboardRoute = {
+export const billboardRoute = {
     get: "https://oe-zabuni-api.herokuapp.com/billboard/all",
     create: "https://oe-zabuni-api.herokuapp.com/billboard/create",
     edit: "https://oe-zabuni-api.herokuapp.com/billboard/",
@@ -8,8 +8,8 @@ const billboardRoute = {
 };
 
 const billboardDataApi =  {
-    get: async () => {
-            const response = await axios.get(billboardRoute.get);
+    get: async (url) => {
+            const response = await axios.get(url);
             console.log("get-all-billboard",response.data)
             if(response.data.message){
                 throw new Error("Failed to fetch all billboards");

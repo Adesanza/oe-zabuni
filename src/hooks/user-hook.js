@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { logUserOut, setUserData } from "../../redux/user/userReducer";
+import { logUserOut, setUserData } from "../redux/user/userReducer";
 
 const useUserData = () => {
     const dispatch = useDispatch();

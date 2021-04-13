@@ -29,11 +29,11 @@ const VerticalCenterModal = ({ children }) => {
   const modalState = useSelector((state) => state.verticalModal);
   const dispatch = useDispatch();
   const handleCloseModal = () => {
-    if(modalState.type !== 'edit-billboard'){
-      dispatch(closeVerticalModalDisplay());
-    }else{
+    if(modalState.type === 'edit-billboard' || modalState.type === 'more-details'){
       dispatch(closeVerticalModalDisplay());
       dispatch(resetBillboardFormData());
+    }else{
+      dispatch(closeVerticalModalDisplay());
     }
   }
   return (

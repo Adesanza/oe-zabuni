@@ -49,6 +49,12 @@ const BillboardDataVisuals = () => {
                     <CircleVisual />
                     <CircleVisual />
                     <CircleVisual />
+                    <CircleVisual />
+                    <CircleVisual />
+                    <CircleVisual />
+                    <CircleVisual />
+                    <CircleVisual />
+                    <CircleVisual />
                 </div>
             </div>
         </div>

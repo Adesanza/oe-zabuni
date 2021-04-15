@@ -3,7 +3,9 @@ import 'react-circular-progressbar/dist/styles.css';
 
 const DoughnutChart = () => {
     return (
-        <CircularProgressbar value={65} text="5" strokeWidth={10} />
+        <div >
+            <CircularProgressbar value={45} text="5" strokeWidth={15} />
+        </div>
     )
     
 }

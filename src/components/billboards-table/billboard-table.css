@@ -15,7 +15,7 @@ table tbody tr:hover {
 }
 .lightert {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 12px;
   text-transform: uppercase;
   /* background-color: #0056B3; */
@@ -48,7 +48,6 @@ table th:last-child {
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
-  line-height: 21px;
 }
 .fonter {
   color: #6e6b7b;
@@ -124,6 +123,7 @@ table th:last-child {
 .locate {
   font-size: 10px;
   color: #6e6b7b;
+  text-align: center;
 }
 .active {
   color: #f5148e;

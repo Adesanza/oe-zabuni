@@ -8,10 +8,13 @@
   border-radius: 10px;
   padding: 10px 18px 0 18px;
   font-size: 15px;
+  display: flex;
+  flex-flow: row;
 }
 .dayo-add {
-  margin: 0;
-  font-size: 11px;
+  margin: 0 0 0 0.46rem;
+  /* font-size: 11px; */
+  text-align: left;
 }
 .lolo {
   width: 426px;

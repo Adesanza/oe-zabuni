@@ -1,17 +1,17 @@
 const CircleVisual = () => {
     return (
-        <svg width={100} height={100} >
+        <svg width={70} height={70} >
             <circle 
-                cx={45}
-                cy={55}
-                r={40}
-                fill="blue"
+                cx={35}
+                cy={40}
+                r={25}
+                fill="#E3BDE0"
             />
             <text 
-                x={45}
-                y={57}
+                x={35}
+                y={43}
                 textAnchor="middle"
-                fill="white"
+                fill="#F5148E"
                 fontSize="1rem"
             >{5}</text>
         </svg>

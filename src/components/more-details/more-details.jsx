@@ -24,7 +24,7 @@ const MoreDetails = () => {
                     <p>Region: {formData.region}</p>
                 </div>
                 <div className="row dayo">
-                    <p>Location:<span className="dayo-add">{formData.location}</span></p>
+                    <span>Location:</span><span className="dayo-add">{formData.location}</span>
                 </div>
                 <div className="row dayo">
                     <p>Height: {`${formData.height_m} metre${formData.class === 'digital' ? `, ${formData.height_px} pixel` : ''}`}</p>
@@ -43,6 +43,8 @@ const MoreDetails = () => {
                 </div>
                 <div className="row justify-content-between dayo">
                     <p>City: {formData.city}</p>
+                </div>
+                <div className="row justify-content-between dayo">
                     <p>Coordinate: {formData.coordinate}</p>
                 </div>
                 <div className="row dayo">

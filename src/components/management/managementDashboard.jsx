@@ -21,10 +21,10 @@ const ManagementDashboard = () => {
             <div className="dashy">
                 <BillboardCategory />
                 <div className="row">
-                    <div className="col-md-4 pl-0">
+                    <div className="col-md-5 p-0">
                         <BillboardDataVisuals />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-7">
                     <DisplayBillboards />
                     </div>
                     

@@ -2,3 +2,14 @@
   width: auto;
   margin-top: 1rem;
 }
+.active.active-blue > span.page-link {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  height: 26px;
+}
+span.page-link {
+  height: 30px;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #0056b3;
+}

@@ -10,7 +10,7 @@ import "./billboards-display.css";
 const DisplayBillboards = ({ showCreate, showCategoryNav }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [tableSize] = useState(10);
-  const { billboardData } = useBillboardData();
+  const { billboardData, isError } = useBillboardData();
   // console.log("bill",billboardData);
   // const billboardData = useSelector(state => state.billboardData);
   const filterKey = useSelector(state => state.filterBillboard);
@@ -27,8 +27,16 @@ const DisplayBillboards = ({ showCreate, showCategoryNav }) => {
           :
           null
       }
-      <BillboardsTable showCreate={showCreate} setCurrentPage={setCurrentPage} filterKey={filterKey} billboardData={billboardData} filteredBillboardData={filteredBillboardData} />
+      {
+        !isError ? 
+        <>
+        <BillboardsTable showCreate={showCreate} setCurrentPage={setCurrentPage} filterKey={filterKey} billboardData={billboardData} filteredBillboardData={filteredBillboardData} />
       <TablePagination currentTablePage={currentPage} pageData={filteredBillboardData.result}  setCurrentPage={setCurrentPage} pageEnd={filteredBillboardData.pageEnd} gotoNextPage={filteredBillboardData.nextPage} />
+      </>
+      :
+      null
+      }
+      
     </div>
   );
 };

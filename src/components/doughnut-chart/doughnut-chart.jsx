@@ -1,10 +1,18 @@
-import { CircularProgressbar } from "react-circular-progressbar";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
 
-const DoughnutChart = () => {
+const DoughnutChart = ({totalValue, value, classState}) => {
     return (
         <div >
-            <CircularProgressbar value={45} text="5" strokeWidth={15} />
+            <CircularProgressbar 
+                value={value}
+                maxValue={totalValue} 
+                text={`${value}`} 
+                strokeWidth={15} 
+                styles={buildStyles({
+                    pathColor: classState === 'active' ? '#0056b3' : classState === 'inactive' ? '#f5148e' : '#24f25e' 
+                })}
+                />
         </div>
     )
     

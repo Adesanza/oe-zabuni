@@ -11,4 +11,13 @@ const useBillboardData = () => {
     }
 }
 
-export { useBillboardData }
+const useBillboardGeneralInfo = () => {
+    const { data, error } = useSWR(billboardRoute.general_info,billboardDataApi.billboard_general_get);
+    return {
+        billboardGeneralInfo: data,
+        isLoading: !error && !data,
+        isError: error
+    }
+}
+
+export { useBillboardData, useBillboardGeneralInfo }

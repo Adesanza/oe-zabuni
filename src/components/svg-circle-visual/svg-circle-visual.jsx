@@ -1,4 +1,4 @@
-const CircleVisual = () => {
+const CircleVisual = ({ bgColor, textColor, text }) => {
     return (
         <svg width={70} height={70} >
             <circle 
@@ -13,7 +13,7 @@ const CircleVisual = () => {
                 textAnchor="middle"
                 fill="#F5148E"
                 fontSize="1rem"
-            >{5}</text>
+            >{text}</text>
         </svg>
     )
 }

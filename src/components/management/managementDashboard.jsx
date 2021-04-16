@@ -4,10 +4,12 @@ import BillboardDataVisuals from '../billboard-visualization/billboard-visualiza
 import DisplayBillboards from '../billboards-display/billboards-display';
 import CampaignManagement from '../campaigns-mgt/campaigns-mgt';
 import PeopleManagement from '../people-mgt/people-mgt';
+import { useBillboardGeneralInfo } from '../../hooks/billboard-data-hook';
 import './management-dashboard.css';
 
 const ManagementDashboard = () => {
     const dashboardManagementState = useSelector(({dashboard}) => dashboard.management);
+    const { billboardGeneralInfo, isError } = useBillboardGeneralInfo();
     return (
             dashboardManagementState.child === 'inventory' ? 
                 <DisplayBillboards showCreate showCategoryNav />
@@ -22,7 +24,13 @@ const ManagementDashboard = () => {
                 <BillboardCategory />
                 <div className="row">
                     <div className="col-md-5 p-0">
-                        <BillboardDataVisuals />
+                        {
+                            billboardGeneralInfo ?
+                            <BillboardDataVisuals billboardGeneralInfo={billboardGeneralInfo}/>
+                            :
+                            null
+                        }
+                        
                     </div>
                     <div className="col-md-7">
                     <DisplayBillboards />

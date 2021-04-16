@@ -4,7 +4,8 @@ export const billboardRoute = {
     get: "https://oe-zabuni-api.herokuapp.com/billboard/all",
     create: "https://oe-zabuni-api.herokuapp.com/billboard/create",
     edit: "https://oe-zabuni-api.herokuapp.com/billboard/",
-    delete: "https://oe-zabuni-api.herokuapp.com/billboard/"
+    delete: "https://oe-zabuni-api.herokuapp.com/billboard/",
+    general_info: "https://oe-zabuni-api.herokuapp.com/billboard-general/"
 };
 
 const billboardDataApi =  {
@@ -40,7 +41,15 @@ const billboardDataApi =  {
                 throw new Error("Failed to delete billboard");
             }
             return response.data;
-    }
+    },
+    billboard_general_get: async (url) => {
+        const response = await axios.get(url);
+        console.log("get-billboard-general-info",response.data)
+        if(response.data.message){
+            throw new Error("Failed to fetch billboard general info");
+        }
+        return response.data;
+}
    
 }
 

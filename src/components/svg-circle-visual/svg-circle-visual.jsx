@@ -5,14 +5,15 @@ const CircleVisual = ({ bgColor, textColor, text }) => {
                 cx={35}
                 cy={40}
                 r={25}
-                fill="#E3BDE0"
+                fill={bgColor}
             />
             <text 
                 x={35}
                 y={43}
                 textAnchor="middle"
-                fill="#F5148E"
+                fill={textColor}
                 fontSize="1rem"
+                fontWeight="bold"
             >{text}</text>
         </svg>
     )

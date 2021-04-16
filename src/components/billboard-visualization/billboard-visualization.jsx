@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import { useState } from 'react';
+import { formatBillboardType } from '../../utils/billboard-table/format-text';
+import ControlBarchartDisplay from '../bar-chart-selection/bar-chart-selection';
 import BarChart from '../bar-chart/bar-chart';
 import DoughnutChart from '../doughnut-chart/doughnut-chart';
 import PieChart from '../pie-chart/pie-chart';
@@ -16,6 +19,7 @@ const BillboardDataVisuals = ({
     },
   },
 }) => {
+  const [currentState, setCurrState] = useState(billboardStatesStatus[0]);
   let billboardDigitalTotal = _.reduce(
     billboardClass.digital,
     (result, value) => result + value,
@@ -90,8 +94,8 @@ const BillboardDataVisuals = ({
       regions: [],
       regionCount: []
   });
-  const barReduce = _.reduce(billboardStatesStatus[1].types, (result, value, key) => {
-    result.labels.push(value.type)
+  const barReduce = _.reduce(currentState.types, (result, value, key) => {
+    result.labels.push(formatBillboardType(value.type))
     result.datasets[0].data.push(value.active || 0)
     result.datasets[1].data.push(value.inactive || 0)
     result.datasets[2].data.push(value.vacant || 0)
@@ -235,15 +239,11 @@ const BillboardDataVisuals = ({
       </div>
       <div className="row">
         <div className="col-md-12 lagos">
-            <div className="sttates">
-                <p>Lagos</p>
-                <p>enugu</p>
-                <p>akwa ibom</p>
-                <p>delta</p>
-                <p>aba</p>
-                <p>jos</p>
-                <div>arr</div>
-            </div>
+            <ControlBarchartDisplay 
+              stateData={billboardStatesStatus}
+              currState={currentState}
+              setCurrState={setCurrState}
+            />
           <div className="">
               <BarChart barData={barReduce}/>
           </div>

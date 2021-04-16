@@ -114,8 +114,4 @@
   /* margin-bottom: 0.5rem; */
   margin-right: 1rem;
 }
-.sttates {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+

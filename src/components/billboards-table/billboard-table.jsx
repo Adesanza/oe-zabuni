@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
 import { editBillboardData } from '../../redux/form/billboardFormReducer';
 // import { billboardFilter } from '../../utils/billboard-table/filter-billboard';
-import { formatBillboardState, formatBillboardType } from '../../utils/billboard-table/format-text';
+import { formatBillboardLocation, formatBillboardState, formatBillboardType } from '../../utils/billboard-table/format-text';
 import { overheadModalContainer } from '../../redux/overhead-modal/overheadModalReducer';
 import { setConfirmationAction } from '../../redux/confirmation/confirmationPopupReducer';
 // import TablePagination from '../pagination/pagination';
@@ -67,7 +67,7 @@ const BillboardsTable = ({showCreate, billboardData, filteredBillboardData}) => 
                       <span>{details.sn}</span>
                     </td> */}
                     <td className="fonter">{details.name}</td>
-                    <td className="locate">{details.location}</td>
+                    <td className="locate">{formatBillboardLocation(details.location)}</td>
                     <td className="fonter">{formatBillboardType(details.type)}</td>
                     <td className="fonter">
                         <span>{`${details.height_m}m`}</span>

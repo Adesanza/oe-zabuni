@@ -30,4 +30,11 @@ const formatBillboardState = (state) => {
     }
 }
 
-export { formatBillboardType, formatBillboardState }
+const formatBillboardLocation = (location) => {
+    if(location.length > 15){
+        return `${location.substr(0,15)}...`
+    }
+    return location;
+}
+
+export { formatBillboardType, formatBillboardState, formatBillboardLocation }

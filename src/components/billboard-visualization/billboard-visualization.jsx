@@ -86,57 +86,69 @@ const BillboardDataVisuals = ({
     },
   ];
 
-  const pieReduce = _.reduce(billboardRegions, function(result, value, key) {
-    result.regions.push(`${key[0].toUpperCase()}${key.substr(1)}`)
-    result.regionCount.push(value)
-    return result;
-  }, {
+  const pieReduce = _.reduce(
+    billboardRegions,
+    function (result, value, key) {
+      result.regions.push(`${key[0].toUpperCase()}${key.substr(1)}`);
+      result.regionCount.push(value);
+      return result;
+    },
+    {
       regions: [],
-      regionCount: []
-  });
-  const barReduce = _.reduce(currentState.types, (result, value, key) => {
-    result.labels.push(formatBillboardType(value.type))
-    result.datasets[0].data.push(value.active || 0)
-    result.datasets[1].data.push(value.inactive || 0)
-    result.datasets[2].data.push(value.vacant || 0)
-    result.datasets[0].backgroundColor.push('#f5148e')
-    result.datasets[0].borderColor.push('#f5148e')
-    result.datasets[1].backgroundColor.push('#0056b3')
-    result.datasets[1].borderColor.push('#0056b3')
-    result.datasets[2].backgroundColor.push('#24f25e')
-    result.datasets[2].borderColor.push('#24f25e')
-    return result;
-  }, {
+      regionCount: [],
+    }
+  );
+  const barReduce = _.reduce(
+    currentState.types,
+    (result, value, key) => {
+      result.labels.push(formatBillboardType(value.type));
+      result.datasets[0].data.push(value.active || 0);
+      result.datasets[1].data.push(value.inactive || 0);
+      result.datasets[2].data.push(value.vacant || 0);
+      result.datasets[0].backgroundColor.push('#f5148e');
+      result.datasets[0].borderColor.push('#f5148e');
+      result.datasets[1].backgroundColor.push('#0056b3');
+      result.datasets[1].borderColor.push('#0056b3');
+      result.datasets[2].backgroundColor.push('#24f25e');
+      result.datasets[2].borderColor.push('#24f25e');
+      return result;
+    },
+    {
       labels: [],
-      datasets: [{
+      datasets: [
+        {
           label: 'active',
           data: [],
           backgroundColor: [],
           borderColor: [],
           borderWidth: 1,
-        barThickness: 6,
-        maxBarThickness: 3,
-        minBarLength: 1
-      },{
-        label: 'inactive',
-        data: [],
-        backgroundColor: [],
-        borderColor: [],
-        borderWidth: 1,
-        barThickness: 6,
-        maxBarThickness: 3,
-        minBarLength: 1
-      },{
-        label: 'vacant',
-        data: [],
-        backgroundColor: [],
-        borderColor: [],
-        borderWidth: 1,
-        barThickness: 6,
-        maxBarThickness: 3,
-        minBarLength: 1
-      }]
-  });
+          barThickness: 6,
+          maxBarThickness: 3,
+          minBarLength: 1,
+        },
+        {
+          label: 'inactive',
+          data: [],
+          backgroundColor: [],
+          borderColor: [],
+          borderWidth: 1,
+          barThickness: 6,
+          maxBarThickness: 3,
+          minBarLength: 1,
+        },
+        {
+          label: 'vacant',
+          data: [],
+          backgroundColor: [],
+          borderColor: [],
+          borderWidth: 1,
+          barThickness: 6,
+          maxBarThickness: 3,
+          minBarLength: 1,
+        },
+      ],
+    }
+  );
 
   return (
     <>
@@ -207,7 +219,7 @@ const BillboardDataVisuals = ({
             {billboardTypesArr.map((billboardType, idx) => (
               <div className="types-active" key={billboardType.title}>
                 <CircleVisual
-                  bgColor={idx % 2 === 0 ? '#e3bde0' : '#0056b3'}
+                  bgColor={idx % 2 === 0 ? '#e3bde0' : '#0057b377'}
                   textColor={idx % 2 === 0 ? '#f5148e' : '#fff'}
                   text={billboardType.count}
                 />
@@ -217,21 +229,25 @@ const BillboardDataVisuals = ({
           </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col-md-3 total">
+      <div className="row folker">
+        <div className="col total">
           <p className="total-title">Total</p>
           <CircleVisual
             bgColor={'#f7f6fb'}
             textColor={'#f514be'}
             text={billboardCount}
           />
-          <p>
-            in <span>{billboardStatesStatus.length}</span>States
+          <p className="state-status-gen">
+            in{' '}
+            <span className="state-status-num">
+              {billboardStatesStatus.length}
+            </span>
+            States
           </p>
         </div>
-        <div className="col billboards">
+        <div className="col-md-9 col-sm-12 billboards">
           <p className="billboard-title">Regions and number of Billboards</p>
-          <PieChart 
+          <PieChart
             pieLabels={pieReduce.regions}
             pieData={pieReduce.regionCount}
           />
@@ -239,13 +255,13 @@ const BillboardDataVisuals = ({
       </div>
       <div className="row">
         <div className="col-md-12 lagos">
-            <ControlBarchartDisplay 
-              stateData={billboardStatesStatus}
-              currState={currentState}
-              setCurrState={setCurrState}
-            />
+          <ControlBarchartDisplay
+            stateData={billboardStatesStatus}
+            currState={currentState}
+            setCurrState={setCurrState}
+          />
           <div className="">
-              <BarChart barData={barReduce}/>
+            <BarChart barData={barReduce} />
           </div>
         </div>
       </div>

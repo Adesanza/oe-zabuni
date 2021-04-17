@@ -10,6 +10,9 @@
   box-shadow: 0px 4px 4px rgba(0, 86, 179, 0.12);
   border-radius: 6px;
 }
+.folker {
+  margin-bottom: 0.5rem;
+}
 .digital > p,
 .static > p {
   text-align: center;
@@ -20,7 +23,8 @@
   color: #342929;
 }
 .types > p,
-.types-active > p {
+.types-active > p,
+.total-title {
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
@@ -48,7 +52,7 @@
 }
 .types {
   background: #ffffff;
-  border: 0.3px solid #0057b3;
+  border: 0.3px solid #0057b370;
   box-shadow: 0px 4px 4px rgba(0, 86, 179, 0.1);
   border-radius: 6px;
   padding: 0;
@@ -66,6 +70,7 @@
   background: #0056b3;
   box-shadow: 0px 4px 4px rgba(0, 86, 179, 0.1);
   border-radius: 6px;
+  padding-bottom: 1rem;
   /* height: 130px; */
 }
 .lagos {
@@ -103,10 +108,12 @@
   font-size: 12px;
   line-height: 14px;
   color: #ffffff;
+  padding-bottom: 1rem;
 }
 .total {
+  text-align: center;
   background: #ffffff;
-  border: 0.3px solid #0057b3;
+  border: 0.3px solid #0057b377;
   box-shadow: 0px 4px 4px rgba(0, 86, 179, 0.1);
   border-radius: 6px;
   /* height: 130px; */
@@ -114,4 +121,43 @@
   /* margin-bottom: 0.5rem; */
   margin-right: 1rem;
 }
+.state-status-gen {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  margin: 0;
+  color: #342929;
+  text-align: center;
+}
+.state-status-num {
+  font-weight: 700;
+  font-size: 20px;
+  font-style: normal;
+  color: #0056b3;
+}
 
+/****************************** scroll bar edit **********************/
+/* width */
+.types-container::-webkit-scrollbar {
+  width: 10px;
+  height: 9px;
+  border-radius: 10px;
+}
+
+/* Track */
+.types-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+.types-container::-webkit-scrollbar-thumb {
+  background: #0056b3;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.types-container::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+  border-radius: 10px;
+} /****************************** end of scroll bar edit **********************/

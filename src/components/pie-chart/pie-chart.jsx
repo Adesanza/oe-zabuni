@@ -1,6 +1,20 @@
 import { Pie } from "react-chartjs-2";
 
+// function handleHover(evt, item, legend) {
+//     legend.chart.data.datasets[0].backgroundColor.forEach((color, index, colors) => {
+//       colors[index] = index === item.index || color.length === 9 ? color : color + '4D';
+//     });
+//     legend.chart.update();
+//   }
+//   function handleLeave(evt, item, legend) {
+//     legend.chart.data.datasets[0].backgroundColor.forEach((color, index, colors) => {
+//       colors[index] = color.length === 9 ? color.slice(0, -2) : color;
+//     });
+//     legend.chart.update();
+//   }
+
 const PieChart = ({ pieLabels, pieData }) => {
+    
     return (
         <Pie data={{
             labels: [...pieLabels],
@@ -8,12 +22,12 @@ const PieChart = ({ pieLabels, pieData }) => {
               label: 'Pie Dataset',
               data: [...pieData],
               backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(155, 205, 36)',
-                'rgb(112, 100, 86)',
-                'rgb(55, 50, 86)',
-                'rgb(105, 105, 56)'
+                '#342929',
+                '#F5148E',
+                '#FFB800',
+                '#24F25E',
+                '#fff',
+                '#97B9DF'
               ],
               hoverOffset: 4
             }]
@@ -21,7 +35,9 @@ const PieChart = ({ pieLabels, pieData }) => {
           options={{
                 legend: {
                     labels: {
-                        fontColor: '#fff'
+                        fontSize: 13,
+                        fontColor: '#fff',
+                        usePointStyle: true,
                     },
                     position: 'left'
                 }

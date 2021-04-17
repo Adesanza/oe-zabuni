@@ -20,5 +20,3 @@ const CircleVisual = ({ bgColor, textColor, text }) => {
 }
 
 export default CircleVisual;
-
-/* dy=".3em" */

@@ -6,7 +6,15 @@ const BarChart = ({ barData }) => {
             data={barData}
             height={450}
             options={{
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                borderRadius: 33,
+                legend: {
+                    labels: {
+                        fontSize: 13,
+                        fontColor: 'rgba(52, 41, 41, 0.6)',
+                        usePointStyle: true,
+                    }
+                }
             }}
         />
     )

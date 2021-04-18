@@ -17,9 +17,10 @@ const StatesContainer = styled.div`
         margin-top: .786rem;
 
     &:nth-of-type(${(props) => props.currStateIdx + 1}) {
-        border-bottom: 2px solid blue;
-        color: blue;
+        border-bottom: 2px solid #0056B3;
+        color: #0056B3;
         font-weight: bold;
+        padding: 0 .35rem;
         }
     }
 `;
@@ -28,7 +29,7 @@ const ArrowContainer = styled('div')`
     font-size: 2rem;
 
     &:first-child {
-        color: ${props => props.showPrevious ? "blue" : "#6c757d" };
+        color: ${props => props.showPrevious ? "#0056B3" : "rgba(52, 41, 41, 0.6)" };
         cursor: ${props => props.showPrevious ? "pointer" : "default" };
 
         .cursorsHover {
@@ -38,7 +39,7 @@ const ArrowContainer = styled('div')`
     }
 
     &:last-child {
-        color: ${props => props.showNext ? "blue" : "#6c757d" };
+        color: ${props => props.showNext ? "#0056B3" : "rgba(52, 41, 41, 0.6)" };
         cursor: ${props => props.showNext ? "pointer" : "default" };
 
         .cursorsHover {

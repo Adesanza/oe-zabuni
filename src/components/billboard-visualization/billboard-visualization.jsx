@@ -117,33 +117,33 @@ const BillboardDataVisuals = ({
       labels: [],
       datasets: [
         {
-          label: 'active',
+          label: 'Active',
           data: [],
           backgroundColor: [],
           borderColor: [],
-          borderWidth: 1,
-          barThickness: 6,
-          maxBarThickness: 3,
+          borderWidth: 0,
+          barThickness: 8,
+          maxBarThickness: 16,
           minBarLength: 1,
         },
         {
-          label: 'inactive',
+          label: 'Inactive',
           data: [],
           backgroundColor: [],
           borderColor: [],
-          borderWidth: 1,
-          barThickness: 6,
-          maxBarThickness: 3,
+          borderWidth: 0,
+          barThickness: 8,
+          maxBarThickness: 16,
           minBarLength: 1,
         },
         {
-          label: 'vacant',
+          label: 'Vacant',
           data: [],
           backgroundColor: [],
           borderColor: [],
-          borderWidth: 1,
-          barThickness: 6,
-          maxBarThickness: 3,
+          borderWidth: 0,
+          barThickness: 8,
+          maxBarThickness: 16,
           minBarLength: 1,
         },
       ],
@@ -245,7 +245,7 @@ const BillboardDataVisuals = ({
             States
           </p>
         </div>
-        <div className="col-md-9 col-sm-12 billboards">
+        <div className="col-md-8 billboards">
           <p className="billboard-title">Regions and number of Billboards</p>
           <PieChart
             pieLabels={pieReduce.regions}

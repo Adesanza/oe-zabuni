@@ -1,0 +1,33 @@
+.edit-profile-container {
+    /* border: 1px solid green; */
+    margin-top: -4rem;
+}
+.edit-profile-container > p {
+    color: blue;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.54rem;
+}
+.edit-profile {
+    margin-top: 1.76rem;
+    display: flex;
+    justify-content: space-between;
+}
+.profile-desc {
+    text-align: center;
+}
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid yellowgreen;
+}
+
+.user-name {
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.profile-form {
+    /* border: 1px solid yellow; */
+    flex-basis: 50%;
+}

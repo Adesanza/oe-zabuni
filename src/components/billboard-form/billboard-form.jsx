@@ -295,7 +295,6 @@ const BillboardForm = () => {
                     name="state"
                     value={values.state}
                     onChange={(e) => {
-                      console.log(e.target.value)
                       dispatch(showLgaData(e.target.value))
                       handleChange(e);
                     }}

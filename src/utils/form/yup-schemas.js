@@ -34,3 +34,9 @@ export const registerScehma = Yup.object().shape({
     email: Yup.string().email('Invalid email address').trim().required('Email is a required field'),
     password: Yup.string().required("Password is a required field").matches(/^[a-zA-Z0-9]{5,30}$/,"Password must contain only alphabets or numbers and must be longer than 5 characters")
 })
+
+export const editProfileSchema = Yup.object().shape({
+    firstName: Yup.string().matches(/^[a-zA-Z]{3,30}$/,"Firstname must contain only alphabets and must be more than 3 characters").required("First name is a required field"),
+    lastName: Yup.string().matches(/^[a-zA-Z]{3,30}$/,"Lastname must contain only alphabets and must be more than 3 characters").required("Last name is a required field"),
+    email: Yup.string().email('Invalid email address').trim().required('Email is a required field')
+})

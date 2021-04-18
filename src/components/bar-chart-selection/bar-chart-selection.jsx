@@ -14,13 +14,18 @@ const StatesContainer = styled.div`
     & p {
         text-transform: capitalize;
         cursor: pointer;
-        margin-top: .786rem;
+        margin-top: .854rem;
+        color: rgba(52, 41, 41, 0.6);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 24px;
 
     &:nth-of-type(${(props) => props.currStateIdx + 1}) {
         border-bottom: 2px solid #0056B3;
         color: #0056B3;
         font-weight: bold;
-        padding: 0 .35rem;
+        padding: 0 .31rem;
         }
     }
 `;

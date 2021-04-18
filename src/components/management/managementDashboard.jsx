@@ -1,22 +1,22 @@
-import { useSelector } from 'react-redux';
-import BillboardCategory from '../billboard-category/billboard-category';
-import BillboardDataVisuals from '../billboard-visualization/billboard-visualization';
-import DisplayBillboards from '../billboards-display/billboards-display';
-import CampaignManagement from '../campaigns-mgt/campaigns-mgt';
-import PeopleManagement from '../people-mgt/people-mgt';
-import { useBillboardGeneralInfo } from '../../hooks/billboard-data-hook';
-import './management-dashboard.css';
+import { useSelector } from "react-redux";
+import BillboardCategory from "../billboard-category/billboard-category";
+import BillboardDataVisuals from "../billboard-visualization/billboard-visualization";
+import DisplayBillboards from "../billboards-display/billboards-display";
+import CampaignManagement from "../campaigns-mgt/campaigns-mgt";
+import PeopleManagement from "../people-mgt/people-mgt";
+import { useBillboardGeneralInfo } from "../../hooks/billboard-data-hook";
+import "./management-dashboard.css";
 
 const ManagementDashboard = () => {
   const dashboardManagementState = useSelector(
     ({ dashboard }) => dashboard.management
   );
-  const { billboardGeneralInfo, isError } = useBillboardGeneralInfo();
-  return dashboardManagementState.child === 'inventory' ? (
+  const { billboardGeneralInfo } = useBillboardGeneralInfo();
+  return dashboardManagementState.child === "inventory" ? (
     <DisplayBillboards showCreate showCategoryNav />
-  ) : dashboardManagementState.child === 'people' ? (
+  ) : dashboardManagementState.child === "people" ? (
     <PeopleManagement />
-  ) : dashboardManagementState.child === 'campaign' ? (
+  ) : dashboardManagementState.child === "campaign" ? (
     <CampaignManagement />
   ) : (
     <div className="dashy">

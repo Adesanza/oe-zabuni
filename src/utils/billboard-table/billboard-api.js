@@ -11,7 +11,6 @@ export const billboardRoute = {
 const billboardDataApi =  {
     get: async (url) => {
             const response = await axios.get(url);
-            console.log("get-all-billboard",response.data)
             if(response.data.message){
                 throw new Error("Failed to fetch all billboards");
             }
@@ -19,16 +18,13 @@ const billboardDataApi =  {
     },
     create: async (billboardData) => {
             const response = await axios.post(billboardRoute.create, billboardData);
-            console.log("create-billboard",response.data)
             if(response.data.message){
                 throw new Error("Failed to create billboard");
             }
             return response.data;
     },
     edit: async (billboardData) => {
-            console.log("axis",billboardData)
             const response = await axios.patch(`${billboardRoute.edit}${billboardData._id}`, billboardData);
-            console.log("edit-billboard",response.data)
             if(response.data.message){
                 throw new Error("Failed to update billboard");
             }
@@ -36,7 +32,6 @@ const billboardDataApi =  {
     },
     delete: async (billboardId) => {
             const response = await axios.delete(`${billboardRoute.delete}${billboardId}`);
-            console.log("delete-billboard",response.data)
             if(response.data.message){
                 throw new Error("Failed to delete billboard");
             }
@@ -44,7 +39,6 @@ const billboardDataApi =  {
     },
     billboard_general_get: async (url) => {
         const response = await axios.get(url);
-        console.log("get-billboard-general-info",response.data)
         if(response.data.message){
             throw new Error("Failed to fetch billboard general info");
         }

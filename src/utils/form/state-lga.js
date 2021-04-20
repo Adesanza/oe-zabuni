@@ -124,6 +124,10 @@ const stateData = {
             'Ohaise',
             'Umun-Nekwu'
         ]}, 
+            {lga:'Ngwa',
+        cities:[
+            'Ngwa'
+        ]},
             {lga:'Obi Ngwa', 
         cities:[
             'Abayi',
@@ -161,7 +165,63 @@ const stateData = {
             'Uratta'
         ]}, 
             {lga:'Ugwunagbo', 
-        cities:[]}, 'Ukwa East', 'Ukwa West', 'Umuahia North', 'Umuahia South', 'Umu Nneochi'],
+        cities:[
+            'Abayi',
+            'Akanu',
+            'Alaoji',
+            'Amaokpu-Umuitiri',
+            'Obuzor',
+            'Osusu-Aku',
+            'Ozaa-Umuebukwu',
+            'Ugwunagbo',
+            'Uke'
+        ]}, 
+            {lga:'Ukwa East', 
+        cities:[
+            'Akwete',
+            'Ala-Ukwu',
+            'Azumini',
+            'Ibeme',
+            'Ikwueke',
+            'Ikwuo-Rieator',
+            'Ntigha-uzo',
+            'Obohia',
+            'Umuigbube-Achara'
+        ]}, 
+            {lga:'Ukwa West', 
+        cities:[
+            'Asa-North',
+            'Obokwe',
+            'Oke-Ikpe',
+            'Ozar-Ukwu',
+            'Ozar-West'
+        ]}, 
+            {lga:'Umuahia North', 
+        cities:[
+            'Ndume',
+            'Ohokobe',
+            'Ossa',
+            'Ugwunihara'
+        ]}, 
+            {lga:'Umuahia South', 
+        cities:[
+            'Ahiaukwa',
+            'Amakama',
+            'Apumiri',
+            'Nsirimo',
+            'Ohiaocha',
+            'Old Umuahia',
+            'Omaegwu',
+            'Ubalaka'
+        ]}, 
+            {lga:'Umu-Nneochi', 
+        cities:[
+            'Achara',
+            'Lomara',
+            'Nkwo-Agu',
+            'Umuelem'
+        ]}
+    ],
         anambra: ['Aguata', 'Anambra East', 'Anambra West', 'Anaocha', 'Awka North', 'Awka South', 'Ayamelum', 'Dunukofia', 'Ekwusigo', 'Idemili North', 'Idemili South', 'Ihiala', 'Njikoka', 'Nnewi North', 'Nnewi South', 'Ogbaru', 'Onitsha North', 'Onitsha South', 'Orumba North', 'Orumba South', 'Oyi'],
         ebonyi: ['Abakaliki', 'Afikpo North', 'Afikpo South', 'Ebonyi', 'Ezza North', 'Ezza South', 'Ikwo', 'Ishielu', 'Ivo', 'Izzi', 'Ohaozara', 'Ohaukwu', 'Onicha'],
         enugu: ['Aninri', 'Awgu', 'Enugu East', 'Enugu North', 'Enugu South', 'Ezeagu', 'Igbo Etiti', 'Igbo Eze North', 'Igbo Eze South', 'Isi Uzo', 'Nkanu East', 'Nkanu West', 'Nsukka', 'Oji River', 'Udenu', 'Udi', 'Uzo Uwani'],

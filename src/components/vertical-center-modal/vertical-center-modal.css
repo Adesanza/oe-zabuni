@@ -19,12 +19,12 @@
   /* border: 1px solid rebeccapurple; */
   margin-left: auto;
   font-size: 1.556rem;
-  transition: all 0.3s linear;
+  /* transition: all 0.3s linear; */
   cursor: pointer;
 }
-.modal-close-btn:hover {
+/* .modal-close-btn:hover {
   transform: rotate(360deg);
-}
+} */
 
 .modal-heading {
   font-family: 'Raleway';

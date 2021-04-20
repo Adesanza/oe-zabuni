@@ -46,14 +46,14 @@ const BillboardsTable = ({showCreate, billboardData, filteredBillboardData}) => 
       <th>AMOUNT</th>
       {
         showCreate ?
-        <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATE</Button></th>
+        <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATE NEW</Button></th>
         :
         null
       }
       
     </tr>
   </thead>
-  <tbody className="table-hover">
+  <tbody className="evenad">
         {
             filteredBillboardData.result.map(details => (
                 <tr key={details._id} className="billboard-row table-hover" 

@@ -122,7 +122,7 @@ const BillboardDataVisuals = ({
           backgroundColor: [],
           borderColor: [],
           borderWidth: 0,
-          barThickness: 8,
+          barThickness: 9,
           maxBarThickness: 16,
           minBarLength: 1,
         },
@@ -132,7 +132,7 @@ const BillboardDataVisuals = ({
           backgroundColor: [],
           borderColor: [],
           borderWidth: 0,
-          barThickness: 8,
+          barThickness: 9,
           maxBarThickness: 16,
           minBarLength: 1,
         },
@@ -142,7 +142,7 @@ const BillboardDataVisuals = ({
           backgroundColor: [],
           borderColor: [],
           borderWidth: 0,
-          barThickness: 8,
+          barThickness: 9,
           maxBarThickness: 16,
           minBarLength: 1,
         },
@@ -212,8 +212,23 @@ const BillboardDataVisuals = ({
           </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col types">
+      <div className="row seconder">
+      <div className="col total">
+          <p className="total-title">Total</p>
+          <CircleVisual
+            bgColor={'#f7f6fb'}
+            textColor={'#f514be'}
+            text={billboardCount}
+          />
+          <p className="state-status-gen">
+            in{' '}
+            <span className="state-status-num">
+              {billboardStatesStatus.length} {' '}
+            </span>
+            States
+          </p>
+        </div>
+        <div className="col-md-8 types">
           <p className="types-title">Types</p>
           <div className="types-container">
             {billboardTypesArr.map((billboardType, idx) => (
@@ -230,22 +245,7 @@ const BillboardDataVisuals = ({
         </div>
       </div>
       <div className="row folker">
-        <div className="col total">
-          <p className="total-title">Total</p>
-          <CircleVisual
-            bgColor={'#f7f6fb'}
-            textColor={'#f514be'}
-            text={billboardCount}
-          />
-          <p className="state-status-gen">
-            in{' '}
-            <span className="state-status-num">
-              {billboardStatesStatus.length}
-            </span>
-            States
-          </p>
-        </div>
-        <div className="col-md-8 billboards">
+        <div className="col billboards">
           <p className="billboard-title">Regions and number of Billboards</p>
           <PieChart
             pieLabels={pieReduce.regions}

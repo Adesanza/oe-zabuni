@@ -65,6 +65,7 @@ table th:last-child {
   font-weight: 600;
   font-size: 10px;
   line-height: 12px;
+  white-space: nowrap;
 }
 .create-billboard-btn:hover,
 .create-billboard-btn:not(:disabled):not(.disabled):active,
@@ -74,6 +75,7 @@ table th:last-child {
 
 .edit-delete-container {
   display: flex;
+  /* justify-content: space-around; */
   flex-flow: row nowrap;
   justify-content: center;
   /* border: 1px solid yellow; */
@@ -84,6 +86,9 @@ table th:last-child {
   display: flex;
   flex-flow: column nowrap;
   cursor: pointer;
+}
+.edit-delete-container > div:last-child {
+  padding: 0;
 }
 
 .billboard-amount {
@@ -133,4 +138,10 @@ table th:last-child {
 }
 .vacant {
   color: #24f25e;
+}
+.evenad {
+  border: 0.3px solid rgba(0, 123, 255, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 123, 255, 0.1);
+  border-radius: 6px;
 }

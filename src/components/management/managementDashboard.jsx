@@ -22,12 +22,12 @@ const ManagementDashboard = () => {
     <div className="dashy">
       <BillboardCategory />
       <div className="row">
-        <div className="col-md-5 p-0">
+        <div className="col-md-4 p-0">
           {billboardGeneralInfo ? (
             <BillboardDataVisuals billboardGeneralInfo={billboardGeneralInfo} />
           ) : null}
         </div>
-        <div className="col-md-7">
+        <div className="col-md-8">
           <DisplayBillboards />
         </div>
       </div>

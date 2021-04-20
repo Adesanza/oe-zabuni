@@ -4,7 +4,7 @@ const BarChart = ({ barData }) => {
   return (
     <Bar
       data={barData}
-      height={450}
+      height={350}
       options={{
         scales: {
           yAxes: [

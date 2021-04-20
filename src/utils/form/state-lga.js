@@ -2,8 +2,6 @@ const getStateLga = (state) => stateData[state];
 
 const getLgaCity = (lga) => cityData[lga];
 
-
-
 const stateData = {
     northcentral: {
         benue: ['Agatu', 'Apa', 'Ado', 'Buruku', 'Gboko', 'Guma', 'Gwer East', 'Gwer West', 'Katsina Ala', 'Konshisha', 'Kwande', 'Logo', 'Makurdi', 'Obi', 'Ogbadibo', 'Ohimini', 'Oju', 'Okpokwu', 'Oturkpo', 'Tarka', 'Ukum', 'Ushongo', 'Vandeikya'],
@@ -187,9 +185,6 @@ const stateData = {
     }
 };
 
-const cityData = {
-
-}
-
+const cityData = {};
 
 export { getStateLga, getLgaCity };

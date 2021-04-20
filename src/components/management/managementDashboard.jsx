@@ -23,7 +23,7 @@ const ManagementDashboard = () => {
     <div className="dashy">
       <BillboardCategory />
       <div className="row">
-        <div className="col-md-5 p-0">
+        <div className="col-md-4 p-0">
           {isLoading ? (
             <div className="loading-container">
               <RingLoader borderColor="#0056b3" />

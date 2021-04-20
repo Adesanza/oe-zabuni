@@ -139,6 +139,20 @@ table th:last-child {
 .vacant {
   color: #24f25e;
 }
+
+.table-loading {
+  /* border: 1px solid green; */
+  height: 70vh;
+}
+.table-loading > td {
+  /* border: 1px solid yellow; */
+  text-align: center;
+}
+
+.table-loading > td > div {
+  /* border: 1px solid green; */
+  margin-top: 25%;
+}
 .evenad {
   border: 0.3px solid rgba(0, 123, 255, 0.5);
   box-sizing: border-box;

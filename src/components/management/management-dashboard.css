@@ -35,3 +35,13 @@
   border-radius: 10px;
 } /****************************** end of scroll bar edit **********************/
 
+/* Loader area */
+.loading-container {
+  /* border: 1px solid pink; */
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

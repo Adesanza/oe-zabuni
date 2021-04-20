@@ -83,7 +83,7 @@ const BillboardForm = () => {
                   placeholder="Name"
                   className="formfont"
                 />
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.name && errors.name ? errors.name : null}
                 </Form.Text>
               </Form.Group>
@@ -98,7 +98,7 @@ const BillboardForm = () => {
                   placeholder="Location"
                   className="formfont"
                 />
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.location && errors.location ? errors.location : null}
                 </Form.Text>
               </Form.Group>
@@ -129,7 +129,7 @@ const BillboardForm = () => {
                     <option value="wall_drape">Wall Drape</option>
                     <option value="unipole">Unipole</option>
                   </Form.Control>
-                  <Form.Text className="text-danger">
+                  <Form.Text className="text-danger text-left">
                     {touched.type && errors.type ? errors.type : null}
                   </Form.Text>
                 </Form.Group>
@@ -148,7 +148,7 @@ const BillboardForm = () => {
                 <option value="inactive" className="inactive-status">Inactive</option>
                 <option value="vacant" className="vacant-status">Vacant</option>
               </Form.Control>
-              <Form.Text className="text-danger">
+              <Form.Text className="text-danger text-left">
                 {touched.status && errors.status ? errors.status : null}
               </Form.Text>
             </Form.Group>
@@ -168,7 +168,7 @@ const BillboardForm = () => {
                     placeholder="Height (m)"
                     className="formfont"
                   />
-                  <Form.Text className="text-danger">
+                  <Form.Text className="text-danger text-left">
                     {touched.height_m && errors.height_m ? errors.height_m : null}
                   </Form.Text>
                 </Form.Group>
@@ -185,7 +185,7 @@ const BillboardForm = () => {
                 placeholder="Width (m)"
                 className="formfont"
               />
-              <Form.Text className="text-danger">
+              <Form.Text className="text-danger text-left">
                 {touched.width_m && errors.width_m ? errors.width_m : null}
               </Form.Text>
             </Form.Group>
@@ -204,7 +204,7 @@ const BillboardForm = () => {
                     placeholder="Height (px)"
                     className="formfont"
                   />
-                  <Form.Text className="text-danger">
+                  <Form.Text className="text-danger text-left">
                     {touched.height_px && errors.height_px ? errors.height_px : null}
                   </Form.Text>
                 </Form.Group>
@@ -221,7 +221,7 @@ const BillboardForm = () => {
                 placeholder="Width (px)"
                 className="formfont"
               />
-              <Form.Text className="text-danger">
+              <Form.Text className="text-danger text-left">
                 {touched.width_px && errors.width_px ? errors.width_px : null}
               </Form.Text>
             </Form.Group>
@@ -240,7 +240,7 @@ const BillboardForm = () => {
                   <option value="">Category</option>
                   <option value="billboard">Billboard</option>
                 </Form.Control>
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.category && errors.category ? errors.category : null}
                 </Form.Text>
               </Form.Group>
@@ -258,7 +258,7 @@ const BillboardForm = () => {
                 <option value="digital">Digital</option>
                 <option value="static">Static</option>
               </Form.Control>
-              <Form.Text className="text-danger">
+              <Form.Text className="text-danger text-left">
                 {touched.class && errors.class ? errors.class : null}
               </Form.Text>
             </Form.Group>
@@ -283,7 +283,7 @@ const BillboardForm = () => {
                   <option value="northwest">Northwest</option>
                   <option value="southsouth">Southsouth</option>
                 </Form.Control>
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.class && errors.region ? errors.region : null}
                 </Form.Text>
               </Form.Group>
@@ -340,7 +340,7 @@ const BillboardForm = () => {
                     <option value="yobe">Yobe</option>
                     <option value="zamfara">Zamfara</option>
                   </Form.Control>
-                  <Form.Text className="text-danger">
+                  <Form.Text className="text-danger text-left">
                     {touched.state && errors.state ? errors.state : null}
                   </Form.Text>
                 </Form.Group>
@@ -361,7 +361,7 @@ const BillboardForm = () => {
                       lgaData.map(lga => <option key={lga} value={lga}>{lga}</option> )
                     }
                     </Form.Control>
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.lga && errors.lga ? errors.lga : null}
                 </Form.Text>
               </Form.Group>
@@ -376,7 +376,7 @@ const BillboardForm = () => {
                   placeholder="City"
                   className="formfont"
                 />
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.city && errors.city ? errors.city : null}
                 </Form.Text>
               </Form.Group>
@@ -393,7 +393,7 @@ const BillboardForm = () => {
                   placeholder="Coordinate"
                   className="formfont"
                 />
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.coordinate && errors.coordinate ? errors.coordinate : null}
                 </Form.Text>
               </Form.Group>
@@ -408,7 +408,7 @@ const BillboardForm = () => {
                   placeholder="Amount"
                   className="formfont"
                 />
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.amount && errors.amount ? errors.amount : null}
                 </Form.Text>
               </Form.Group>
@@ -427,7 +427,7 @@ const BillboardForm = () => {
                   placeholder="Faces"
                   className="formfont"
                 />
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.face && errors.face ? errors.face : null}
                 </Form.Text>
               </Form.Group>
@@ -444,7 +444,7 @@ const BillboardForm = () => {
                   placeholder="Slots"
                   className="formfont"
                 />
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.slot && errors.slot ? errors.slot : null}
                 </Form.Text>
               </Form.Group>
@@ -462,7 +462,7 @@ const BillboardForm = () => {
                   className="formfont"
                 />
                 {/* <Form.Label>Name</Form.Label> */}
-                <Form.Text className="text-danger">
+                <Form.Text className="text-danger text-left">
                   {touched.unit && errors.unit ? errors.unit : null}
                 </Form.Text>
               </Form.Group>

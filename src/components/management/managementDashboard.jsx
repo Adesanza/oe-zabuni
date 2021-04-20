@@ -5,13 +5,14 @@ import DisplayBillboards from "../billboards-display/billboards-display";
 import CampaignManagement from "../campaigns-mgt/campaigns-mgt";
 import PeopleManagement from "../people-mgt/people-mgt";
 import { useBillboardGeneralInfo } from "../../hooks/billboard-data-hook";
+import RingLoader from '../loader/loader';
 import "./management-dashboard.css";
 
 const ManagementDashboard = () => {
   const dashboardManagementState = useSelector(
     ({ dashboard }) => dashboard.management
   );
-  const { billboardGeneralInfo } = useBillboardGeneralInfo();
+  const { billboardGeneralInfo, isLoading, isError } = useBillboardGeneralInfo();
   return dashboardManagementState.child === "inventory" ? (
     <DisplayBillboards showCreate showCategoryNav />
   ) : dashboardManagementState.child === "people" ? (
@@ -22,9 +23,14 @@ const ManagementDashboard = () => {
     <div className="dashy">
       <BillboardCategory />
       <div className="row">
-        <div className="col-md-4 p-0">
-          {billboardGeneralInfo ? (
-            <BillboardDataVisuals billboardGeneralInfo={billboardGeneralInfo} />
+        <div className="col-md-5 p-0">
+          {isLoading ? (
+            <div className="loading-container">
+              <RingLoader borderColor="#0056b3" />
+            </div>
+          ):
+              billboardGeneralInfo && !isLoading ? (
+            <BillboardDataVisuals billboardGeneralInfo={billboardGeneralInfo}/>
           ) : null}
         </div>
         <div className="col-md-8">

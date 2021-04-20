@@ -19,7 +19,7 @@ export const createBillboardSchema = Yup.object().shape({
     region: Yup.string().oneOf(['southwest', 'southsouth', 'northcentral', 'southeast', 'northeast', 'northwest' ],'Invalid status').required("Must select an option"),
     state: Yup.string().max(15,"Must be 15 characters or less").required("Billboard state is required"),
     lga: Yup.string().required("Billboard lga is required"),
-    city: Yup.string().max(50,"Must be 50 characters or less").required("Billboard city is required"),
+    city: Yup.string().required("Billboard city is required"),
     amount: Yup.string().max(15,"Must be 15 characters or less").required("Billboard price is required"),
     coordinate: Yup.string().min(3).max(25,"Must be 25 characters or less").required("Billboard coordinate is required"),
     face: Yup.number().min(1).max(50).required("Billboard face is required"),

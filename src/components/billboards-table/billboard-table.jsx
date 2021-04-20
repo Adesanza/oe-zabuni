@@ -8,14 +8,10 @@ import { editBillboardData } from '../../redux/form/billboardFormReducer';
 import { formatBillboardLocation, formatBillboardState, formatBillboardType } from '../../utils/billboard-table/format-text';
 import { overheadModalContainer } from '../../redux/overhead-modal/overheadModalReducer';
 import { setConfirmationAction } from '../../redux/confirmation/confirmationPopupReducer';
+import RingLoader from '../loader/loader';
 // import TablePagination from '../pagination/pagination';
 
-const BillboardsTable = ({showCreate, billboardData, filteredBillboardData}) => {
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [tableSize] = useState(10);
-  // const billboardData = useSelector(state => state.billboardData);
-  // const filterKey = useSelector(state => state.filterBillboard);
-  // const filteredBillboardData = billboardFilter(filterKey,billboardData,currentPage,tableSize);
+const BillboardsTable = ({showCreate, billboardData, filteredBillboardData, isLoadingData}) => {
   const dispatch = useDispatch();
   const handleEdit = (id,moreDeatils = false) => {
     const toBeEdited = billboardData.find(billboard => billboard._id === id);
@@ -55,17 +51,20 @@ const BillboardsTable = ({showCreate, billboardData, filteredBillboardData}) => 
   </thead>
   <tbody className="table-hover">
         {
+          isLoadingData ?
+          <tr className="table-loading">
+            <td colSpan={100}>
+             <RingLoader borderColor="#0056b3" />
+            </td>
+           
+          </tr>
+          :
             filteredBillboardData.result.map(details => (
                 <tr key={details._id} className="billboard-row table-hover" 
                     onClick={() => {
                       handleEdit(details._id,true)
                       dispatch(verticalModalContent('more-details'))
                     }}>
-                    {/* <td id="fonter">
-                      {/* <FiMoreVertical className="more-icon"/> 
-                      <img src="https://res.cloudinary.com/adesanza/image/upload/v1616156307/zabuni/Group_1787_kbiyfb.svg" alt="more..." className="more-icon" onClick={() => dispatch(verticalModalContent('more-details'))}/>
-                      <span>{details.sn}</span>
-                    </td> */}
                     <td className="fonter">{details.name}</td>
                     <td className="locate">{formatBillboardLocation(details.location)}</td>
                     <td className="fonter">{formatBillboardType(details.type)}</td>

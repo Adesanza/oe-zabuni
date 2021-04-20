@@ -17,7 +17,7 @@ const BillboardDataVisuals = ({
       billboardTypes,
       billboardRegions,
     },
-  },
+  }
 }) => {
   const [currentState, setCurrState] = useState(billboardStatesStatus[0]);
   let billboardDigitalTotal = _.reduce(

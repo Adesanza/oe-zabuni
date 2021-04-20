@@ -164,7 +164,7 @@ const BillboardDataVisuals = ({
               />
               <p>Active</p>
             </div>
-            <div className="digital-active">
+            <div className="static-active1">
               <DoughnutChart
                 value={billboardClass.digital.inactive || 0}
                 totalValue={billboardDigitalTotal}
@@ -193,7 +193,7 @@ const BillboardDataVisuals = ({
               />
               <p>Active</p>
             </div>
-            <div className="static-active">
+            <div className="static-active1">
               <DoughnutChart
                 value={billboardClass.static.inactive || 0}
                 totalValue={billboardStaticTotal}

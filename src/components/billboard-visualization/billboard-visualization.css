@@ -38,12 +38,14 @@
 }
 
 .digital-active > p,
-.static-active > p {
+.static-active > p,
+.static-active1 > p {
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
   line-height: 18px;
   color: #0056b3;
+  margin-bottom: 0;
 }
 .doughnut-container {
   display: flex;
@@ -88,8 +90,12 @@
   border: 1px solid brown; */
   padding: 0.5rem;
 }
+.static-active1 {
+  padding: 0.5rem 0;
+}
 .static-active > p,
-.digital-active > p {
+.digital-active > p,
+.static-active1 > p {
   text-align: center;
   margin-top: 0.67rem;
 }
@@ -161,3 +167,10 @@
   background: #0056b3;
   border-radius: 10px;
 } /****************************** end of scroll bar edit **********************/
+.types-active > p {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+.middle-inactive {
+  padding: 0.5rem 0;
+}

@@ -1,4 +1,5 @@
 import { Table, Button } from 'react-bootstrap';
+import { FaSortDown, FaSortUp } from 'react-icons/fa';
 import { RiDeleteBin6Line, RiPencilLine } from 'react-icons/ri';
 import './billboard-table.css';
 import { useDispatch } from 'react-redux';
@@ -9,6 +10,8 @@ import { formatBillboardLocation, formatBillboardState, formatBillboardType } fr
 import { overheadModalContainer } from '../../redux/overhead-modal/overheadModalReducer';
 import { setConfirmationAction } from '../../redux/confirmation/confirmationPopupReducer';
 import RingLoader from '../loader/loader';
+import { getTableHeaderProps } from './table-header-data';
+
 // import TablePagination from '../pagination/pagination';
 
 const BillboardsTable = ({showCreate, billboardData, filteredBillboardData, isLoadingData}) => {
@@ -23,23 +26,23 @@ const BillboardsTable = ({showCreate, billboardData, filteredBillboardData, isLo
         <Table >
   <thead className="lightert">
     <tr>
-      <th>NAME</th>
-      <th>LOCATION</th>
-      <th>TYPE</th>
-      <th>HEIGHT</th>
-      <th>WIDTH</th>
-      <th>STATUS</th>
-      <th>CATEGORY</th>
-      <th>CLASS</th>
-      <th>FACE</th>
-      <th>SLOT</th>
-      <th>UNIT</th>
-      <th>REGION</th>
-      <th>STATE</th>
-      <th>LGA</th>
-      <th>CITY</th>
-      <th>COORDINATE (LAT/LONG)</th>
-      <th>AMOUNT</th>
+      {
+          getTableHeaderProps().getTableHeaderData()
+          .map(({ headName, isSorted, isSortedDesc}) => (
+            <th>
+              <span>{ headName }</span>
+              {
+                isSorted ?
+                  isSortedDesc ?
+                    <span className="sort-btn" ><FaSortDown /></span> 
+                    :
+                    <span className="sort-btn" ><FaSortUp /></span>
+                    :
+                    null
+              }
+            </th>
+          ))
+      }
       {
         showCreate ?
         <th><Button type="button" className="create-billboard-btn" onClick={() => {

@@ -158,3 +158,9 @@ table th:last-child {
   box-shadow: 0px 4px 4px rgba(0, 123, 255, 0.1);
   border-radius: 6px;
 }
+
+.sort-btn {
+  /* border: 1px solid #f5148e; */
+  font-size: 1.34rem;
+  line-height: .45rem;   
+}

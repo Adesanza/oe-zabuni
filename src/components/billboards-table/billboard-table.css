@@ -16,6 +16,7 @@ table tbody tr:hover {
 .lightert {
   font-weight: bold;
   font-size: 11px;
+  white-space: nowrap;
   line-height: 12px;
   text-transform: uppercase;
   /* background-color: #0056B3; */
@@ -159,8 +160,16 @@ table th:last-child {
   border-radius: 6px;
 }
 
+.show-cursor {
+  cursor: pointer;
+}
+
 .sort-btn {
   /* border: 1px solid #f5148e; */
-  font-size: 1.34rem;
-  line-height: .45rem;   
+  font-size: 0.78rem;
+  line-height: 0.45rem;
+}
+.sort-btn:last-child {
+  display: inline-block;
+  margin-left: 0.25rem;
 }

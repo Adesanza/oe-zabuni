@@ -1,5 +1,10 @@
+:root {
+  --generic-blue: #0056b3;
+  --generic-pink: #f5148e;
+}
+
 .dayo {
-  background-color: #0056b3;
+  background-color: var(--generic-blue);
   color: white;
   margin: 5px 0 10px;
   width: 426px;
@@ -25,11 +30,58 @@
   cursor: pointer;
   margin-bottom: 1rem;
 }
+
+p.lolo {
+  border: 0.5px solid var(--generic-blue);
+  padding-top: 25%;
+}
+
 .more-details-header {
   font-family: Raleway;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 26px;
-  color: #0056b3;
+  color: var(--generic-blue);
+}
+
+.billboard-preview-container {
+  margin: 0 auto;
+  /* border: 1px solid blueviolet; */
+  width: 42.45%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.billboard-preview-container > p {
+  cursor: pointer;
+}
+
+.live-stream-preview, .image-preview {
+  color: var(--generic-blue);
+  font-weight: bolder;
+  border-bottom: 2px solid var(--generic-blue);
+  cursor: default !important;
+}
+
+.download-billboard-summary {
+   display: inline-block;
+   width: fit-content;
+   margin-bottom: .79rem;
+   padding: .78rem;
+   background-color: var(--generic-pink);
+   letter-spacing: 1px;
+   font-size: .87rem;
+   border-radius: 10px;
+   border: 0;
+   font-weight: 600;
+   line-height: 12px;
+   white-space: nowrap;
+   color: #fff;
+}
+
+.download-billboard-summary:hover{
+  background-color: var(--generic-pink);
+  color: #fff;
 }

@@ -38,7 +38,7 @@ const billboardFormReducer = createSlice({
             state.formData = {
                 ...action.payload
             }
-            state.lgaData = [...getStateLga(action.payload.state)]
+            // state.lgaData = [...getStateLga(action.payload.state)]
         },
         showLgaData: (state, action) => {
             state.lgaData = [...getStateLga(action.payload)]

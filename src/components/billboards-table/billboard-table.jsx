@@ -42,7 +42,10 @@ const BillboardsTable = ({showCreate, billboardData, filteredBillboardData, isLo
       <th>AMOUNT</th>
       {
         showCreate ?
-        <th><Button type="button" className="create-billboard-btn" onClick={() => dispatch(verticalModalContent('create-billboard'))}>CREATE NEW</Button></th>
+        <th><Button type="button" className="create-billboard-btn" onClick={() => {
+          alert("Creating of billboard is currently under construction.")
+          // dispatch(verticalModalContent('create-billboard'))
+        }}>CREATE NEW</Button></th>
         :
         null
       }
@@ -110,7 +113,8 @@ const BillboardsTable = ({showCreate, billboardData, filteredBillboardData, isLo
                       <div className="edit-delete-container">
                       <div onClick={(e) => {
                         e.stopPropagation();
-                        handleEdit(details._id)
+                        // handleEdit(details._id)
+                        alert("Editing of billboard is currently under construction.")
                       }}>
                         <RiPencilLine className="edit-icon"/>
                         <span className="edit-icon-text">Edit</span>

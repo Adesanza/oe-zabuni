@@ -1,17 +1,39 @@
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import { useState } from "react";
+import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { formatBillboardType } from "../../utils/billboard-table/format-text";
+import BillboardPdfDetails from "../pdf-doc/pdf-doc";
 import './more-details.css';
 
 const MoreDetails = () => {
+    const [billboardPreview, setBillboardPreview] = useState("live-stream");
     const formDataState = useSelector(state => state.billboardForm);
     const { formData } = formDataState;
     return (
         <div>
             <p className="more-details-header">{formData.name}</p>
             <div>
-                <img className="lolo" src="https://res.cloudinary.com/adesanza/image/upload/v1617877527/zabuni/Group_2114_r3npfs.svg" alt=""/>
-                <p>Live Stream</p>
+                {
+                    billboardPreview === "live-stream" ?
+                    <p className="lolo">Waiting for video feed...</p> 
+                    :
+                    <img className="lolo" src="https://res.cloudinary.com/adesanza/image/upload/v1617877527/zabuni/Group_2114_r3npfs.svg" alt=""/>
+                }
             </div>
+            <div className="billboard-preview-container">
+                <p 
+                    className={`billboard-preview ${billboardPreview === 'live-stream' ? 'live-stream-preview' : ''}`}
+                    onClick={() => setBillboardPreview('live-stream')}
+                    >Live stream</p>
+                <p  
+                    className={`billboard-preview ${billboardPreview === 'image-preview' ? 'image-preview' : '' }`}
+                    onClick={() => setBillboardPreview('image-preview')}
+                    >Image</p>
+            </div>
+            <PDFDownloadLink document={<BillboardPdfDetails {...formData} />} fileName={`${formData.name}-billboard.pdf`} className="download-billboard-summary">
+                    {({ loading, error }) => loading ? 'Loading document...' : error ? 'Failed to create summary' : 'Download summary'}
+            </PDFDownloadLink>
             <div className="">
                 <div className="row justify-content-between dayo">
                     <p>Name: {formData.name} </p>

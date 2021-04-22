@@ -1,6 +1,5 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { formatBillboardType } from "../../utils/billboard-table/format-text";
 import BillboardPdfDetails from "../pdf-doc/pdf-doc";

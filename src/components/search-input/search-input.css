@@ -1,3 +1,15 @@
+.search-control {
+  display: flex;
+  /* border: 1px solid red; */
+}
+.select-control {
+  padding: 0;
+  margin-top: -.36rem;
+}
+.select-control, .select-control:focus {
+  border: 0;
+  background-color: transparent;
+}
 .searchContainer {
     display: inline-flex;
     /* flex: 1 1 200px; */
@@ -6,7 +18,7 @@
     border-bottom: 1px;
     border-bottom-style: groove;
     /* border: 1px solid red; */
-    margin-top: .5rem;
+    margin: .5rem 0 0 .65rem;
   }
 .searchIcon {
   /* border: 1px solid blue; */

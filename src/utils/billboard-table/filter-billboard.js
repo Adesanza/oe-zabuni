@@ -1,5 +1,3 @@
-import { split } from 'lodash';
-
 const billboardFilter = (filterData, billboardData, tablePage, tableSize) => {
   switch (filterData.type) {
     case 'search-by-name':

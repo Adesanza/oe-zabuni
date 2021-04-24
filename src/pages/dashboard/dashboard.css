@@ -16,3 +16,20 @@
   justify-content: space-between;
   /* border: 1px solid tomato; */
 }
+
+.refresh-billboard-visuals {
+  background-color: #0056b3;
+  width: fit-content;
+  color: #fff;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: .76rem;
+  padding: 0.24rem .65rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: .85rem;
+}
+
+.refresh-billboard-visuals > *:first-child {
+  font-size: 1.45rem;
+}

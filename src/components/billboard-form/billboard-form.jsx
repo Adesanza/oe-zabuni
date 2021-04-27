@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closeVerticalModalDisplay } from '../../redux/vertical-modal/verticalModalReducer';
 import {
   resetBillboardFormData,
+  showStateData,
   showLgaData,
+  showCityData
 } from '../../redux/form/billboardFormReducer';
 import { overheadModalContainer } from '../../redux/overhead-modal/overheadModalReducer';
 import { setAlertContent } from '../../redux/alert/alertPopupReducer';
@@ -19,7 +21,7 @@ import { useBillboardData } from '../../hooks/billboard-data-hook';
 const BillboardForm = () => {
   const { billboardData } = useBillboardData(billboardRoute.get);
   const formDataState = useSelector((state) => state.billboardForm);
-  const { isEditing, formData, lgaData } = formDataState;
+  const { isEditing, formData, stateData, lgaData, cityData } = formDataState;
   const dispatch = useDispatch();
   return (
     <Formik
@@ -299,7 +301,10 @@ const BillboardForm = () => {
                   as="select"
                   name="region"
                   value={values.region}
-                  onChange={handleChange}
+                  onChange={(e) => {
+                    dispatch(showStateData(e.target.value));
+                    handleChange(e);
+                  }}
                   onBlur={handleBlur}
                   className="formf"
                 >
@@ -330,43 +335,11 @@ const BillboardForm = () => {
                   className="formf"
                 >
                   <option value="">Select State</option>
-                  <option value="fct">Abuja FCT</option>
-                  <option value="abia">Abia</option>
-                  <option value="adamawa">Adamawa</option>
-                  <option value="akwa_ibom">Akwa Ibom</option>
-                  <option value="anambra">Anambra</option>
-                  <option value="bauchi">Bauchi</option>
-                  <option value="bayelsa">Bayelsa</option>
-                  <option value="benue">Benue</option>
-                  <option value="borno">Borno</option>
-                  <option value="cross_river">Cross River</option>
-                  <option value="delta">Delta</option>
-                  <option value="ebonyi">Ebonyi</option>
-                  <option value="edo">Edo</option>
-                  <option value="ekiti">Ekiti</option>
-                  <option value="enugu">Enugu</option>
-                  <option value="gombe">Gombe</option>
-                  <option value="imo">Imo</option>
-                  <option value="jigawa">Jigawa</option>
-                  <option value="kaduna">Kaduna</option>
-                  <option value="kano">Kano</option>
-                  <option value="katsina">Katsina</option>
-                  <option value="kebbi">Kebbi</option>
-                  <option value="kogi">Kogi</option>
-                  <option value="kwara">Kwara</option>
-                  <option value="lagos">Lagos</option>
-                  <option value="nassarawa">Nassarawa</option>
-                  <option value="niger">Niger</option>
-                  <option value="ogun">Ogun</option>
-                  <option value="ondo">Ondo</option>
-                  <option value="osun">Osun</option>
-                  <option value="oyo">Oyo</option>
-                  <option value="plateau">Plateau</option>
-                  <option value="rivers">Rivers</option>
-                  <option value="sokoto">Sokoto</option>
-                  <option value="taraba">Taraba</option>
-                  <option value="yobe">Yobe</option>
-                  <option value="zamfara">Zamfara</option>
+                  {stateData.map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
                 </Form.Control>
                 <Form.Text className="text-danger text-left">
                   {touched.state && errors.state ? errors.state : null}
@@ -380,7 +353,10 @@ const BillboardForm = () => {
                   as="select"
                   name="lga"
                   value={values.lga}
-                  onChange={handleChange}
+                  onChange={(e) => {
+                    dispatch(showCityData(e.target.value));
+                    handleChange(e);
+                  }}
                   onBlur={handleBlur}
                   className="formf"
                 >
@@ -395,17 +371,24 @@ const BillboardForm = () => {
                   {touched.lga && errors.lga ? errors.lga : null}
                 </Form.Text>
               </Form.Group>
-              <Form.Group as={Col} controlId="formBasicCity">
+              <Form.Group as={Col} controlId="controlSelectCity">
                 <Form.Label className="form-label">City</Form.Label>
                 <Form.Control
-                  type="text"
+                  as="select"
                   name="city"
                   value={values.city}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="City"
-                  className="formfont"
-                />
+                  className="formf"
+                >
+                   <option value="">Select City</option>
+                  {cityData.map((city) => (
+                    <option key={city} value={city}>
+                      {city}
+                    </option>
+                  ))}
+                  </Form.Control>
                 <Form.Text className="text-danger text-left">
                   {touched.city && errors.city ? errors.city : null}
                 </Form.Text>

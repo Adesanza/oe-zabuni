@@ -17,7 +17,7 @@ export const createBillboardSchema = Yup.object().shape({
     category: Yup.string().oneOf(['billboard'],'Invalid status').required("Must select an option"),
     class: Yup.string().oneOf(['digital', 'static'],'Invalid status').required("Must select an option"),
     region: Yup.string().oneOf(['southwest', 'southsouth', 'northcentral', 'southeast', 'northeast', 'northwest' ],'Invalid status').required("Must select an option"),
-    state: Yup.string().max(15,"Must be 15 characters or less").required("Billboard state is required"),
+    state: Yup.string().required("Billboard state is required"),
     lga: Yup.string().required("Billboard lga is required"),
     city: Yup.string().required("Billboard city is required"),
     amount: Yup.string().max(15,"Must be 15 characters or less").required("Billboard price is required"),

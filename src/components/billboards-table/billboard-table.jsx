@@ -86,10 +86,10 @@ const BillboardsTable = ({
                   type="button"
                   className="create-billboard-btn"
                   onClick={() => {
-                    alert(
-                      'Creating of billboard is currently under construction.'
-                    );
-                    // dispatch(verticalModalContent('create-billboard'))
+                    // alert(
+                    //   'Creating of billboard is currently under construction.'
+                    // );
+                    dispatch(verticalModalContent('create-billboard'))
                   }}
                 >
                   CREATE NEW

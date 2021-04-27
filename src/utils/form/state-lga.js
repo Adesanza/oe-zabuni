@@ -1,7 +1,3 @@
-const getStateLga = (state) => stateData[state];
-
-const getLgaCity = (lga) => cityData[lga];
-
 const stateData = {
   northcentral: {
     benue: [
@@ -10002,6 +9998,5 @@ const stateData = {
   },
 };
 
-const cityData = {};
 
-export { getStateLga, getLgaCity };
+export default stateData;

@@ -1,3 +1,4 @@
+// temi is here
 const getStateLga = (state) => stateData[state];
 
 const getLgaCity = (lga) => cityData[lga];

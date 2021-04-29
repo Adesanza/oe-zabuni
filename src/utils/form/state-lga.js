@@ -209,7 +209,6 @@ const stateData = {
           'Orokam',
           'Otukpa',
           'Owukpa',
-          'Okpoga',
           'Edumoga',
         ],
       },

@@ -209,7 +209,6 @@ const stateData = {
           'Orokam',
           'Otukpa',
           'Owukpa',
-          'Okpoga',
           'Edumoga',
         ],
       },
@@ -688,6 +687,7 @@ const stateData = {
         lga: 'Asa',
         cities: [
           'Afon',
+          'olugbon',
           'Yowere',
           'Owode',
           'Inive',
@@ -1878,9 +1878,11 @@ const stateData = {
         ],
       },
       {
-        lga: 'Abuja Municipal',
+        lga: 'Municipal Area Council',
         cities: [
           'Garki',
+          'Central Business District',
+          'Independent Avenue',
           'Jabi',
           'Wuse',
           'Maitama',
@@ -4129,6 +4131,7 @@ const stateData = {
           'Sabon-Birnin Daji',
           'Kwarau',
           'Rigachikun',
+          'Jaji',
           'Kerawa',
           'Kawaraji',
           'Gadan Gayan',
@@ -4206,6 +4209,7 @@ const stateData = {
         cities: [
           'Doka',
           'Gaji',
+          'Dadi Riba',
           'Gabasawa',
           'Shaba',
           'Hayin Bank',
@@ -7494,7 +7498,7 @@ const stateData = {
       },
       {
         lga: 'Enugu North',
-        cities: ['Enugu', 'Amaigbo Lane', 'Onuato', 'Umunevo', 'Ihenwuzi'],
+        cities: ['Enugu', 'Amaigbo Lane', 'Onuato', 'Umunevo','Okpara', 'Ihenwuzi'],
       },
       {
         lga: 'Nkanu East',
@@ -9959,6 +9963,7 @@ const stateData = {
         cities: [
           'Ikeja',
           'Anifowoshe',
+          'Airport road',
           'Ikeja',
           'Ojodu',
           'Agidingbi',
@@ -9982,6 +9987,7 @@ const stateData = {
         lga: 'Ikorodu',
         cities: [
           'Ikorodu',
+          'Sagamu road',
           'Isele',
           'Aga',
           'Ijimu',
@@ -10009,6 +10015,7 @@ const stateData = {
           'Ajao Estate',
           'Mende',
           'Maryland',
+          'Gbagada',
           'Ojota',
           'Ogudu',
           'Ketu',
@@ -10081,6 +10088,7 @@ const stateData = {
           'Mushin',
           'Alakara',
           'Odi Olowu',
+          'Tinubu',
           'Babalosa',
           'Ojuwoye',
           'Ilupeju',
@@ -10154,8 +10162,10 @@ const stateData = {
         lga: 'Surulere',
         cities: [
           'Surulere',
+          'Alagbede',
           'Orile',
           'Aguda',
+          'Iponri',
           'Ijeshatedo',
           'Akinhanmi/Cole',
           'Yaba',

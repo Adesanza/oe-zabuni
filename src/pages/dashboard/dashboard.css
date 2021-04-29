@@ -16,18 +16,21 @@
   justify-content: space-between;
   /* border: 1px solid tomato; */
 }
-
+/* .top-section > div:first-child {
+  display: flex;
+  border: 1px solid goldenrod;
+} */
 .refresh-billboard-visuals {
   background-color: #0056b3;
   width: fit-content;
   color: #fff;
   font-weight: bold;
   text-transform: capitalize;
-  font-size: .76rem;
-  padding: 0.24rem .65rem;
+  font-size: 0.76rem;
+  padding: 0.24rem 0.65rem;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: .85rem;
+  margin-top: 0.85rem;
 }
 
 .refresh-billboard-visuals > *:first-child {

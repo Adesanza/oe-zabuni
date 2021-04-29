@@ -16,7 +16,7 @@ table tbody tr:hover {
 .lightert {
   font-weight: bold;
   font-size: 11px;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   line-height: 12px;
   text-transform: uppercase;
   /* background-color: #0056B3; */
@@ -116,6 +116,7 @@ table th:last-child {
 .edit-icon-text,
 .delete-icon-text {
   font-size: 9px;
+  white-space: nowrap;
 }
 .more-icon {
   font-size: 2rem;
@@ -162,14 +163,30 @@ table th:last-child {
 
 .show-cursor {
   cursor: pointer;
+  white-space: nowrap;
 }
 
-.sort-btn {
+.sort-btn-up,
+.sort-btn-down {
   /* border: 1px solid #f5148e; */
   font-size: 0.78rem;
-  line-height: 0.45rem;
+  /* line-height: 0.45rem; */
+  /* display: inline-block; */
+  margin-left: 0.2rem;
 }
-.sort-btn:last-child {
-  display: inline-block;
-  margin-left: 0.25rem;
+.sort-btn-up {
+  /* margin-top: 0.5rem; */
+  justify-self: center;
+}
+.sort-btn-down {
+  margin-bottom: 0.5rem;
+  justify-self: center;
+}
+
+/* .sort-btn-down > :last-child, */
+.sort-btn-up > :last-child {
+  margin-top: 0.25rem;
+}
+.sort-btn-down > :last-child {
+  margin-bottom: 0.5rem;
 }

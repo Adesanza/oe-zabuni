@@ -17,7 +17,7 @@ const BillboardDataVisuals = ({
       billboardTypes,
       billboardRegions,
     },
-  }
+  },
 }) => {
   const [currentState, setCurrState] = useState(billboardStatesStatus[0]);
   let billboardDigitalTotal = _.reduce(
@@ -213,7 +213,7 @@ const BillboardDataVisuals = ({
         </div>
       </div>
       <div className="row seconder">
-      <div className="col total">
+        <div className="col total">
           <p className="total-title">Total</p>
           <CircleVisual
             bgColor={'#f7f6fb'}
@@ -223,7 +223,7 @@ const BillboardDataVisuals = ({
           <p className="state-status-gen">
             in{' '}
             <span className="state-status-num">
-              {billboardStatesStatus.length} {' '}
+              {billboardStatesStatus.length}{' '}
             </span>
             States
           </p>

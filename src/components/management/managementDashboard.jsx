@@ -36,7 +36,7 @@ const ManagementDashboard = () => {
             <BillboardDataVisuals billboardGeneralInfo={billboardGeneralInfo} />
           ) : null}
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8 pr-1">
           <DisplayBillboards />
         </div>
       </div>

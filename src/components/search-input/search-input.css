@@ -24,7 +24,7 @@
   border-bottom: 1px;
   border-bottom-style: groove;
   /* border: 1px solid red; */
-  margin: 0.5rem 0 0 0.65rem;
+  margin: 0.5rem 0.5rem 0 0.65rem;
 }
 .searchIcon {
   /* border: 1px solid blue; */
@@ -45,6 +45,7 @@
   outline: none;
   /* line-height: .45rem; */
   background-color: #e5e5e5;
+  width: 420px;
 }
 .name-search,
 .location-search {

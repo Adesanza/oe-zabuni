@@ -8,7 +8,7 @@ import {
   resetBillboardFormData,
   showStateData,
   showLgaData,
-  showCityData
+  showCityData,
 } from '../../redux/form/billboardFormReducer';
 import { overheadModalContainer } from '../../redux/overhead-modal/overheadModalReducer';
 import { setAlertContent } from '../../redux/alert/alertPopupReducer';
@@ -382,13 +382,13 @@ const BillboardForm = () => {
                   placeholder="City"
                   className="formf"
                 >
-                   <option value="">Select City</option>
+                  <option value="">Select City</option>
                   {cityData.map((city) => (
                     <option key={city} value={city}>
                       {city}
                     </option>
                   ))}
-                  </Form.Control>
+                </Form.Control>
                 <Form.Text className="text-danger text-left">
                   {touched.city && errors.city ? errors.city : null}
                 </Form.Text>

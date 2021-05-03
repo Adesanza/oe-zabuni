@@ -688,7 +688,7 @@ const stateData = {
         cities: [
           'Afon',
           'olugbon',
-          'Gbagba',
+          'Gbagba'
           'Yowere',
           'Owode',
           'Inive',
@@ -10102,7 +10102,6 @@ const stateData = {
           'Alakara',
           'Odi Olowu',
           'Tinubu',
-          'Idi Oro',
           'Babalosa',
           'Ojuwoye',
           'Ilupeju',

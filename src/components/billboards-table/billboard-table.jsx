@@ -69,11 +69,11 @@ const BillboardsTable = ({
                 <span>{headName}</span>
                 {isSorted ? (
                   isSortedDesc ? (
-                    <span className="sort-btn">
+                    <span className="sort-btn-down">
                       <FaSortDown />
                     </span>
                   ) : (
-                    <span className="sort-btn">
+                    <span className="sort-btn-up">
                       <FaSortUp />
                     </span>
                   )
@@ -89,7 +89,7 @@ const BillboardsTable = ({
                     // alert(
                     //   'Creating of billboard is currently under construction.'
                     // );
-                    dispatch(verticalModalContent('create-billboard'))
+                    dispatch(verticalModalContent('create-billboard'));
                   }}
                 >
                   CREATE NEW
@@ -162,7 +162,6 @@ const BillboardsTable = ({
                 <td className="fonter">{details.city}</td>
                 <td className="fonter">{details.coordinate}</td>
                 <td className="fonter billboard-amount">
-                  <span></span>
                   {details.amount}
                   <span>Per annum</span>
                 </td>
@@ -172,10 +171,10 @@ const BillboardsTable = ({
                       <div
                         onClick={(e) => {
                           e.stopPropagation();
-                          // handleEdit(details._id)
-                          alert(
-                            'Editing of billboard is currently under construction.'
-                          );
+                          handleEdit(details._id);
+                          // alert(
+                          //   'Editing of billboard is currently under construction.'
+                          // );
                         }}
                       >
                         <RiPencilLine className="edit-icon" />

@@ -203,14 +203,7 @@ const stateData = {
       },
       {
         lga: 'Okpokwu',
-        cities: [
-          'Okpoga',
-          'Ichanna',
-          'Orokam',
-          'Otukpa',
-          'Owukpa',
-          'Edumoga',
-        ],
+        cities: ['Okpoga', 'Ichanna', 'Orokam', 'Otukpa', 'Owukpa', 'Edumoga'],
       },
       {
         lga: 'Ohimini',
@@ -688,7 +681,7 @@ const stateData = {
         cities: [
           'Afon',
           'olugbon',
-          'Gbagba'
+          'Gbagba',
           'Yowere',
           'Owode',
           'Inive',
@@ -7500,7 +7493,14 @@ const stateData = {
       },
       {
         lga: 'Enugu North',
-        cities: ['Enugu', 'Amaigbo Lane', 'Onuato', 'Umunevo','Okpara', 'Ihenwuzi'],
+        cities: [
+          'Enugu',
+          'Amaigbo Lane',
+          'Onuato',
+          'Umunevo',
+          'Okpara',
+          'Ihenwuzi',
+        ],
       },
       {
         lga: 'Nkanu East',
@@ -11997,6 +11997,5 @@ const stateData = {
     ],
   },
 };
-
 
 export default stateData;

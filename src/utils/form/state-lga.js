@@ -688,6 +688,7 @@ const stateData = {
         cities: [
           'Afon',
           'olugbon',
+          'Gbagba'
           'Yowere',
           'Owode',
           'Inive',
@@ -758,6 +759,7 @@ const stateData = {
           'Ibagan',
           'Agbeyangi',
           'Gbadamu',
+          'Ilorin',
           'Gambari',
           'Marafa Maya',
           'Ile Apa',
@@ -4231,7 +4233,7 @@ const stateData = {
           'Kakuri Hausa',
           'Kakuri Gwari',
           'Barnawa',
-          'Badoko',
+          'Badiko',
         ],
       },
       {
@@ -7294,7 +7296,7 @@ const stateData = {
         ],
       },
       {
-        lga: 'Onitsha',
+        lga: 'Onitsha North',
         cities: ['Onitsha'],
       },
       {
@@ -8393,6 +8395,7 @@ const stateData = {
         lga: 'Ikwerre',
         cities: [
           'Isiokpor',
+          'Ozuaha',
           'Aluu',
           'Elele',
           'Igwuruta',
@@ -8424,15 +8427,18 @@ const stateData = {
         ],
       },
       {
-        lga: 'Obia/Akpor',
+        lga: 'Obio/Akpor',
         cities: [
           'Rumuodumaya',
           'Elelenwo',
           'choba',
+          'Iriebe',
+          'Elimgbu',
           'Oro Igwe',
           'Ozuba',
           'Rupkokwu',
-          'Rumueme',
+          'Rumuome',
+          'Rumuola',
           'Rumuigbo',
           'Rumuokwuta',
           'Rumuodara',
@@ -9308,6 +9314,7 @@ const stateData = {
         lga: 'Egor',
         cities: [
           'Uselu',
+          'Ugbowo',
           'Agidigbi',
           'Egor',
           'Environ Camp',
@@ -9466,7 +9473,7 @@ const stateData = {
   southwest: {
     ekiti: [
       {
-        lga: 'Ado',
+        lga: 'Ado Ekiti',
         cities: [
           'Ado Ekiti',
           'Ago Araromi',
@@ -9474,7 +9481,8 @@ const stateData = {
           'Amirin',
           'Aso Ayegbule',
           'Ategbedo',
-          'Ernfun',
+          'Erinfun',
+          'Igbeyin',
           'Igim Okogo',
           'Igirigiri',
           'Ika',
@@ -9782,6 +9790,7 @@ const stateData = {
           'Papa Uku',
           'Agbotikuyo',
           'Dopemu',
+          'Akowonjo',
           'Oyewole',
           'Papa Ashafa',
           'Okekoto',
@@ -9855,6 +9864,7 @@ const stateData = {
           'Apapa',
           'Tincan/Snake Island',
           'Ijora Oloye',
+          'Apapa-Oworonsoki Expressway',
           'Olodan',
           'Olojowou',
           'Olatokunbo',
@@ -9911,7 +9921,6 @@ const stateData = {
         cities: [
           'Ikoyi',
           'Victoria Island',
-          'Ilasan',
           'Ilasan',
           'Ikate',
           'Ilado',
@@ -9977,6 +9986,8 @@ const stateData = {
           'Adekunle Village/Adeniyi Jones',
           'Ogba',
           'Oke Ira',
+          'Ojota',
+          'Oshosun',
           'Aguda',
           'Onigbongbo',
           'Wasimi',
@@ -10052,6 +10063,8 @@ const stateData = {
           'Ilupessi',
           'Isale Agbede',
           'Olosun',
+          'Ahmadu Bello Way',
+          'Tafawa Balewa Square',
           'Olushi',
           'Kakawa',
           'Popo Aguda',
@@ -10146,6 +10159,7 @@ const stateData = {
           'Lad Lak',
           'Bariga',
           'Bariga',
+          'Idi Oro',
           'Ilaje',
           'akoka',
           'Igbobi/Fadeyi',
@@ -10214,6 +10228,7 @@ const stateData = {
         cities: [
           'Ake Abeokuta',
           'Abese',
+          'Aro',
           'Abesin',
           'Isale',
           'Abesin Oke',
@@ -10268,6 +10283,9 @@ const stateData = {
           'Agbado',
           'Ojoolu',
           'Abeloju',
+          'Oke',
+          'Isheri',
+          'Otta',
           'Jagunna',
           'Lerin',
           'Pakoto',
@@ -10317,6 +10335,7 @@ const stateData = {
         lga: 'Ijebu Ode',
         cities: [
           'Ijebu Igbo',
+          'Ijebu Ode',
           'Ijagun Ijari/Ogbogbo',
           'Ikangba',
           'Imoru',
@@ -10331,6 +10350,10 @@ const stateData = {
       {
         lga: 'Ikenne',
         cities: ['Ikenne', 'Iperu', 'Ilisha', 'Ogere', 'Irolu', 'Ikenne'],
+      },
+      {
+        lga: 'Egbado South',
+        cities: ['Ilaro'],
       },
       {
         lga: 'Imeko-Afon',
@@ -10703,6 +10726,7 @@ const stateData = {
           'Koseru',
           'Ebijan',
           'Ayesan',
+          'Asewele',
           'Araromi Obu',
           'Ajue',
           'ago Alaye',
@@ -11021,6 +11045,7 @@ const stateData = {
           'Apesibiti',
           'Balogun Obiribiri',
           'Isule',
+          'Obale Jugbe',
           'Lamba Agbere',
           'Morayin',
         ],
@@ -11111,6 +11136,7 @@ const stateData = {
         cities: [
           'Iyemogun',
           'Iyemogun',
+          'Ilesha',
           'Ayeso',
           'Araromi',
           'Okesa',
@@ -11127,6 +11153,7 @@ const stateData = {
         lga: 'Ilesha West',
         cities: [
           'Ayeso',
+          'Ilesha',
           'Ereja',
           'Ikoti/Araromi',
           'Ilaje',

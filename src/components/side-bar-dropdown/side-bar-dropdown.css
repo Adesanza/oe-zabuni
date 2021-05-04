@@ -9,7 +9,7 @@
 .sidebar-dropdown-toggle {
   display: flex;
   flex-flow: row nowrap;
-  padding: 0.49rem;
+  padding: 0.49rem 0.15rem;
   text-transform: capitalize;
   cursor: pointer;
 }
@@ -19,8 +19,8 @@
 }
 .sidebar-dropdown-toggle > * {
   /* display: inline-block; */
-  padding-right: 0.62rem;
-  align-self: flex-start;
+  padding-right: 0.39rem;
+  /* align-self: flex-start; */
 }
 
 .sidebar-dropdown-toggle > span:first-child {
@@ -34,11 +34,11 @@
 }
 
 .sidebar-dropdown-content {
-  padding-left: 3.37rem;
+  padding-left: 3rem;
 }
 
 .sidebar-dropdown-content > * {
-  margin: 0.56rem 0;
+  margin: 0.4rem 0;
   font-weight: lighter;
   cursor: pointer;
   font-size: 14px;

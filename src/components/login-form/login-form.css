@@ -1,21 +1,20 @@
 .login-submit-btn {
-    height: 60px;
-background-color: #0056B3;
-box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08);
-border-radius: 10px;
-font-size: 24px;
+  height: 60px;
+  background-color: #0056b3;
+  box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08);
+  border-radius: 10px;
+  font-size: 24px;
 }
 
 .sign-up-text {
-    color: #0056B3;
-    cursor: pointer;
-    font-style: normal;
-font-weight: bold;
-font-size: 21px;
+  color: #0056b3;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
 }
-.dont{
-    font-size: 17px;
-line-height: 30px;
-color: #393333;
+.dont {
+  font-size: 17px;
+  line-height: 30px;
+  color: #393333;
 }
-

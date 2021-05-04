@@ -3,7 +3,7 @@ import 'react-circular-progressbar/dist/styles.css';
 
 const DoughnutChart = ({ totalValue, value, classState }) => {
   return (
-    <div >
+    <div>
       <strong>
         <CircularProgressbar
           value={value}

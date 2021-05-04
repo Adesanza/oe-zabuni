@@ -7,7 +7,7 @@
   background-color: #e5e5e5;
   width: 100%;
   flex-basis: 100%;
-  padding: 1rem 0 0 188px;
+  padding: 1rem 0 0 170px;
   /* border: 1px solid green; */
 }
 
@@ -24,8 +24,6 @@
   background-color: #0056b3;
   width: fit-content;
   color: #fff;
-  font-weight: bold;
-  text-transform: capitalize;
   font-size: 0.76rem;
   padding: 0.24rem 0.65rem;
   border-radius: 10px;

@@ -44,6 +44,8 @@ const billboardFormReducer = createSlice({
       state.formData = {
         ...action.payload,
       };
+      state.currentRegion = action.payload.region;
+      state.currentState = action.payload.state;
       state.stateData = [...getRegionState(action.payload.region)];
       state.lgaData = [
         ...getStateLga(action.payload.state, action.payload.region),

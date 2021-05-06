@@ -9,7 +9,7 @@ import './billboards-display.css';
 
 const DisplayBillboards = ({ showCreate, showCategoryNav }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [tableSize] = useState(10);
+  const [tableSize] = useState(12);
   const { billboardData, isLoading, isError } = useBillboardData();
   // console.log("bill",billboardData);
   // const billboardData = useSelector(state => state.billboardData);

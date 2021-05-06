@@ -1902,7 +1902,6 @@ const stateData = {
           'Dutse',
           'Katampe',
           'Karmo',
-          'Gwarimpa',
           'Dape',
           'Kafe',
           'Nbora',

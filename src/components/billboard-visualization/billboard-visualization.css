@@ -1,9 +1,9 @@
 .digital {
-  margin: 0 1rem 0.5rem 0;
+  margin: 0 1rem 1rem 0;
 }
 .static,
 .seconder {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 1rem 0;
 }
 .digital,
 .static {
@@ -12,7 +12,7 @@
   border-radius: 6px;
 }
 .folker {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .digital > p,
 .static > p {

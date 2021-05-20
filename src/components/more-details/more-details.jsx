@@ -6,21 +6,17 @@ import BillboardPdfDetails from '../pdf-doc/pdf-doc';
 import './more-details.css';
 
 const MoreDetails = () => {
-  const [billboardPreview, setBillboardPreview] = useState('live-stream');
+  const [billboardPreview, setBillboardPreview] = useState('image-preview');
   const formDataState = useSelector((state) => state.billboardForm);
   const { formData } = formDataState;
   return (
     <div>
       <p className="more-details-header">{formData.name}</p>
       <div>
-        {billboardPreview === 'live-stream' ? (
-          <p className="lolo">Waiting for video feed...</p>
+        {billboardPreview === 'image-preview' ? (
+          <img className="lolo" src={formData.image} alt="" />
         ) : (
-          <img
-            className="lolo"
-            src="https://res.cloudinary.com/adesanza/image/upload/v1617877527/zabuni/Group_2114_r3npfs.svg"
-            alt=""
-          />
+          <p className="lolo">Waiting for video feed...</p>
         )}
       </div>
       <div className="billboard-preview-container">

@@ -1,6 +1,6 @@
 import { Table, Button } from 'react-bootstrap';
 import { FaSortDown, FaSortUp } from 'react-icons/fa';
-import { RiDeleteBin6Line, RiPencilLine } from 'react-icons/ri';
+import { RiPencilLine } from 'react-icons/ri';
 import './billboard-table.css';
 import { useDispatch } from 'react-redux';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
@@ -193,7 +193,12 @@ const BillboardsTable = ({
                           // dispatch(deleteBillboard(details.id));
                         }}
                       >
-                        <RiDeleteBin6Line className="delete-icon" />
+                        {/* <RiDeleteBin6Line className="delete-icon" /> */}
+                        <img
+                          src="https://res.cloudinary.com/adesanza/image/upload/v1616010293/zabuni/Vector_c0exq8.png"
+                          alt="delete"
+                          className="delete-icon"
+                        />
                         <span className="delete-icon-text">Delete</span>
                       </div>
                     </div>

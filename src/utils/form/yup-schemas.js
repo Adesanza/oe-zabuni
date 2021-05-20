@@ -14,6 +14,7 @@ export const loginSchema = Yup.object().shape({
 });
 
 export const createBillboardSchema = Yup.object().shape({
+  image: Yup.string(),
   name: Yup.string()
     .max(15, 'Must be 15 characters or less')
     .required('Billboard name is required'),

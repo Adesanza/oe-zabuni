@@ -106,7 +106,7 @@ table th:last-child {
 }
 .delete-icon {
   color: #b50841;
-  opacity: 0.7;
+  /* opacity: 0.7; */
 }
 .edit-icon {
   color: #6e6b7b;

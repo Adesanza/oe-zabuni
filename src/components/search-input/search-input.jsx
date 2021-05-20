@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { FaSearch } from 'react-icons/fa';
+import { BiSearch } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { filterBillboardData } from '../../redux/filter-Billboard/filterBillboardReducer';
 import './search-input.css';
@@ -38,7 +38,7 @@ const SearchInputField = () => {
       {/* <Dropdown.Item as="button" onClick={() => setSearchType("search-by-location")} >Search by location</Dropdown.Item> */}
       <div className="searchContainer">
         {/* <i className="fa fa-search searchIcon"></i> */}
-        <FaSearch className="searchIcon" />
+        <BiSearch className="searchIcon" />
         <input
           className="searchBox"
           type="search"

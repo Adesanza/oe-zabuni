@@ -17,12 +17,32 @@ import billboardDataApi, {
   billboardRoute,
 } from '../../utils/billboard-table/billboard-api';
 import { useBillboardData } from '../../hooks/billboard-data-hook';
+import { useRef } from 'react';
 
 const BillboardForm = () => {
+  const fileInputRef = useRef(null);
   const { billboardData } = useBillboardData(billboardRoute.get);
   const formDataState = useSelector((state) => state.billboardForm);
   const { isEditing, formData, stateData, lgaData, cityData } = formDataState;
   const dispatch = useDispatch();
+  const handleFileUpload = () => {
+    if (fileInputRef.current) fileInputRef.current.click();
+  };
+  const onImageDrop = (e) => {
+    console.log(window.URL.createObjectURL(e.target.files[0]));
+    try {
+      if (e.target.files?.length) {
+        try {
+          dispatch();
+          // fetchImageRecogByUpload({ imageFile: e.target.files[0]})
+        } catch (err) {
+          // dispatch(resetFaceRecog('error'));
+        }
+      }
+    } catch (error) {
+      console.log('error-uploadBtn', error);
+    }
+  };
   return (
     <Formik
       validationSchema={createBillboardSchema}
@@ -91,6 +111,22 @@ const BillboardForm = () => {
         isSubmitting,
       }) => (
         <>
+          <Form>
+            <input
+              className="hide"
+              type="file"
+              accept="image/*"
+              ref={fileInputRef}
+              onChange={onImageDrop}
+            />
+            <button
+              className="billboard-update-btn"
+              type="button"
+              onClick={handleFileUpload}
+            >
+              {isEditing ? 'change billboard image' : 'upload billboard image'}
+            </button>
+          </Form>
           <Form noValidate onSubmit={handleSubmit}>
             <Form.Row>
               <Form.Group as={Col} controlId="formBasicName">

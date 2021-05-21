@@ -7,13 +7,13 @@ const BillboardPdfDetails = ({ name, location, status, amount }) => {
         <View style={styles.header}>
           <Image
             style={styles.logo}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7AizKwGgJ9qZEHWDmuyccP0zfqjM8ct94rg&usqp=CAU"
+            src="https://res.cloudinary.com/adesanza/image/upload/v1621580639/zabuni/Group_15_cuz46b.png"
           />
           <Text style={styles.title}>billboard details</Text>
         </View>
         <Image
           style={styles.image}
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7AizKwGgJ9qZEHWDmuyccP0zfqjM8ct94rg&usqp=CAU"
+          src="https://res.cloudinary.com/adesanza/image/upload/v1621580225/zabuni/March17.2017_pczaxm.jpg"
         />
         <Text style={styles.content}>billboard name: {name}</Text>
         <Text style={styles.content}>billboard location: {location}</Text>

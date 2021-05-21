@@ -84,19 +84,25 @@ const MoreDetails = () => {
         <div className="row dayo">
           <p>
             Height:{' '}
-            {`${formData.height_m} metre${
-              formData.class === 'digital'
-                ? `, ${formData.height_px} pixel`
-                : ''
-            }`}
+            <strong>
+              {`${formData.height_m} metre${
+                formData.class === 'digital'
+                  ? `, ${formData.height_px} pixel`
+                  : ''
+              }`}
+            </strong>
           </p>
         </div>
         <div className="row dayo">
           <p>
             Width:{' '}
-            {`${formData.width_m} metre${
-              formData.class === 'digital' ? `, ${formData.width_px} pixel` : ''
-            }`}
+            <strong>
+              {`${formData.width_m} metre${
+                formData.class === 'digital'
+                  ? `, ${formData.width_px} pixel`
+                  : ''
+              }`}
+            </strong>
           </p>
         </div>
         <div className="row justify-content-between dayo">

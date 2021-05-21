@@ -5,7 +5,6 @@ import './billboard-table.css';
 import { useDispatch } from 'react-redux';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
 import { editBillboardData } from '../../redux/form/billboardFormReducer';
-// import { billboardFilter } from '../../utils/billboard-table/filter-billboard';
 import {
   formatBillboardLocation,
   formatBillboardState,
@@ -18,7 +17,6 @@ import { tableHeaderData } from './table-header-data';
 import { useState } from 'react';
 import { filterBillboardData } from '../../redux/filter-Billboard/filterBillboardReducer';
 
-// import TablePagination from '../pagination/pagination';
 const BillboardsTable = ({
   showCreate,
   billboardData,
@@ -155,7 +153,7 @@ const BillboardsTable = ({
                 <td className="fonter">{details.slot}</td>
                 <td className="fonter">{details.unit}</td>
                 <td className="fonter">{details.region}</td>
-                <td className="fonter">
+                <td className="fonter text-uppercase">
                   {formatBillboardState(details.state)}
                 </td>
                 <td className="fonter">{details.lga}</td>
@@ -172,9 +170,6 @@ const BillboardsTable = ({
                         onClick={(e) => {
                           e.stopPropagation();
                           handleEdit(details._id);
-                          // alert(
-                          //   'Editing of billboard is currently under construction.'
-                          // );
                         }}
                       >
                         <RiPencilLine className="edit-icon" />
@@ -190,10 +185,8 @@ const BillboardsTable = ({
                             })
                           );
                           dispatch(overheadModalContainer('confirmation'));
-                          // dispatch(deleteBillboard(details.id));
                         }}
                       >
-                        {/* <RiDeleteBin6Line className="delete-icon" /> */}
                         <img
                           src="https://res.cloudinary.com/adesanza/image/upload/v1616010293/zabuni/Vector_c0exq8.png"
                           alt="delete"
@@ -209,7 +202,6 @@ const BillboardsTable = ({
           )}
         </tbody>
       </Table>
-      {/* <TablePagination currentTablePage={currentPage} pageData={filteredBillboardData.result}  setCurrentPage={setCurrentPage} pageEnd={filteredBillboardData.pageEnd} gotoNextPage={filteredBillboardData.nextPage}/> */}
     </div>
   );
 };

@@ -23,7 +23,10 @@ const SideBar = () => {
   }, [location.pathname]);
   return (
     <div className="side-bar">
-      <SidebarDropdown data={activeSidebar.management}>
+      <SidebarDropdown
+        data={activeSidebar.management}
+        setactiveSidebar={setactiveSidebar}
+      >
         <p
           onClick={() => dispatch(managementDashboard('inventory'))}
           className={
@@ -49,22 +52,34 @@ const SideBar = () => {
           Campaigns
         </p>
       </SidebarDropdown>
-      <SidebarDropdown data={activeSidebar.marketing}>
+      <SidebarDropdown
+        data={activeSidebar.marketing}
+        setactiveSidebar={setactiveSidebar}
+      >
         <p>zabuni</p>
         <p>zabuni</p>
         <p>zabuni</p>
       </SidebarDropdown>
-      <SidebarDropdown data={activeSidebar.technical}>
+      <SidebarDropdown
+        data={activeSidebar.technical}
+        setactiveSidebar={setactiveSidebar}
+      >
         <p>Javascript</p>
         <p>React</p>
         <p>Node</p>
       </SidebarDropdown>
-      <SidebarDropdown data={activeSidebar.operations}>
+      <SidebarDropdown
+        data={activeSidebar.operations}
+        setactiveSidebar={setactiveSidebar}
+      >
         <p>Addition</p>
         <p>Multiplication</p>
         <p>Division</p>
       </SidebarDropdown>
-      <SidebarDropdown data={activeSidebar.finance}>
+      <SidebarDropdown
+        data={activeSidebar.finance}
+        setactiveSidebar={setactiveSidebar}
+      >
         <p>Dollar</p>
         <p>Naira</p>
         <p>Kobo</p>

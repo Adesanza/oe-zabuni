@@ -3,17 +3,17 @@ const formatBillboardType = (type) => {
     case 'led':
       return 'LED';
     case 'bridge_panel':
-      return 'bridge panel';
+      return 'Bridge Panel';
     case 'eye_catcher':
-      return 'eye catcher';
+      return 'Eye catcher';
     case 'mega_board':
-      return 'mega board';
+      return 'Mega board';
     case 'super48_sheet':
-      return 'super 48 sheet';
+      return 'Super 48 sheet';
     case 'video_wall':
-      return 'video wall';
+      return 'Video wall';
     case 'wall_drape':
-      return 'wall drape';
+      return 'Wall Drape';
     default:
       return type;
   }
@@ -21,9 +21,9 @@ const formatBillboardType = (type) => {
 
 const formatBillboardState = (state) => {
   switch (state) {
-    case 'akwa_ibom':
+    case 'akwaibom':
       return 'akwa ibom';
-    case 'cross_river':
+    case 'crossRiver':
       return 'cross river';
     default:
       return state;
@@ -37,4 +37,13 @@ const formatBillboardLocation = (location) => {
   return location;
 };
 
-export { formatBillboardType, formatBillboardState, formatBillboardLocation };
+const formatBillboardRegion = (region) => {
+  return `${region.substr(0, 5)} ${region.substr(5)}`;
+};
+
+export {
+  formatBillboardType,
+  formatBillboardState,
+  formatBillboardLocation,
+  formatBillboardRegion,
+};

@@ -17,6 +17,7 @@ const billboardDataApi = {
     return response.data;
   },
   create: async (billboardData) => {
+    // console.log('fff', billboardData);
     const response = await axios.post(billboardRoute.create, billboardData);
     if (response.data.message) {
       throw new Error('Failed to create billboard');
@@ -24,6 +25,7 @@ const billboardDataApi = {
     return response.data;
   },
   edit: async (billboardData) => {
+    // console.log('edit', billboardData);
     const response = await axios.patch(
       `${billboardRoute.edit}${billboardData._id}`,
       billboardData

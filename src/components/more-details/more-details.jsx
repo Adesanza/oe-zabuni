@@ -14,7 +14,14 @@ const MoreDetails = () => {
       <p className="more-details-header">{formData.name}</p>
       <div>
         {billboardPreview === 'image-preview' ? (
-          <img className="lolo" src={formData.image} alt="" />
+          <img
+            className="lolo"
+            src={
+              formData.image ||
+              'https://res.cloudinary.com/tbakare/image/upload/v1621347865/No_image_jykbva.png'
+            }
+            alt=""
+          />
         ) : (
           <p className="lolo">Waiting for video feed...</p>
         )}

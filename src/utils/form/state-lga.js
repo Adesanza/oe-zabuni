@@ -422,8 +422,7 @@ const stateData = {
           'Ogegele',
           'Owoli Apa',
           'Ogegele',
-          'OIgacheba',
-          'Igalaogba',
+          'Oigacheba',
         ],
       },
       {

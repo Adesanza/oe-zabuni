@@ -1,5 +1,6 @@
-import { Form, Button, Col } from 'react-bootstrap';
+import { Form, Button, Col, Spinner } from 'react-bootstrap';
 import { Formik } from 'formik';
+import axios from 'axios';
 import './billboard-form.css';
 import { createBillboardSchema } from '../../utils/form/yup-schemas';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,30 +18,57 @@ import billboardDataApi, {
   billboardRoute,
 } from '../../utils/billboard-table/billboard-api';
 import { useBillboardData } from '../../hooks/billboard-data-hook';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 const BillboardForm = () => {
   const fileInputRef = useRef(null);
+  const [uploadImage, setImageUpload] = useState(false);
+  const [isuploadingImage, setIsUploadingImage] = useState(false);
+  const [billboardImageUrl, setBillboardImageUrl] = useState('');
+  const [imageUploadSuccess, setImageUploadSuccess] = useState('');
   const { billboardData } = useBillboardData(billboardRoute.get);
   const formDataState = useSelector((state) => state.billboardForm);
   const { isEditing, formData, stateData, lgaData, cityData } = formDataState;
   const dispatch = useDispatch();
+  useEffect(() => {
+    // console.log(formData);
+    if (isEditing && formData.image) {
+      setBillboardImageUrl(formData.image);
+      setImageUpload(true);
+    }
+  }, []);
   const handleFileUpload = () => {
     if (fileInputRef.current) fileInputRef.current.click();
   };
-  const onImageDrop = (e) => {
-    console.log(window.URL.createObjectURL(e.target.files[0]));
+  const onImageDrop = async (e) => {
+    // console.log(e.target.files[0]);
+    setIsUploadingImage(true);
     try {
       if (e.target.files?.length) {
-        try {
-          dispatch();
-          // fetchImageRecogByUpload({ imageFile: e.target.files[0]})
-        } catch (err) {
-          // dispatch(resetFaceRecog('error'));
+        const formData = new FormData();
+        formData.append('file', e.target.files[0]);
+        formData.append('upload_preset', 'xled2csv');
+        const res = await axios.post(
+          'https://api.cloudinary.com/v1_1/adesanza/image/upload',
+          formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          }
+        );
+        if (res.data.secure_url) {
+          setIsUploadingImage(false);
+          setImageUploadSuccess('success');
+          setImageUpload(true);
+          setBillboardImageUrl(res.data.secure_url);
         }
       }
     } catch (error) {
       console.log('error-uploadBtn', error);
+      setImageUploadSuccess('failure');
+      setIsUploadingImage(false);
+      // setImageUpload(false);
     }
   };
   return (
@@ -48,8 +76,10 @@ const BillboardForm = () => {
       validationSchema={createBillboardSchema}
       initialValues={formData}
       onSubmit={async (values, { setSubmitting }) => {
-        console.log(values);
+        // console.log(values);
         setSubmitting(true);
+        values = { ...values, image: billboardImageUrl };
+        // console.log(values);
         let updatedBillboardData = [...billboardData];
         if (isEditing) {
           try {
@@ -120,12 +150,66 @@ const BillboardForm = () => {
               onChange={onImageDrop}
             />
             <button
-              className="billboard-update-btn"
+              className={`billboardimage-update-btn ${
+                uploadImage ? 'billboardimage-upload-btn' : ''
+              }`}
+              style={
+                uploadImage && billboardImageUrl
+                  ? { backgroundImage: `url(${billboardImageUrl})` }
+                  : null
+              }
               type="button"
               onClick={handleFileUpload}
             >
-              {isEditing ? 'change billboard image' : 'upload billboard image'}
+              {isuploadingImage ? (
+                <>
+                  <Spinner
+                    as="span"
+                    animation="border"
+                    size="md"
+                    role="status"
+                    aria-hidden="true"
+                  />
+                  <span className="sr-only">Loading...</span>
+                </>
+              ) : isEditing ? (
+                'change billboard image'
+              ) : (
+                'upload billboard image'
+              )}
             </button>
+            <div>
+              <div>
+                {imageUploadSuccess ? (
+                  <>
+                    <img
+                      src={
+                        imageUploadSuccess === 'success'
+                          ? 'https://res.cloudinary.com/adesanza/image/upload/v1622031599/billboard-images/Group_2125_xfhjic.svg'
+                          : 'https://res.cloudinary.com/adesanza/image/upload/v1622031599/billboard-images/Group_2125_xfhjic.svg'
+                      }
+                      alt="success state icon"
+                    />
+                    <span>
+                      {imageUploadSuccess === 'success'
+                        ? 'Image successfully uploaded'
+                        : imageUploadSuccess === 'failure'
+                        ? 'Image failed to upload'
+                        : 'Image deleted'}
+                    </span>
+                  </>
+                ) : null}
+              </div>
+              <img
+                onClick={() => {
+                  setImageUpload(false);
+                  setBillboardImageUrl('');
+                  setImageUploadSuccess('deleted');
+                }}
+                src="https://res.cloudinary.com/adesanza/image/upload/v1622030906/billboard-images/Vector_2_bih6fj.svg"
+                alt="del"
+              />
+            </div>
           </Form>
           <Form noValidate onSubmit={handleSubmit}>
             <Form.Row>

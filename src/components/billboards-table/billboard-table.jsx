@@ -9,6 +9,7 @@ import {
   formatBillboardLocation,
   formatBillboardState,
   formatBillboardType,
+  formatBillboardRegion,
 } from '../../utils/billboard-table/format-text';
 import { overheadModalContainer } from '../../redux/overhead-modal/overheadModalReducer';
 import { setConfirmationAction } from '../../redux/confirmation/confirmationPopupReducer';
@@ -84,9 +85,6 @@ const BillboardsTable = ({
                   type="button"
                   className="create-billboard-btn"
                   onClick={() => {
-                    // alert(
-                    //   'Creating of billboard is currently under construction.'
-                    // );
                     dispatch(verticalModalContent('create-billboard'));
                   }}
                 >
@@ -152,7 +150,9 @@ const BillboardsTable = ({
                 <td className="fonter">{details.face}</td>
                 <td className="fonter">{details.slot}</td>
                 <td className="fonter">{details.unit}</td>
-                <td className="fonter">{details.region}</td>
+                <td className="fonter">
+                  {formatBillboardRegion(details.region)}
+                </td>
                 <td className="fonter text-uppercase">
                   {formatBillboardState(details.state)}
                 </td>

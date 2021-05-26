@@ -27,6 +27,7 @@ const init = {
     face: '',
     slot: '',
     unit: '',
+    image: '',
   },
   currentRegion: '',
   currentState: '',

@@ -6,10 +6,13 @@ import SideBar from '../../components/side-bar/side-bar';
 import { BiRefresh } from 'react-icons/bi';
 import './dashboard.css';
 import { mutate } from 'swr';
+import { DateTime } from 'luxon';
 import { billboardRoute } from '../../utils/billboard-table/billboard-api';
+import { useState } from 'react';
 
 const Dashboard = ({ type }) => {
   // const dashboardState = useSelector(state => state.dashboard);
+  const [currTime, setCurrTime] = useState(DateTime.now());
   return (
     <div className="dashboard">
       <SideBar />
@@ -20,7 +23,10 @@ const Dashboard = ({ type }) => {
         </div>
         <div
           className="refresh-billboard-visuals"
-          onClick={() => mutate(billboardRoute.general_info)}
+          onClick={async () => {
+            await mutate(billboardRoute.general_info);
+            setCurrTime(DateTime.now());
+          }}
         >
           <BiRefresh />
         </div>

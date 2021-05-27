@@ -1,6 +1,3 @@
-.billboard-update-btn {
-  text-transform: capitalize;
-}
 .form-control {
   border: 0.5px solid #0056b3;
   box-sizing: border-box;
@@ -9,17 +6,18 @@
 }
 .billboard-update-btn {
   background: #0056b3;
-  box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08);
   border-radius: 10px;
   height: 60px;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   width: 100%;
+  text-transform: capitalize;
+  border-width: 0;
 }
 .billboardimage-update-btn {
   background: #0056b3;
-  box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08);
+  /* box-shadow: 0px 2px 2px rgba(181, 8, 65, 0.08); */
   border-radius: 10px;
   height: 60px;
   font-style: normal;
@@ -27,11 +25,21 @@
   font-size: 24px;
   width: 100%;
   color: #fff;
+  text-transform: capitalize;
+  border-width: 0;
+  opacity: 0.8;
 }
 .billboardimage-upload-btn {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
+  text-transform: capitalize;
+}
+.image-delete-icon {
+  cursor: pointer;
+  /* margin-left: 199px; */
+  /* margin-left: 433px; */
+  /* align-self: right; */
 }
 .formfont::placeholder {
   height: 14px;
@@ -47,9 +55,20 @@
 .form-label {
   display: flex;
   font-size: 10px;
-  /* margin: 0; */
   text-align: left;
 }
 .hide {
   display: none;
+}
+.error-state {
+  justify-content: space-between;
+  padding-top: 9.5px;
+}
+.success-state-text {
+  margin-left: 0.5rem;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  color: #342929;
 }

@@ -178,7 +178,7 @@ const BillboardForm = () => {
                 'upload billboard image'
               )}
             </button>
-            <div>
+            <div className="row error-state">
               <div>
                 {imageUploadSuccess ? (
                   <>
@@ -186,11 +186,11 @@ const BillboardForm = () => {
                       src={
                         imageUploadSuccess === 'success'
                           ? 'https://res.cloudinary.com/adesanza/image/upload/v1622031599/billboard-images/Group_2125_xfhjic.svg'
-                          : 'https://res.cloudinary.com/adesanza/image/upload/v1622031599/billboard-images/Group_2125_xfhjic.svg'
+                          : 'https://res.cloudinary.com/adesanza/image/upload/v1622118775/billboard-images/Group_2168_aciq1f.svg'
                       }
-                      alt="success state icon"
+                      alt=""
                     />
-                    <span>
+                    <span className="success-state-text">
                       {imageUploadSuccess === 'success'
                         ? 'Image successfully uploaded'
                         : imageUploadSuccess === 'failure'
@@ -201,6 +201,7 @@ const BillboardForm = () => {
                 ) : null}
               </div>
               <img
+                className="image-delete-icon"
                 onClick={() => {
                   setImageUpload(false);
                   setBillboardImageUrl('');
@@ -442,7 +443,6 @@ const BillboardForm = () => {
               </Form.Group>
               <Form.Group as={Col} controlId="controlSelectState">
                 <Form.Label className="form-label">State</Form.Label>
-                {/* <Form.Label>Example select</Form.Label> */}
                 <Form.Control
                   as="select"
                   name="state"

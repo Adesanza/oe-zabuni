@@ -76,6 +76,7 @@ const Header = () => {
                   onClick={() => {
                     logUserOut();
                     history.push('/');
+                    dispatch(resetDashboard());
                   }}
                 >
                   Log Out

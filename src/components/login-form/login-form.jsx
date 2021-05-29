@@ -20,7 +20,7 @@ const LoginForm = () => {
       initialValues={{ email: '', password: '' }}
       onSubmit={(values, actions) => {
         actions.setSubmitting(true);
-        console.log({ values, actions });
+        // console.log({ values, actions });
         dispatch(fetchUserOnLogin(values))
           .then(unwrapResult)
           .then((data) => {

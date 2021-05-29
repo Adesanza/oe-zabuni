@@ -1,5 +1,5 @@
 import { FaCaretRight, FaCaretDown } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router';
 import { useHistory } from 'react-router';
 import { resetDashboard } from '../../redux/dashboard/dashboardReducer';

@@ -19,7 +19,7 @@ const userApi = {
     const response = await axios.post(databaseRoute.login, {
       ...loginDetails,
     });
-    console.log('login', response.data);
+    // console.log('login', response.data);
     if (response.data.message) {
       throw new Error('Wrong email or password');
     }

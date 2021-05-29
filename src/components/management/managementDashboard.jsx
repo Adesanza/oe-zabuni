@@ -12,11 +12,7 @@ const ManagementDashboard = () => {
   const dashboardManagementState = useSelector(
     ({ dashboard }) => dashboard.management
   );
-  const {
-    billboardGeneralInfo,
-    isLoading,
-    isError,
-  } = useBillboardGeneralInfo();
+  const { billboardGeneralInfo, isLoading } = useBillboardGeneralInfo();
   return dashboardManagementState.child === 'inventory' ? (
     <DisplayBillboards showCreate showCategoryNav />
   ) : dashboardManagementState.child === 'people' ? (

@@ -16,7 +16,7 @@ const SideBar = () => {
     setactiveSidebar({
       ...dropdownData,
       [location.pathname.replace('/', '')]: {
-        active: true,
+        active: false,
         title: location.pathname.replace('/', ''),
       },
     });

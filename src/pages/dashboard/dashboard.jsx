@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 const Dashboard = ({ type }) => {
   // const dashboardState = useSelector(state => state.dashboard);
-  const [currTime, setCurrTime] = useState(DateTime.now());
+  const [setCurrTime] = useState(DateTime.now());
   return (
     <div className="dashboard">
       <SideBar />

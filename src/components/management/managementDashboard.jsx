@@ -28,9 +28,12 @@ const ManagementDashboard = () => {
             <div className="loading-container">
               <RingLoader borderColor="#0056b3" />
             </div>
-          ) : billboardGeneralInfo && !isLoading ? (
+          ) : !isLoading &&
+            !billboardGeneralInfo.billboard_info.billboardCount ? (
+            <p>Sorry, no data yet</p>
+          ) : (
             <BillboardDataVisuals billboardGeneralInfo={billboardGeneralInfo} />
-          ) : null}
+          )}
         </div>
         <div className="col-md-8 pr-1">
           <DisplayBillboards />

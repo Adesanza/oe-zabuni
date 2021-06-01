@@ -21,27 +21,30 @@ import { useBillboardData } from '../../hooks/billboard-data-hook';
 import { useRef, useState, useEffect } from 'react';
 
 const BillboardForm = () => {
+  const { _id } = useSelector((state) => state.user);
   const fileInputRef = useRef(null);
   const [uploadImage, setImageUpload] = useState(false);
   const [isuploadingImage, setIsUploadingImage] = useState(false);
   const [billboardImageUrl, setBillboardImageUrl] = useState('');
   const [imageUploadSuccess, setImageUploadSuccess] = useState('');
-  const { billboardData } = useBillboardData(billboardRoute.get);
+  const { billboardData } = useBillboardData();
   const formDataState = useSelector((state) => state.billboardForm);
   const { isEditing, formData, stateData, lgaData, cityData } = formDataState;
   const dispatch = useDispatch();
-  useEffect(() => {
-    // console.log(formData);
-    if (isEditing && formData.image) {
-      setBillboardImageUrl(formData.image);
-      setImageUpload(true);
-    }
-  }, []);
+  useEffect(
+    () => {
+      if (isEditing && formData.image) {
+        setBillboardImageUrl(formData.image);
+        setImageUpload(true);
+      }
+    },
+    // eslint-disable-next-line
+    []
+  );
   const handleFileUpload = () => {
     if (fileInputRef.current) fileInputRef.current.click();
   };
   const onImageDrop = async (e) => {
-    // console.log(e.target.files[0]);
     setIsUploadingImage(true);
     try {
       if (e.target.files?.length) {
@@ -112,10 +115,10 @@ const BillboardForm = () => {
           }
         } else {
           try {
-            const createdBillboard = await billboardDataApi.create(values);
+            const createdBillboard = await billboardDataApi.create(_id, values);
             updatedBillboardData.push(createdBillboard.billboardData);
             await mutate(
-              billboardRoute.get,
+              `${billboardRoute.url}${_id}/billboard`,
               { billboardData: updatedBillboardData },
               false
             );

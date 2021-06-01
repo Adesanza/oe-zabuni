@@ -1,30 +1,34 @@
 // import './edit-profile-form.css';
-// import { Form, Button, Col } from "react-bootstrap";
-// import { Formik } from "formik";
-// import { editProfileSchema } from "../../utils/form/yup-schemas";
-// import { useDispatch, useSelector } from "react-redux";
-// import { closeVerticalModalDisplay } from "../../redux/vertical-modal/verticalModalReducer";
-// import { resetBillboardFormData, showLgaData } from "../../redux/form/billboardFormReducer";
-// import { overheadModalContainer } from "../../redux/overhead-modal/overheadModalReducer";
-// import { setAlertContent } from "../../redux/alert/alertPopupReducer";
-// import { mutate } from "swr";
-// import billboardDataApi, { billboardRoute } from "../../utils/billboard-table/billboard-api";
+// import { Form, Button, Col } from 'react-bootstrap';
+// import { Formik } from 'formik';
+// import { editProfileSchema } from '../../utils/form/yup-schemas';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { closeVerticalModalDisplay } from '../../redux/vertical-modal/verticalModalReducer';
+// import {
+//   resetBillboardFormData,
+//   showLgaData,
+// } from '../../redux/form/billboardFormReducer';
+// import { overheadModalContainer } from '../../redux/overhead-modal/overheadModalReducer';
+// import { setAlertContent } from '../../redux/alert/alertPopupReducer';
+// import { mutate } from 'swr';
+// import billboardDataApi, {
+//   billboardRoute,
+// } from '../../utils/billboard-table/billboard-api';
 
 // const EditProfileForm = () => {
-//   const userState = useSelector(state => state.user);
+//   const userState = useSelector((state) => state.user);
 //   const dispatch = useDispatch();
 //   return (
 //     <Formik
 //       validationSchema={editProfileSchema}
 //       initialValues={{
-//           firstName: userState.first_name,
-//           lastName: userState.last_name,
-//           email: userState.email
+//         firstName: userState.first_name,
+//         lastName: userState.last_name,
+//         email: userState.email,
 //       }}
 //       onSubmit={async (values, { setSubmitting }) => {
-//           console.log(values)
-//           setSubmitting(true);
-
+//         console.log(values);
+//         setSubmitting(true);
 //       }}
 //     >
 //       {({
@@ -35,13 +39,13 @@
 //         touched,
 //         isValid,
 //         errors,
-//         isSubmitting
+//         isSubmitting,
 //       }) => (
 //         <>
 //           <Form noValidate onSubmit={handleSubmit}>
 //             <Form.Row>
 //               <Form.Group as={Col} controlId="formBasicFirstName">
-//               <Form.Label>First Name</Form.Label>
+//                 <Form.Label>First Name</Form.Label>
 //                 <Form.Control
 //                   type="text"
 //                   name="firstName"
@@ -52,13 +56,15 @@
 //                   className="formfont"
 //                 />
 //                 <Form.Text className="text-danger">
-//                   {touched.firstName && errors.firstName ? errors.firstName : null}
+//                   {touched.firstName && errors.firstName
+//                     ? errors.firstName
+//                     : null}
 //                 </Form.Text>
 //               </Form.Group>
 //             </Form.Row>
 //             <Form.Row>
 //               <Form.Group as={Col} controlId="formBasicLastName">
-//               <Form.Label>Last Name</Form.Label>
+//                 <Form.Label>Last Name</Form.Label>
 //                 <Form.Control
 //                   type="text"
 //                   name="lastName"
@@ -75,7 +81,7 @@
 //             </Form.Row>
 //             <Form.Row>
 //               <Form.Group as={Col} controlId="formBasicEmail">
-//               <Form.Label>Email</Form.Label>
+//                 <Form.Label>Email</Form.Label>
 //                 <Form.Control
 //                   type="email"
 //                   name="email"
@@ -91,7 +97,17 @@
 //               </Form.Group>
 //             </Form.Row>
 
-//             <Button type="submit" block className="billboard-update-btn" disabled={isSubmitting || !touched.firstName || !touched.lastName || !touched.email}>
+//             <Button
+//               type="submit"
+//               block
+//               className="billboard-update-btn"
+//               disabled={
+//                 isSubmitting ||
+//                 !touched.firstName ||
+//                 !touched.lastName ||
+//                 !touched.email
+//               }
+//             >
 //               update
 //             </Button>
 //           </Form>

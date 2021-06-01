@@ -1,11 +1,7 @@
 import axios from 'axios';
 
 export const billboardRoute = {
-  get: 'https://oe-zabuni-api.herokuapp.com/billboard/all',
-  create: 'https://oe-zabuni-api.herokuapp.com/billboard/create',
-  edit: 'https://oe-zabuni-api.herokuapp.com/billboard/',
-  delete: 'https://oe-zabuni-api.herokuapp.com/billboard/',
-  general_info: 'https://oe-zabuni-api.herokuapp.com/billboard-general/',
+  url: 'http://localhost:5000/publisher/',
 };
 
 const billboardDataApi = {
@@ -16,9 +12,12 @@ const billboardDataApi = {
     }
     return response.data;
   },
-  create: async (billboardData) => {
+  create: async (user_id, billboardData) => {
     // console.log('fff', billboardData);
-    const response = await axios.post(billboardRoute.create, billboardData);
+    const response = await axios.post(
+      `${billboardRoute.url}${user_id}/billboard/create`,
+      billboardData
+    );
     if (response.data.message) {
       throw new Error('Failed to create billboard');
     }

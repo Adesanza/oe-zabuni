@@ -17,9 +17,11 @@ const DateLastUpdated = () => {
         <p>
           Data last updated{' '}
           <span>
-            {getTimeSince(
-              billboardGeneralInfo.billboard_info.billboardLastUpdated
-            )}
+            {billboardGeneralInfo.billboard_info.billboardLastUpdated
+              ? getTimeSince(
+                  billboardGeneralInfo.billboard_info.billboardLastUpdated
+                )
+              : '--:--'}
           </span>
         </p>
       ) : null}

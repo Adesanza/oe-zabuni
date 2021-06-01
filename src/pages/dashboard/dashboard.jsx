@@ -9,10 +9,12 @@ import { mutate } from 'swr';
 import { DateTime } from 'luxon';
 import { billboardRoute } from '../../utils/billboard-table/billboard-api';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Dashboard = ({ type }) => {
+  const { _id } = useSelector((state) => state.user);
   // const dashboardState = useSelector(state => state.dashboard);
-  const [setCurrTime] = useState(DateTime.now());
+  const [currTime, setCurrTime] = useState(DateTime.now());
   return (
     <div className="dashboard">
       <SideBar />
@@ -24,7 +26,7 @@ const Dashboard = ({ type }) => {
         <div
           className="refresh-billboard-visuals"
           onClick={async () => {
-            await mutate(billboardRoute.general_info);
+            await mutate(`${billboardRoute.url}${_id}/billboard-general`);
             setCurrTime(DateTime.now());
           }}
         >

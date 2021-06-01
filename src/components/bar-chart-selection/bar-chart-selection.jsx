@@ -64,8 +64,11 @@ const ControlBarchartDisplay = ({ stateData, currState, setCurrState }) => {
 
   useEffect(() => {
     const slicedStates = [...stateData].splice(startCount, 6);
+
     if (startCount + 6 <= stateData.length) {
       setNext(true);
+      setStatesToDisplay(slicedStates);
+    } else {
       setStatesToDisplay(slicedStates);
     }
     if (startCount > 0) setPrevious(true);

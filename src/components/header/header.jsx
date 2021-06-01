@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { verticalModalContent } from '../../redux/vertical-modal/verticalModalReducer';
 import './header.css';
-import { BiSearch } from 'react-icons/bi';
-import { RiArrowDownSLine } from 'react-icons/ri';
+// import { BiSearch } from 'react-icons/bi';
+// import { RiArrowDownSLine } from 'react-icons/ri';
 import { CgProfile } from 'react-icons/cg';
 import { resetDashboard } from '../../redux/dashboard/dashboardReducer';
 import { useUserData } from '../../hooks/user-hook';
@@ -106,20 +106,21 @@ const Header = () => {
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className="navbar-nav">
-            <div className="searchContainer">
+            {/* <div className="searchContainer">
               <BiSearch className="searchIcon" />
               <input
                 className="searcher"
                 placeholder="Where will you like to place your advert?"
                 type="search"
               />
-            </div>
+            </div> */}
             <li>
               <button
                 className="homeb start"
                 onClick={() => dispatch(verticalModalContent('signup'))}
               >
-                Sign Up as <RiArrowDownSLine className="ArrowDown" />
+                Sign Up
+                {/* as <RiArrowDownSLine className="ArrowDown" /> */}
               </button>
             </li>
             <li>
@@ -130,7 +131,7 @@ const Header = () => {
                 className="homeb1 start1"
                 onClick={() => dispatch(verticalModalContent('login'))}
               >
-                Login
+                Login {/* as <RiArrowDownSLine className="ArrowDown" /> */}
               </button>
             </li>
           </ul>

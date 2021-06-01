@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // let loginRoute = "http://localhost:5000/user/login";
-let loginRoute = 'https://oe-zabuni-api.herokuapp.com/user/login';
-let registerRoute = 'http://localhost:5000/user/register';
+let loginRoute = 'http://localhost:5000/publisher/login';
+let registerRoute = 'http://localhost:5000/publisher/create';
 
 // if(process.env.NODE_ENV === "production"){
 //     loginRoute = "https://oe-zabuni-api.herokuapp.com/user/login"
@@ -23,6 +23,7 @@ const userApi = {
     if (response.data.message) {
       throw new Error('Wrong email or password');
     }
+    console.log('login', response.data);
     return response.data;
   },
   registerUser: async (registerDetails) => {

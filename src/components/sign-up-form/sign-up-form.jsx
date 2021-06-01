@@ -8,23 +8,37 @@ import {
   closeVerticalModalDisplay,
   verticalModalContent,
 } from '../../redux/vertical-modal/verticalModalReducer';
+import { fetchUserOnRegister } from '../../redux/user/userReducer';
+import { unwrapResult } from '@reduxjs/toolkit';
+import { useHistory } from 'react-router';
 
 const SignupForm = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   return (
     <Formik
       validationSchema={registerScehma}
       initialValues={{
-        firstName: '',
-        lastName: '',
+        first_name: '',
+        last_name: '',
         company: '',
         email: '',
         password: '',
       }}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, { setSubmitting, setFieldError }) => {
         // console.log(values)
-        dispatch(closeVerticalModalDisplay());
-        alert('Back-End Loading.. Database Not ready');
+        setSubmitting(true);
+        // console.log({ values, actions });
+        dispatch(fetchUserOnRegister(values))
+          .then(unwrapResult)
+          .then((data) => {
+            dispatch(closeVerticalModalDisplay());
+            history.push('/management');
+          })
+          .catch((error) => {
+            setSubmitting(false);
+            setFieldError('password', error.message);
+          });
       }}
     >
       {({
@@ -42,15 +56,15 @@ const SignupForm = () => {
               <Form.Control
                 type="text"
                 placeholder="First name"
-                name="firstName"
-                value={values.firstName}
+                name="first_name"
+                value={values.first_name}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className="email-login-input"
               />
               <Form.Text className="text-danger">
-                {touched.firstName && errors.firstName
-                  ? errors.firstName
+                {touched.first_name && errors.first_name
+                  ? errors.first_name
                   : null}
               </Form.Text>
             </Form.Group>
@@ -58,28 +72,32 @@ const SignupForm = () => {
               <Form.Control
                 type="text"
                 placeholder="Last name"
-                name="lastName"
-                value={values.lastName}
+                name="last_name"
+                value={values.last_name}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className="email-login-input"
               />
               <Form.Text className="text-danger">
-                {touched.lastName && errors.lastName ? errors.lastName : null}
+                {touched.last_name && errors.last_name
+                  ? errors.last_name
+                  : null}
               </Form.Text>
             </Form.Group>
             <Form.Group controlId="formBasicCompany">
               <Form.Control
                 type="text"
                 placeholder="Company"
-                name="company"
-                value={values.company}
+                name="company_name"
+                value={values.company_name}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className="email-login-input"
               />
               <Form.Text className="text-danger">
-                {touched.company && errors.company ? errors.company : null}
+                {touched.company_name && errors.company_name
+                  ? errors.company_name
+                  : null}
               </Form.Text>
             </Form.Group>
             <Form.Group controlId="formBasicEmail">

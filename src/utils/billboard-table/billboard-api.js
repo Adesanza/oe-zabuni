@@ -23,10 +23,11 @@ const billboardDataApi = {
     }
     return response.data;
   },
-  edit: async (billboardData) => {
+  edit: async (user_id, billboardData) => {
     // console.log('edit', billboardData);
     const response = await axios.patch(
-      `${billboardRoute.edit}${billboardData._id}`,
+      // `${billboardRoute.edit}${billboardData._id}`,
+      `${billboardRoute.url}${user_id}/billboard/edit`,
       billboardData
     );
     if (response.data.message) {
@@ -34,11 +35,13 @@ const billboardDataApi = {
     }
     return response.data;
   },
-  delete: async (billboardId) => {
+  delete: async (user_id, billboardId) => {
     const response = await axios.delete(
-      `${billboardRoute.delete}${billboardId}`
+      // `${billboardRoute.delete}${billboardId}`
+      `${billboardRoute.url}${user_id}/billboard/delete`
     );
     if (response.data.message) {
+      // console.log(Error);
       throw new Error('Failed to delete billboard');
     }
     return response.data;

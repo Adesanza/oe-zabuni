@@ -131,7 +131,18 @@ const Header = () => {
                 className="homeb1 start1"
                 onClick={() => dispatch(verticalModalContent('login'))}
               >
-                Login {/* as <RiArrowDownSLine className="ArrowDown" /> */}
+                Login as ADMIN{' '}
+                {/* as <RiArrowDownSLine className="ArrowDown" /> */}
+              </button>
+              <button
+                type="button"
+                data-toggle="modal"
+                data-target="#myModal"
+                className="homeb1 start1"
+                onClick={() => dispatch(verticalModalContent('login'))}
+              >
+                Login as STAFF{' '}
+                {/* as <RiArrowDownSLine className="ArrowDown" /> */}
               </button>
             </li>
           </ul>

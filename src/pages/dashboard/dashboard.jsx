@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux';
 
 const Dashboard = ({ type }) => {
   const { _id } = useSelector((state) => state.user);
-  // const dashboardState = useSelector(state => state.dashboard);
+  // eslint-disable-next-line
   const [currTime, setCurrTime] = useState(DateTime.now());
   return (
     <div className="dashboard">
